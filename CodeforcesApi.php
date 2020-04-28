@@ -1,8 +1,5 @@
 <?php
 
-
-namespace API;
-
 function generateRandomString($length = 6)
 {
     $characters = '0123456789';
