@@ -8,4 +8,6 @@ require __DIR__ . '/CodeforcesUserApi.php';
 $api = new CodeforcesUserApi();
 
 
-$api->login();
+$api->login("shaazzz_admin", "passss");
+
+//$api->addProblemsToContest(278072,array("50A"));
