@@ -1,27 +1,24 @@
 <?php
 
 class problem{
-    private $like, $accepted; // from iran dataset
+    private $like = 0, $accepted = 0; // from iran dataset
     private $tags = array(), $difficulty, $prior;
-    private $used = false;
-
-    function __construct($tags, $difficulty, $prior = 0){
+    private $problemIndex, $contestId, $problemId;
+    function __construct($problemIndex, $contestId, $tags, $difficulty, $prior = 0){
+        $this->problemIndex = $problemIndex;
+        $this->contestId = $contestId;
+        $this->problemId = $this->contestId . $this->problemIndex;
         $this->tags = $tags;
         $this->difficulty = $difficulty;
         $this->prior = $prior;
     }
-    function restart(){
-        $this->like = 0;
-        $this->accepted = 0;
-    }
     function addUserSolved(){
         $this->accepted++;
+        return $this->accepted;
     }
     function addUserLiked(){
         $this->like++;
-    }
-    function usedInContest(){
-        $this->used = true;
+        return $this->like;
     }
     function calcDif(){
         return $this->difficulty;
