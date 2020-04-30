@@ -2,57 +2,69 @@
 
 require __DIR__ . '/problem.php';
 
-class problemset{
-    private $problems = array(), $used = array();
-    private $maxLike = 0, $maxAccepted = 0;
+class problemset
+{
+    static $problems = array();
+    static $maxLike = 0, $maxAccepted = 0;
 
-    public function __construct(){
-        $txt = file_get_contents("data.txt");
-        $arr = explode(",", $txt);
-        foreach($arr as $id){
-            $used[$id] = true;
+    static function readFromFile()
+    {
+        if (file_exists("data/data.txt")) {
+            $data = json_decode(file_get_contents("data/data.txt"), true);
+            foreach ($data as $problemJson) {
+                problemset::addProblem($problemJson["problemIndex"], $problemJson["contestId"], $problemJson["tags"],
+                    $problemJson["difficulty"], $problemJson["prior"]);
+            }
         }
     }
-    function finish(){
-        $txt = "";
-        foreach($this->used as $id){
-            $txt.=$id.",";
+
+    static function update()
+    {
+        file_put_contents("data/data.txt", json_encode(problemset::$problems));
+    }
+
+    static function addProblem($problemId, $tags, $difficulty, $prior = 0, $inside = false)
+    {
+        if (!isset(problemset::$problems[$problemId])) {
+            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior);
         }
-        file_put_contents("data.txt", $txt);
-    }
-    function addProblem($problemIndex, $contestId, $tags, $difficulty, $prior = 0){
-        $problemId = $contestId . $problemIndex;
-        if($this->used[$problemId] != true){
-            $this->problems[$problemId] = new problem($problemIndex, $contestId, $tags, $difficulty, $prior);
+        if (!$inside) {
+            problemset::update();
         }
     }
-    function addUserSolved($problemId){
-        $this->maxAccepted = max($this->maxAccepted, $this->problems[$problemId]->addUserSolved());
+
+    function addUserSolved($problemId)
+    {
+        problemset::$maxAccepted = max(problemset::$maxAccepted, problemset::$problems[$problemId]->addUserSolved());
     }
-    function addUserLiked($problemId){
-        $this->maxLike = max($this->maxLike, $this->problems[$problemId]->addUserLiked());
+
+    function addUserLiked($problemId)
+    {
+        problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked());
     }
-    function chooseProblem($tags, $L, $R){ // age natoonest false mide
+
+    static function chooseProblem($tags, $L, $R)
+    {
         $sortOnBtr = array();
-        foreach($this->problems as $k => $v){
-            if($L <= $v->calcDif && $v->calcDif <= $R)
-                $sortOnBtr[$k] = $v->calcBtr($tags, $this->maxAccepted, $this->maxLike);
+        foreach (problemset::$problems as $k => $v) {
+            if ($L <= $v->calcDif && $v->calcDif <= $R)
+                $sortOnBtr[$k] = $v->calcBtr($tags, problemset::$maxAccepted, problemset::$maxLike);
         }
         $candid = array();
-        for($i=0;$i<3;$i++){
+        for ($i = 0; $i < 3; $i++) {
             $str = "";
-            foreach($sortOnBtr as $k => $v){
-                if($v > $sortOnBtr[$str])
+            foreach ($sortOnBtr as $k => $v) {
+                if ($v > $sortOnBtr[$str])
                     $str = $k;
             }
-            if($str != ""){
+            if ($str != "") {
                 $candid[$i] = $str;
             }
         }
-        if(count($candid) == 0)
+        if (count($candid) == 0)
             return false;
-        $ans = $candid[rand(0, count($candid)-1)];
-        $used[$ans] = true;
+        $ans = $candid[rand(0, count($candid) - 1)];
+        problemset::$problems[$ans]->setUsed();
         return $ans;
     }
 }

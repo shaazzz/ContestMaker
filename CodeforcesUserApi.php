@@ -128,17 +128,22 @@ class CodeforcesUserApi
         return $match[1];
     }
 
+    function getProblemArrayData($problemId)
+    {
+        $result = $this->request('data/mashup', array(
+            "action" => "getProblem",
+            "problemQuery" => $problemId,
+            "problemCount" => 0
+        ));
+        return json_decode($result, true);
+    }
+
     function setNewProblemsForContest($contestId, $problemIds, $contestAddressPrefix = "gym")
     {
         $this->setVisibilityProblems($contestId, false, $contestAddressPrefix);
         $problems = array();
         foreach ($problemIds as $problemId) {
-            $result = $this->request('data/mashup', array(
-                "action" => "getProblem",
-                "problemQuery" => $problemId,
-                "problemCount" => 0
-            ));
-            array_push($problems, json_decode($result));
+            array_push($problems, $this->getProblemArrayData($problemId));
         }
         $body = $this->request("gym/$contestId/problems/new", array());
         $contestName = $this->getValueFromBody($body, "contestName");
@@ -159,6 +164,22 @@ class CodeforcesUserApi
         echo $result;
     }
 
+    function getContestProblemQueriesFromCFContest($contestId)
+    {
+        $body = $this->request("contest/" . $contestId, array());
+        if (!preg_match_all("/contest\/1337\/problem\/.+\"/", $body, $matches)) {
+            throw new Exception("cannot find contest problem ids");
+        }
+        $result = array();
+        foreach ($matches[0] as $match) {
+            $link = substr($match, 0, strlen($match) - 1);
+            $arr = explode("/", $link);
+            $problemId = $arr[count($arr) - 3] . $arr[count($arr) - 1];
+            array_push($result, $problemId);
+        }
+        return array_values(array_unique($result));
+    }
+
     function getContestProblemLinks($contestId, $contestAddressPrefix = "gym")
     {
         $body = $this->request($contestAddressPrefix . "/" . $contestId, array());
@@ -175,6 +196,9 @@ class CodeforcesUserApi
 
     function getContestProblemQueries($contestId, $contestAddressPrefix = "gym")
     {
+        if ($contestAddressPrefix == "contest") {
+            return $this->getContestProblemQueriesFromCFContest();
+        }
         $result = array();
         $links = $this->getContestProblemLinks($contestId, $contestAddressPrefix);
         foreach ($links as $link) {
@@ -184,7 +208,6 @@ class CodeforcesUserApi
         }
         return $result;
     }
-
 
     function setVisibilityProblems($contestId, $visibility, $contestAddressPrefix = "gym")
     {

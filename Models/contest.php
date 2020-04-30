@@ -14,7 +14,7 @@ class contest{
     function giveContest(){ // age nashe false mide
         $ans = array();
         for($i = 0; $i < $this->cntProblems; $i++){
-            $x = chooseProblem($this->L, $this->R, $this->tags);
+            $x = problemset::chooseProblem($this->L, $this->R, $this->tags);
             if($x == false)
                 return false;
             $ans[$i] = $x;
