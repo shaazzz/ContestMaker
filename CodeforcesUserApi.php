@@ -175,25 +175,9 @@ class CodeforcesUserApi
         }
     }
 
-    function getScoreboard()
+    function sendScoreboard()
     {
-        file_put_contents("data/file.html", $this->request("contest/1340/standings", array(), true));
-        $html = file_get_contents("data/file.html");
-
-        $css = <<<EOD
-            .box { 
-              border: 4px solid #03B875; 
-              padding: 20px; 
-              font-family: 'Roboto'; 
-            }
-EOD;
-
-        $google_fonts = "Roboto";
-
-        $data = array(
-            'html' => $html,
-            'css' => $css,
-            'google_fonts' => $google_fonts);
+        $data = array('url' => self::$url . "contest/1278/standings");//"group/tFEA7pkTiD/contest/272297/standings");
 
         $ch = curl_init();
 
@@ -215,9 +199,38 @@ EOD;
         }
         curl_close($ch);
         $res = json_decode($result, true);
-        echo $res['url'];
+
+        $im = imagecreatefrompng($res['url']);
+        $im2 = imagecrop($im, ['x' => 50, 'y' => 180, 'width' => imagesx($im) - 100, 'height' => imagesy($im) - 230]);
+        if ($im2 !== FALSE) {
+            imagepng($im2, 'example-cropped.png');
+            imagedestroy($im2);
+        }
+        imagedestroy($im);
+        $this->sendPhoto('example-cropped.png');
     }
 
+    function sendPhoto($filename)
+    {
+        $data = array(
+            "chat_id" => TELEGRAM_CHANNEL_ID,
+            "caption" => TELEGRAM_SCOREBOARD_CAPTION,
+            "photo" => curl_file_create(realpath($filename), 'image/png', "example-cropped.png")
+        );
+        $proxyIP = '127.0.0.1';
+        $proxyPort = '41177';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_PROXY, $proxyIP);
+        curl_setopt($ch, CURLOPT_PROXYPORT, $proxyPort);
+        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . TELEGRAM_API . "/sendPhoto");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        if (json_decode(curl_exec($ch),true)['ok'] != true || curl_error($ch)) {
+            throw new Exception(curl_error($ch));
+        }
+        curl_close($ch);
+    }
 
     function closeConnection()
     {
