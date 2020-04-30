@@ -81,13 +81,16 @@ class CodeforcesUserApi
         );
     }
 
-    function request($actionAddress, $parameters)
+    function request($actionAddress, $parameters, $returnEveryThing = false)
     {
         curl_setopt($this->curl, CURLOPT_URL, self::$url . $actionAddress);
         curl_setopt($this->curl, CURLOPT_POST, true);
         $parameters = array_merge($this->getAdditionalParameters(), $parameters);
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, http_build_query($parameters));
         $result = curl_exec($this->curl);
+        if ($returnEveryThing) {
+            return $result;
+        }
         $header_size = curl_getinfo($this->curl, CURLINFO_HEADER_SIZE);
         return substr($result, $header_size);
     }
@@ -174,17 +177,10 @@ class CodeforcesUserApi
 
     function getScoreboard()
     {
-        file_put_contents("data/file.html", $this->request("contest/1340/standings", array()));
-        $cFile = curl_file_create("data/file.html");
+        file_put_contents("data/file.html", $this->request("contest/1340/standings", array(), true));
+        $html = file_get_contents("data/file.html");
 
-
-        $html = <<<EOD
-            <div class='box'>
-              Generated from PHP ✅
-            </div>
-EOD;
-
-            $css = <<<EOD
+        $css = <<<EOD
             .box { 
               border: 4px solid #03B875; 
               padding: 20px; 
@@ -194,7 +190,8 @@ EOD;
 
         $google_fonts = "Roboto";
 
-        $data = array('html' => $html,
+        $data = array(
+            'html' => $html,
             'css' => $css,
             'google_fonts' => $google_fonts);
 

@@ -1,5 +1,5 @@
 <?php
-define("CODEFORCES_USERNAME", "shaazz_admin");
+define("CODEFORCES_USERNAME", "shaazzz_admin");
 define("CODEFORCES_PASSWORD", "inPasswordShaazzzAst");
 define("CODEFORCES_API_KEY", "74549d19b172095859d90d556499fa9c6c45db3f");
 define("CODEFORCES_API_SECRET", "6528f3887d3dbd195c8a85bdf38f4d54f37a8017");
