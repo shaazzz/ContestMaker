@@ -40,6 +40,6 @@ class problem{
             }
             $intersect = $intersect / count($tags);
         }
-        return self::evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike);
+        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike);
     }
 }

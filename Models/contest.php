@@ -19,6 +19,6 @@ class contest{
                 return false;
             $ans[$i] = $x;
         }
-        return ans;
+        return $ans;
     }
 }
