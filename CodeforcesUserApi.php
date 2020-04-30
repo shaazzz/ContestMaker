@@ -137,8 +137,6 @@ class CodeforcesUserApi
                 "problemQuery" => $problemId,
                 "problemCount" => 0
             ));
-            echo $result;
-            return;
             array_push($problems, json_decode($result));
         }
         $body = $this->request("gym/$contestId/problems/new", array());
@@ -159,6 +157,25 @@ class CodeforcesUserApi
         ));
         echo $result;
     }
+
+    function getContestProblemIds($contestId, $contestAddressPrefix = "gym/")
+    {
+        $body = $this->request($contestAddressPrefix . $contestId, array());
+        //echo $body;
+        echo "/$contestAddressPrefix$contestId/problems/edit/.+\"/";
+        if (!preg_match("/$contestAddressPrefix$contestId//problems//edit//.+\"/", $body, $match)) {
+            throw new Exception("cannot find contest problem ids");
+        }
+        foreach ($match as $x){
+            echo $x."<br>";
+        }
+    }
+
+    function getContestProblemQueries()
+    {
+
+    }
+
 
     function setVisibilityProblems($contestId, $problemIds, $visibility)
     {
@@ -226,7 +243,7 @@ class CodeforcesUserApi
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        if (json_decode(curl_exec($ch),true)['ok'] != true || curl_error($ch)) {
+        if (json_decode(curl_exec($ch), true)['ok'] != true || curl_error($ch)) {
             throw new Exception(curl_error($ch));
         }
         curl_close($ch);

@@ -14,4 +14,6 @@ $api = new CodeforcesUserApi();
 //$api->addProblemsToContest(278072,array("50A"));
 //$api->setVisibilityProblems(278072, array(608415), false);
 //$api->addProblemsToContest(278072,array("60C"));
-$api->sendScoreboard();
+//$api->sendScoreboard();
+
+$api->getContestProblemIds(278072);

@@ -41,6 +41,6 @@ class CodeforcesApi
             $parameters['apiSig'] = $randomString . hash('sha512', $data);
         }
         $query = self::$url . $methodName . "?" . http_build_query($parameters);
-        return file_get_contents($query);
+        return json_decode(file_get_contents($query), true);
     }
 }

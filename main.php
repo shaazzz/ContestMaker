@@ -16,4 +16,4 @@ $parameters = array(
     "showUnofficial" => true
 );
 
-echo $api->request("contest.standings", $parameters);
+print_r($api->request("contest.standings", $parameters));
