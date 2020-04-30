@@ -33,7 +33,7 @@ class problemset{
         $this->maxLike = max($this->maxLike, $this->problems[$problemId]->addUserLiked());
     }
     function chooseProblem($tags, $L, $R){ // age natoonest false mide
-        $sortOnDiff = array(), $sortOnBtr = array();
+        $sortOnBtr = array();
         foreach($this->problems as $k => $v){
             if($L <= $v->calcDif && $v->calcDif <= $R)
                 $sortOnBtr[$k] = $v->calcBtr($tags, $this->maxAccepted, $this->maxLike);
