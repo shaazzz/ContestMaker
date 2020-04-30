@@ -23,6 +23,9 @@ class problem{
     function calcDif(){
         return $this->difficulty;
     }
+    function evalWithCoff($A, $B, $C, $D){
+        return 7 * $B + 5 * $A + 4 * $B + 2 * $D;
+    }
     function calcBtr($tags, $maxAccepted, $maxLike){ // each item is 0.5 if empty
         if($maxLike == 0)
             $maxLike = 1;
@@ -37,6 +40,6 @@ class problem{
             }
             $intersect = $intersect / count($tags);
         }
-        return evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike);
+        return self::evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike);
     }
 }
