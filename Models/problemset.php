@@ -1,22 +1,21 @@
 <?php
 
 require __DIR__ . '/problem.php';
-require __DIR__ . '/io.php';
 
 class problemset{
     private $problems = array(), $used = array();
     private $maxLike = 0, $maxAccepted = 0;
 
-    function __construct(){
+    public function __construct(){
         $txt = file_get_contents("data.txt");
         $arr = explode(",", $txt);
         foreach($arr as $id){
-            $used[id] = true;
+            $used[$id] = true;
         }
     }
     function finish(){
         $txt = "";
-        foreach($arr as $id){
+        foreach($this->used as $id){
             $txt.=$id.",";
         }
         file_put_contents("data.txt", $txt);
@@ -24,7 +23,7 @@ class problemset{
     function addProblem($problemIndex, $contestId, $tags, $difficulty, $prior = 0){
         $problemId = $contestId . $problemIndex;
         if($this->used[$problemId] != true){
-            $this->problems[$problemId] = new problem($tags, $difficulty, $prior);
+            $this->problems[$problemId] = new problem($problemIndex, $contestId, $tags, $difficulty, $prior);
         }
     }
     function addUserSolved($problemId){
@@ -33,7 +32,27 @@ class problemset{
     function addUserLiked($problemId){
         $this->maxLike = max($this->maxLike, $this->problems[$problemId]->addUserLiked());
     }
-    function chooseProblem($tags){
-
+    function chooseProblem($tags, $L, $R){ // age natoonest false mide
+        $sortOnDiff = array(), $sortOnBtr = array();
+        foreach($this->problems as $k => $v){
+            if($L <= $v->calcDif && $v->calcDif <= $R)
+                $sortOnBtr[$k] = $v->calcBtr($tags, $this->maxAccepted, $this->maxLike);
+        }
+        $candid = array();
+        for($i=0;$i<3;$i++){
+            $str = "";
+            foreach($sortOnBtr as $k => $v){
+                if($v > $sortOnBtr[$str])
+                    $str = $k;
+            }
+            if($str != ""){
+                $candid[$i] = $str;
+            }
+        }
+        if(count($candid) == 0)
+            return false;
+        $ans = $candid[rand(0, count($candid)-1)];
+        $used[$ans] = true;
+        return $ans;
     }
 }

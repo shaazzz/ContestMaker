@@ -4,7 +4,7 @@ class problem{
     private $like = 0, $accepted = 0; // from iran dataset
     private $tags = array(), $difficulty, $prior;
     private $problemIndex, $contestId, $problemId;
-    function __construct($problemIndex, $contestId, $tags, $difficulty, $prior = 0){
+    public function __construct($problemIndex, $contestId, $tags, $difficulty, $prior = 0){
         $this->problemIndex = $problemIndex;
         $this->contestId = $contestId;
         $this->problemId = $this->contestId . $this->problemIndex;
