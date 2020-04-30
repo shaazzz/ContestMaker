@@ -128,8 +128,9 @@ class CodeforcesUserApi
         return $match[1];
     }
 
-    function addProblemsToContest($contestId, $problemIds)
+    function setNewProblemsForContest($contestId, $problemIds, $contestAddressPrefix = "gym")
     {
+        $this->setVisibilityProblems($contestId, false, $contestAddressPrefix);
         $problems = array();
         foreach ($problemIds as $problemId) {
             $result = $this->request('data/mashup', array(
@@ -158,30 +159,39 @@ class CodeforcesUserApi
         echo $result;
     }
 
-    function getContestProblemIds($contestId, $contestAddressPrefix = "gym/")
+    function getContestProblemLinks($contestId, $contestAddressPrefix = "gym")
     {
-        $body = $this->request($contestAddressPrefix . $contestId, array());
-        //echo $body;
-        echo "/$contestAddressPrefix$contestId/problems/edit/.+\"/";
-        if (!preg_match("/$contestAddressPrefix$contestId//problems//edit//.+\"/", $body, $match)) {
+        $body = $this->request($contestAddressPrefix . "/" . $contestId, array());
+        if (!preg_match_all("/$contestAddressPrefix\/$contestId\/problems\/edit\/.+\"/", $body, $matches)) {
             throw new Exception("cannot find contest problem ids");
         }
-        foreach ($match as $x){
-            echo $x."<br>";
+        $result = array();
+        foreach ($matches[0] as $match) {
+            $link = substr($match, 0, strlen($match) - 1);
+            array_push($result, $link);
         }
+        return $result;
     }
 
-    function getContestProblemQueries()
+    function getContestProblemQueries($contestId, $contestAddressPrefix = "gym")
     {
-
+        $result = array();
+        $links = $this->getContestProblemLinks($contestId, $contestAddressPrefix);
+        foreach ($links as $link) {
+            $body = $this->request($link, array());
+            $problemQuery = $this->getValueFromBody($body, "problemQuery");
+            array_push($result, $problemQuery);
+        }
+        return $result;
     }
 
 
-    function setVisibilityProblems($contestId, $problemIds, $visibility)
+    function setVisibilityProblems($contestId, $visibility, $contestAddressPrefix = "gym")
     {
-        foreach ($problemIds as $problemId) {
-            $body = $this->request("gym/$contestId/problems/edit/$problemId", array());
-            $this->request("gym/$contestId/problems/edit/$problemId", array(
+        $links = $this->getContestProblemLinks($contestId, $contestAddressPrefix);
+        foreach ($links as $link) {
+            $body = $this->request($link, array());
+            $this->request($link, array(
                 "action" => "change",
                 "index" => $this->getValueFromBody($body, "index"),
                 "problemQuery" => $this->getValueFromBody($body, "problemQuery"),
