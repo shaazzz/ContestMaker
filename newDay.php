@@ -8,6 +8,14 @@ require __DIR__ . '/data/defines.php';
 require __DIR__ . '/CodeforcesUserApi.php';
 
 
+$api = new CodeforcesUserApi();
+$api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
+
+$contest = new contest(278432, 34, "Candidate masters", 1900, 2400, 3);//$api->createNewMashup(13, CONTEST_LEVEL1);
+$api->changeTimeToToday($contest);
+
+
+/*
 date_default_timezone_set('Asia/Taipei');
 problemset::readFromFile();
 
@@ -24,8 +32,6 @@ $contests = array(
     new contest(278323, $contestIndex, "Grandmasters", 2500, 3500, 3),
 );
 
-$api = new CodeforcesUserApi();
-$api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 
 if ($dayNumber % 7 == 0) {
     foreach ($contests as $contest) {
@@ -33,6 +39,7 @@ if ($dayNumber % 7 == 0) {
     }
 } else {
     foreach ($contests as $contest) {
-        $api->setNewProblemsForContest($contest->contestId, $contest->giveContest());
+        $api->setNewProblemsForContest($contest, $contest->giveContest());
     }
 }
+*/

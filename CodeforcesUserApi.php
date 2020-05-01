@@ -80,11 +80,13 @@ class CodeforcesUserApi
         );
     }
 
-    function request($actionAddress, $parameters, $returnEveryThing = false)
+    function request($actionAddress, $parameters, $returnEveryThing = false, $addAdditionalParameters = true)
     {
         curl_setopt($this->curl, CURLOPT_URL, self::$url . $actionAddress);
         curl_setopt($this->curl, CURLOPT_POST, true);
-        $parameters = array_merge($this->getAdditionalParameters(), $parameters);
+        if ($addAdditionalParameters) {
+            $parameters = array_merge($this->getAdditionalParameters(), $parameters);
+        }
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, http_build_query($parameters));
         $result = curl_exec($this->curl);
         if ($returnEveryThing) {
@@ -138,44 +140,51 @@ class CodeforcesUserApi
     }
 
 
-    // not working!
     function changeTimeToToday($contest)
     {
-        $body = $this->request("gym/edit/" . $contest->contestId, array());
-        $initDT = $this->getValueFromBody($body, "initialDatetime");
-        $initD = substr($initDT, 0, 11);
-        $result = $this->request("gym/edit/" . $contest->contestId . "?" . $this->csrf_token, array(
+        $duration = 1440;
+        if(!TIMER_UPDATE_EVERY_DAY){
+            $duration *= 7;
+        }
+        $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
+            "csrf_token" => $this->csrf_token,
             "contestEditFormSubmitted" => "true",
             "clientTimezoneOffset" => "270",
             "englishName" => "Contest #$contest->contestIndex $contest->contestLevel",
-            "russianName" => "srf",
+            "russianName" => "Contest #$contest->contestIndex $contest->contestLevel",
             "untaggedContestType" => "ICPC",
-            "initialDatetime" => $initDT,
+            "initialDatetime" => "",
             "startDay" => date("M/d/Y"),
-            "startTime" => "00:19",
-            "duration" => "1440",
+            "startTime" => "00:00",
+            "duration" => $duration,
             "visibility" => "PRIVATE",
-            "participationType" => "PERSONS_AND_TEAMS",
+            "participationType" => "PERSONS_ONLY",
             "freezeDuration" => "0",
-            "initialUnfreezeTime" => $initDT,
-            "unfreezeDay" => $initD,
-            "unfreezeTime" => "00:00",
+            "initialUnfreezeTime" => "",
+            "unfreezeDay" => "",
+            "unfreezeTime" => "",
             "allowedPractice" => "on",
-            "allowedVirtual" => "on",
             "allowedSelfRegistration" => "on",
             "allowedViewForNonRegistered" => "on",
             "allowedCommonStatus" => "on",
-            "viewTestdataPolicy" => "NONE",
+            "viewTestdataPolicy" => "OWN_FAILED",
             "submitViewPolicy" => "NONE",
             "languages" => "true",
             "allowedStatements" => "on",
             "allowedStandings" => "on",
+            "season" => "",
+            "contestType" => "",
+            "icpcRegion" => "",
+            "country" => "",
+            "city" => "",
             "difficulty" => "0",
-            "russianRegistrationConfirmation",
-            "englishLogo" => "(binary)",
-            "russianLogo" => "(binary)",
-        ));
-        echo $result;
+            "websiteUrl" => "https://blog.shaazzz.ir",
+            "englishDescription" => "",
+            "russianDescription" => "",
+            "englishRegistrationConfirmation" => "",
+            "russianRegistrationConfirmation" => "",
+            "_tta" => "176"
+        ), false, false);
     }
 
     function createNewMashup($contestIndex, $contestLevel)
@@ -192,16 +201,32 @@ class CodeforcesUserApi
         if ($result != "{\"success\":\"true\"}") {
             throw new Exception("error in creating new mashup");
         }
+
+        $body = $this->request("mashups/", array());
+        if (!preg_match_all("/href=\"\/gym\/([0-9]+)\//", $body, $matches)) {
+            throw new Exception("cannot find contest problem ids");
+        }
+        $contestId = -1;
+        foreach ($matches[1] as $match) {
+            if ((int)$match > $contestId) {
+                $contestId = (int)$match;
+            }
+        }
+        if ($contestId == -1) {
+            throw new Exception("contest id not found");
+        }
+        return $contestId;
     }
 
-    function setNewProblemsForContest($contestId, $problemIds, $contestAddressPrefix = "gym")
+    function setNewProblemsForContest($contest, $problemIds, $contestAddressPrefix = "gym")
     {
-        $this->setVisibilityProblems($contestId, false, $contestAddressPrefix);
+        $this->setVisibilityProblems($contest->contestId, false, $contestAddressPrefix);
+        $this->changeTimeToToday($contest);
         $problems = array();
         foreach ($problemIds as $problemId) {
             array_push($problems, $this->getProblemArrayData($problemId));
         }
-        $body = $this->request("gym/$contestId/problems/new", array());
+        $body = $this->request("gym/$contest->contestId/problems/new", array());
         $contestName = $this->getValueFromBody($body, "contestName");
         $contestDuration = $this->getValueFromBody($body, "contestDuration");
         echo $contestName . $contestDuration;
@@ -210,9 +235,9 @@ class CodeforcesUserApi
         $result = $this->request('data/mashup', array(
             "action" => "saveMashup",
             "isCloneContest" => "false",
-            "parentContestIdAndName" => $contestId . ' - ' . $contestName,
-            "parentContestId" => $contestId,
-            "contestId" => $contestId,
+            "parentContestIdAndName" => $contest->contestId . ' - ' . $contestName,
+            "parentContestId" => $contest->contestId,
+            "contestId" => $contest->contestId,
             "contestName" => $contestName,
             "contestDuration" => $contestDuration,
             "problemsJson" => $problems
