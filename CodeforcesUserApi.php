@@ -141,9 +141,9 @@ class CodeforcesUserApi
 
     function changeTimeToToday($contest)
     {
-        $duration = 1440;
+        $duration = 15 * 60;
         if (!TIMER_UPDATE_EVERY_DAY) {
-            $duration *= 7;
+            $duration = 1440 * 7;
         }
         $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
             "csrf_token" => $this->csrf_token,
@@ -154,7 +154,7 @@ class CodeforcesUserApi
             "untaggedContestType" => "ICPC",
             "initialDatetime" => "",
             "startDay" => date("M/d/Y"),
-            "startTime" => "00:00",
+            "startTime" => "09:00",
             "duration" => $duration,
             "visibility" => "PRIVATE",
             "participationType" => "PERSONS_ONLY",
@@ -341,7 +341,7 @@ class CodeforcesUserApi
 
     function addContestToGroup($contestId)
     {
-        $this->request("group/" . CF_GROUP_ID . "/contests/add" , array(
+        $this->request("group/" . CF_GROUP_ID . "/contests/add", array(
             "action" => "addContest",
             "contestId" => $contestId
         ), true);

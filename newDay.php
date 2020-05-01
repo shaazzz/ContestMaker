@@ -2,6 +2,7 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+date_default_timezone_set('Asia/Taipei');
 
 require __DIR__ . '/Models/contest.php';
 require __DIR__ . '/Models/AllContests.php';
@@ -13,7 +14,6 @@ AllContests::readFromFile();
 $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 
-date_default_timezone_set('Asia/Tehran');
 problemset::readFromFile();
 $dayNumber = 0;
 if (file_exists("data/counter.txt")) {
