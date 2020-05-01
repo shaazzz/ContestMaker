@@ -16,7 +16,7 @@ if (file_exists("data/counter.txt")) {
     $dayNumber = (int)file_get_contents("data/counter.txt");
 }
 file_put_contents("data/counter.txt", $dayNumber + 1);
-$contestIndex = $dayNumber / 7 + 1;
+$contestIndex = intdiv($dayNumber, 7) + 1;
 $contests = array(
     new contest(278320, $contestIndex, "Beginners", 700, 1400, $dayNumber % 7 < 5 ? 4 : 3),
     new contest(278321, $contestIndex, "Specialist", 1400, 2000, 3),
