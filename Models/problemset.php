@@ -26,7 +26,7 @@ class problemset
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {
                 problemset::addProblem($problemJson["problemId"], $problemJson["problemName"], $problemJson["tags"],
-                    $problemJson["difficulty"], $problemJson["prior"], $problemJson["used"]);
+                    $problemJson["difficulty"], $problemJson["prior"], $problemJson["used"], true);
             }
         }
     }
@@ -36,10 +36,10 @@ class problemset
         file_put_contents("data/data.txt", json_encode(problemset::$problems));
     }
 
-    static function addProblem($problemId, $problemName, $tags, $difficulty, $prior = 0, $inside = false)
+    static function addProblem($problemId, $problemName, $tags, $difficulty, $prior, $used, $inside = false)
     {
         if (!isset(problemset::$problems[$problemId])) {
-            problemset::$problems[$problemId] = new problem($problemId, $problemName, $tags, $difficulty, $prior);
+            problemset::$problems[$problemId] = new problem($problemId, $problemName, $tags, $difficulty, $prior, $used);
         }
         if (!$inside) {
             problemset::update();
