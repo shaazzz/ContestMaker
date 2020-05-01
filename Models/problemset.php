@@ -63,7 +63,7 @@ class problemset
         $sortOnBtr = array();
         foreach (problemset::$problems as $k => $v) {
             if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true)
-                $sortOnBtr[$k] = $v->calcBtr($tags, problemset::$maxAccepted, problemset::$maxLike);
+                $sortOnBtr[$k] = $v->calcBtr($tags, problemset::$maxAccepted, problemset::$maxLike, $L, $R);
         }
         $candid = array();
         for ($i = 0; $i < 3; $i++) {

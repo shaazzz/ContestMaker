@@ -38,12 +38,12 @@ class problem
         return $this->difficulty;
     }
 
-    function evalWithCoff($A, $B, $C, $D)
+    function evalWithCoff($A, $B, $C, $D, $E)
     {
-        return 7 * $B + 5 * $A + 4 * $B + 2 * $D;
+        return 7 * $B + 5 * $A + 4 * $B + 2 * $D + 2 * $E;
     }
 
-    function calcBtr($tags, $maxAccepted, $maxLike)
+    function calcBtr($tags, $maxAccepted, $maxLike, $L, $R)
     { // each item is 0.5 if empty
         if ($maxLike == 0)
             $maxLike = 1;
@@ -58,6 +58,8 @@ class problem
             }
             $intersect = $intersect / count($tags);
         }
-        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike);
+        $dif = $this->calcDif() - (($L + $R) / 2);
+        $len2 = ($R - $L) / 2;
+        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike, 1 - ($dif * $dif) /  ($len2 * $len2));
     }
 }
