@@ -12,7 +12,7 @@ class AllContests
         array_multisort($array_map, SORT_ASC, $files);
         if(file_exists("data/contest.txt")) {
             $text = file_get_contents("data/contest.txt");
-            file_put_contents("data/dataBackups/contest" . Date(date(" Y.m.d h:m:s")) . ".txt", $text);
+            file_put_contents("data/dataBackups/contest" . date(" Y.m.d h:m:s") . ".txt", $text);
             if (count($files) > MAXIMUM_BACKUP_FILES) {
                 unlink($files[0]);
             }
