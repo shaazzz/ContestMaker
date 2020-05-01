@@ -4,13 +4,11 @@ class problem
 {
     public $like = 0, $accepted = 0; // from iran dataset
     public $tags, $difficulty, $prior;
-    public $problemId, $used, $problemName;
+    public $used, $problemName;
 
-    public function __construct($problemId, $problemName, $tags, $difficulty, $prior = 0, $used = false)
+    public function __construct($problemName, $tags, $difficulty, $prior = 0, $used = false)
     {
-        var_dump($tags);
         $this->problemName = $problemName;
-        $this->problemId = $problemId;
         $this->tags = $tags;
         $this->difficulty = $difficulty;
         $this->prior = $prior;

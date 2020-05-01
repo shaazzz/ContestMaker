@@ -21,13 +21,21 @@ class problemset
         }
     }
 
+    static function resetUsed()
+    {
+        foreach (problemset::$problems as $problem) {
+            $problem->used = false;
+        }
+        problemset::update();
+    }
+
     static function readFromFile()
     {
         problemset::takeBackup();
         if (file_exists("data/data.txt")) {
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {
-                problemset::addProblem($problemJson["problemId"], $problemJson["problemName"], $problemJson["tags"],
+                problemset::addProblem($problemJson["problemName"], $problemJson["tags"],
                     $problemJson["difficulty"], $problemJson["prior"], $problemJson["used"], true);
             }
         }
@@ -38,8 +46,9 @@ class problemset
         file_put_contents("data/data.txt", json_encode(problemset::$problems));
     }
 
-    static function addProblem($problemId, $problemName, $tags, $difficulty, $prior, $used, $inside = false)
+    static function addProblem($problemName, $tags, $difficulty, $prior, $used, $inside = false)
     {
+        $problemId=preg_split('/ /', $problemName)[0];
         if (!isset(problemset::$problems[$problemId])) {
             problemset::$problems[$problemId] = new problem($problemId, $problemName, $tags, $difficulty, $prior, $used);
         }

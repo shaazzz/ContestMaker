@@ -55,7 +55,7 @@ for ($i = $L; $i < $R; $i++) {
         if (!isset($data['rating'])) {
             $data['rating'] = $_POST['defaultDifficulty'];
         }
-        problemset::addProblem($data['id'], $problemQueries[$i], array_merge(json_decode($data['tags'], true), explode(',', $_POST['additionalTags'])), (int)$data['rating'], (float)$_POST["prior"], false);
+        problemset::addProblem($problemQueries[$i], array_merge(json_decode($data['tags'], true), explode(',', $_POST['additionalTags'])), (int)$data['rating'], (float)$_POST["prior"], false);
     }
 }
 
