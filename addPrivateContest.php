@@ -54,7 +54,7 @@ for ($i = $L; $i < $R; $i++) {
             $data['rating'] = $_POST['defaultDifficulty'];
         }
         echo $data['tags'];
-        problemset::addProblem($data['id'], $problemQueries[$i], $data['tags'], (int)$data['rating'], (float)$_POST["prior"]);
+        problemset::addProblem($data['id'], $problemQueries[$i], $data['tags'], (int)$data['rating'], (float)$_POST["prior"], false);
     }
 }
 
