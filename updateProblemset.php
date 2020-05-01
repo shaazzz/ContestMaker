@@ -7,7 +7,7 @@ problemset::readFromFile();
 
 $cfApi = new CodeforcesApi();
 
-$legends = file_get_contents("data/legends.txt");
+$legends = json_decode(file_get_contents("data/legends.txt"), true);
 $seen = array();
 
 foreach ($legends as $person) {
@@ -20,7 +20,7 @@ foreach ($legends as $person) {
                     $sub["problem"]["contestId"] . $sub["problem"]["index"],
                     $sub["problem"]["tags"],
                     $sub["problem"]["rating"],
-                    0,false, true);
+                    0, false, true);
             }
             problemset::addUserSolved($sub["id"], true);
         }
