@@ -12,7 +12,7 @@ class problemset
         $dir = "data/dataBackups/";
         $array_map = array_map('filemtime', ($files = glob($dir . "data*.txt")));
         array_multisort($array_map, SORT_ASC, $files);
-        if(file_exists("data/data.txt")) {
+        if (file_exists("data/data.txt")) {
             $text = file_get_contents("data/data.txt");
             file_put_contents("data/dataBackups/data" . Date(date(" Y.m.d h:m:s")) . ".txt", $text);
             if (count($files) > MAXIMUM_BACKUP_FILES) {
@@ -48,16 +48,20 @@ class problemset
         }
     }
 
-    function addUserSolved($problemId)
+    static function addUserSolved($problemId, $inside = false)
     {
         problemset::$maxAccepted = max(problemset::$maxAccepted, problemset::$problems[$problemId]->addUserSolved());
-        problemset::update();
+        if (!$inside) {
+            problemset::update();
+        }
     }
 
-    function addUserLiked($problemId)
+    static function addUserLiked($problemId, $inside = false)
     {
         problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked());
-        problemset::update();
+        if (!$inside) {
+            problemset::update();
+        }
     }
 
     static function chooseProblem($L, $R, $tags)
