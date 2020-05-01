@@ -1,8 +1,10 @@
 # ContestMaker
 mashup maker for codeforces.com
 
-<br>برای راه اندازی محتوای فایل 
-<br>data/defines_sample.php
-<br>را تکمیل کرده و اسم آن را به 
-<br>data/defines.php
-تغییر دهید<br>
+<h3 dir="rtl">
+ برای راه اندازی محتوای فایل 
+ data/defines_sample.php
+ را تکمیل کرده و اسم آن را به 
+ data/defines.php
+تغییر دهید
+</h3><br> 
