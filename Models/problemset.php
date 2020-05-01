@@ -42,7 +42,6 @@ class problemset
     function addUserLiked($problemId)
     {
         problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked());
-
         problemset::update();
     }
 

@@ -240,6 +240,7 @@ class CodeforcesUserApi
     function getContestProblemLinks($contestId, $contestAddressPrefix = "gym")
     {
         $body = $this->request($contestAddressPrefix . "/" . $contestId, array());
+        $contestAddressPrefix = str_replace("/", "\\/", $contestAddressPrefix);
         if (!preg_match_all("/$contestAddressPrefix\/$contestId\/problems\/edit\/.+\"/", $body, $matches)) {
             throw new Exception("cannot find contest problem ids");
         }
@@ -254,7 +255,7 @@ class CodeforcesUserApi
     function getContestProblemQueries($contestId, $contestAddressPrefix = "gym")
     {
         if ($contestAddressPrefix == "contest") {
-            return $this->getContestProblemQueriesFromCFContest();
+            return $this->getContestProblemQueriesFromCFContest($contestId);
         }
         $result = array();
         $links = $this->getContestProblemLinks($contestId, $contestAddressPrefix);
@@ -282,9 +283,10 @@ class CodeforcesUserApi
         }
     }
 
-    function sendScoreboard()
+    function sendScoreboard($contestId, $contestAddressPrefix = "gym")
     {
-        $data = array('url' => self::$url . "contest/1278/standings");//"group/tFEA7pkTiD/contest/272297/standings");
+        $this->setVisibilityProblems($contestId, true, $contestAddressPrefix);
+        $data = array('url' => self::$url . "$contestAddressPrefix/$contestId/standings");
 
         $ch = curl_init();
 
@@ -294,7 +296,7 @@ class CodeforcesUserApi
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_USERPWD, "0b429c7a-a620-44bc-aff8-773fa0f3e14d" . ":" . "059cce1c-d69d-4ff6-bb0c-739c4ce468b7");
+        curl_setopt($ch, CURLOPT_USERPWD, IMG_PWD);
 
         $headers = array();
         $headers[] = "Content-Type: application/x-www-form-urlencoded";

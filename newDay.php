@@ -24,10 +24,14 @@ $contests = array(
 );
 
 $api = new CodeforcesUserApi();
-$api->changeTimeToToday($contests[1]);
-/*
-// end of the day
-foreach ($contests as $contest) {
-    $api->setVisibilityProblems($contest->contestId, false);
+$api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
+
+if ($dayNumber % 7 == 0) {
+    foreach ($contests as $contest) {
+        $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
+    }
+} else {
+    foreach ($contests as $contest) {
+        $api->setNewProblemsForContest($contest->contestId, $contest->giveContest());
+    }
 }
-*/
