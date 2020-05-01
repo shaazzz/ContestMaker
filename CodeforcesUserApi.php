@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . "/pdfcrowd.php";
 
 function generateRandomString($length = 6)
 {
