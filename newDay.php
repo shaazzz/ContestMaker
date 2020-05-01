@@ -15,7 +15,6 @@ $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 
 date_default_timezone_set('Asia/Tehran');
 problemset::readFromFile();
-problemset::resetUsed();
 $dayNumber = 0;
 if (file_exists("data/counter.txt")) {
     $dayNumber = (int)file_get_contents("data/counter.txt");
@@ -31,8 +30,9 @@ if ($dayNumber % 7 == 0) {
         }
     }
     $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
-    $cntProblems = $dayNumber % 7 > 1 ? 4 : 3;
-    AllContests::addContest($contestIndex, CONTEST_LEVEL0 . "",(int)$setting[CONTEST_LEVEL0]['L'],
+
+    $cntProblems = 3;
+    AllContests::addContest($contestIndex, CONTEST_LEVEL0 . "", (int)$setting[CONTEST_LEVEL0]['L'],
         (int)$setting[CONTEST_LEVEL0]['R'], $cntProblems, $setting[CONTEST_LEVEL0]['tags'], null, $api);
 
     AllContests::addContest($contestIndex, CONTEST_LEVEL1 . "", (int)$setting[CONTEST_LEVEL1]['L'],
@@ -46,6 +46,5 @@ if ($dayNumber % 7 == 0) {
 }
 
 foreach (AllContests::$contests[$contestIndex] as $contest) {
-    var_dump($contest->giveContest());
     $api->setNewProblemsForContest($contest, $contest->giveContest());
 }

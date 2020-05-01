@@ -12,6 +12,10 @@ $cfApi = new CodeforcesApi();
 $legends = json_decode(file_get_contents("data/legends.txt"), true);
 $seen = array();
 foreach ($legends as $person) {
+    $userRate = $cfApi->request("user.info", array("handles" => $person))['result'][0]['rating'];
+    if ((int)$userRate < 1900) {
+        continue;
+    }
     $submitions = $cfApi->request("user.status", array("handle" => $person))['result'];
     echo $person . " has " . count($submitions) . " submitions\n";
     foreach ($submitions as $sub) {
@@ -20,9 +24,6 @@ foreach ($legends as $person) {
                 //$seen[$sub["id"]] = true;
                 if (!isset($sub["problem"]["rating"])) {
                     continue;
-                }
-                if ($sub["id"] == "6357165") {
-                    var_dump($sub);
                 }
                 $sub["id"] = $sub["problem"]["contestId"] . $sub["problem"]["index"];
                 problemset::addProblem(

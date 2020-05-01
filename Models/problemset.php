@@ -36,7 +36,7 @@ class problemset
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {
                 problemset::addProblem($problemJson["problemName"], $problemJson["tags"],
-                    $problemJson["difficulty"], $problemJson["prior"], $problemJson["used"], true);
+                    $problemJson["difficulty"], $problemJson["prior"], (bool)$problemJson["used"], true);
             }
         }
     }
@@ -50,7 +50,7 @@ class problemset
     {
         $problemId=preg_split('/ /', $problemName)[0];
         if (!isset(problemset::$problems[$problemId])) {
-            problemset::$problems[$problemId] = new problem($problemId, $problemName, $tags, $difficulty, $prior, $used);
+            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used);
         }
         if (!$inside) {
             problemset::update();
@@ -89,12 +89,14 @@ class problemset
             }
             if ($str != "") {
                 $candid[$i] = $str;
+            }else{
+                throw new Exception("field to build contest choose problem");
             }
         }
         if (count($candid) == 0)
             return false;
         $ans = $candid[rand(0, count($candid) - 1)];
-        problemset::$problems[$ans]->setUsed();
+        problemset::$problems[$ans]->used=true;
         problemset::update();
         return problemset::$problems[$ans]->problemName;
     }

@@ -15,11 +15,6 @@ class problem
         $this->used = $used;
     }
 
-    function setUsed()
-    {
-        $this->used = true;
-    }
-
     function addUserSolved()
     {
         $this->accepted++;

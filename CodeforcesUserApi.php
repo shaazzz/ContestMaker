@@ -51,7 +51,6 @@ class CodeforcesUserApi
         $this->closeConnection();
         unlink("data/cookies.txt");
         $this->__construct();
-        echo $this->checkLogin();
     }
 
     function checkLoginHelper($body)
@@ -231,9 +230,7 @@ class CodeforcesUserApi
         $body = $this->request("gym/$contest->contestId/problems/new", array());
         $contestName = $this->getValueFromBody($body, "contestName");
         $contestDuration = $this->getValueFromBody($body, "contestDuration");
-        echo $contestName . $contestDuration;
         $problems = json_encode($problems);
-        echo $problems;//
         $result = $this->request('data/mashup', array(
             "action" => "saveMashup",
             "isCloneContest" => "false",
@@ -244,7 +241,6 @@ class CodeforcesUserApi
             "contestDuration" => $contestDuration,
             "problemsJson" => $problems
         ));
-        echo $result;
     }
 
     function getContestProblemQueriesFromCFContest($contestId)
@@ -328,7 +324,7 @@ class CodeforcesUserApi
 
         $result = curl_exec($ch);
         if (curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
+            throw new Exception('Error:' . curl_error($ch));
         }
         curl_close($ch);
         $res = json_decode($result, true);
