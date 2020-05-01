@@ -143,7 +143,7 @@ class CodeforcesUserApi
     function changeTimeToToday($contest)
     {
         $duration = 1440;
-        if(!TIMER_UPDATE_EVERY_DAY){
+        if (!TIMER_UPDATE_EVERY_DAY) {
             $duration *= 7;
         }
         $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
@@ -221,7 +221,9 @@ class CodeforcesUserApi
     function setNewProblemsForContest($contest, $problemIds, $contestAddressPrefix = "gym")
     {
         $this->setVisibilityProblems($contest->contestId, false, $contestAddressPrefix);
-        $this->changeTimeToToday($contest);
+        if (TIMER_UPDATE_EVERY_DAY) {
+            $this->changeTimeToToday($contest);
+        }
         $problems = array();
         foreach ($problemIds as $problemId) {
             array_push($problems, $this->getProblemArrayData($problemId));
@@ -265,9 +267,7 @@ class CodeforcesUserApi
     {
         $body = $this->request($contestAddressPrefix . "/" . $contestId, array());
         $contestAddressPrefix = str_replace("/", "\\/", $contestAddressPrefix);
-        if (!preg_match_all("/$contestAddressPrefix\/$contestId\/problems\/edit\/.+\"/", $body, $matches)) {
-            throw new Exception("cannot find contest problem ids");
-        }
+        preg_match_all("/$contestAddressPrefix\/$contestId\/problems\/edit\/.+\"/", $body, $matches);
         $result = array();
         foreach ($matches[0] as $match) {
             $link = substr($match, 0, strlen($match) - 1);
@@ -341,6 +341,14 @@ class CodeforcesUserApi
         }
         imagedestroy($im);
         $this->sendPhoto('example-cropped.png');
+    }
+
+    function addContestToGroup($contestId)
+    {
+        $this->request("group/" . CF_GROUP_ID . "/contests/add" , array(
+            "action" => "addContest",
+            "contestId" => $contestId
+        ), true);
     }
 
     function sendPhoto($filename)

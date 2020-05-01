@@ -6,14 +6,15 @@ class problem
     public $tags, $difficulty, $prior;
     public $problemId, $used, $problemName;
 
-    public function __construct($problemId, $problemName, $tags, $difficulty, $prior = 0, $used=false)
+    public function __construct($problemId, $problemName, $tags, $difficulty, $prior = 0, $used = false)
     {
+        var_dump($tags);
         $this->problemName = $problemName;
         $this->problemId = $problemId;
         $this->tags = $tags;
         $this->difficulty = $difficulty;
         $this->prior = $prior;
-        $this->used=$used;
+        $this->used = $used;
     }
 
     function setUsed()
@@ -53,13 +54,13 @@ class problem
         if (count($tags) != 0) {
             $intersect = 0;
             foreach ($tags as $value) {
-                if ($this->tags[$value] != null)
+                if (in_array($value, $this->tags))
                     $intersect++;
             }
             $intersect = $intersect / count($tags);
         }
         $dif = $this->calcDif() - (($L + $R) / 2);
         $len2 = ($R - $L) / 2;
-        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike, 1 - ($dif * $dif) /  ($len2 * $len2));
+        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike, 1 - ($dif * $dif) / ($len2 * $len2));
     }
 }
