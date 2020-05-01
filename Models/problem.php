@@ -6,13 +6,14 @@ class problem
     public $tags, $difficulty, $prior;
     public $problemId, $used, $problemName;
 
-    public function __construct($problemId, $problemName, $tags, $difficulty, $prior = 0)
+    public function __construct($problemId, $problemName, $tags, $difficulty, $prior = 0, $used=false)
     {
         $this->problemName = $problemName;
         $this->problemId = $problemId;
         $this->tags = $tags;
         $this->difficulty = $difficulty;
         $this->prior = $prior;
+        $this->used=$used;
     }
 
     function setUsed()

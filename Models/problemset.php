@@ -26,7 +26,7 @@ class problemset
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {
                 problemset::addProblem($problemJson["problemId"], $problemJson["problemName"], $problemJson["tags"],
-                    $problemJson["difficulty"], $problemJson["prior"]);
+                    $problemJson["difficulty"], $problemJson["prior"], $problemJson["used"]);
             }
         }
     }
