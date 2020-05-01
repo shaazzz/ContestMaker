@@ -138,6 +138,63 @@ class CodeforcesUserApi
         return json_decode($result, true);
     }
 
+
+    // not working!
+    function changeTimeToToday($contest)
+    {
+        $body = $this->request("gym/edit/" . $contest->contestId, array());
+        $initDT = $this->getValueFromBody($body, "initialDatetime");
+        $initD = substr($initDT, 0, 11);
+        $result = $this->request("gym/edit/" . $contest->contestId . "?" . $this->csrf_token, array(
+            "contestEditFormSubmitted" => "true",
+            "clientTimezoneOffset" => "270",
+            "englishName" => "Contest #$contest->contestIndex $contest->contestLevel",
+            "russianName" => "srf",
+            "untaggedContestType" => "ICPC",
+            "initialDatetime" => $initDT,
+            "startDay" => date("M/d/Y"),
+            "startTime" => "00:19",
+            "duration" => "1440",
+            "visibility" => "PRIVATE",
+            "participationType" => "PERSONS_AND_TEAMS",
+            "freezeDuration" => "0",
+            "initialUnfreezeTime" => $initDT,
+            "unfreezeDay" => $initD,
+            "unfreezeTime" => "00:00",
+            "allowedPractice" => "on",
+            "allowedVirtual" => "on",
+            "allowedSelfRegistration" => "on",
+            "allowedViewForNonRegistered" => "on",
+            "allowedCommonStatus" => "on",
+            "viewTestdataPolicy" => "NONE",
+            "submitViewPolicy" => "NONE",
+            "languages" => "true",
+            "allowedStatements" => "on",
+            "allowedStandings" => "on",
+            "difficulty" => "0",
+            "russianRegistrationConfirmation",
+            "englishLogo" => "(binary)",
+            "russianLogo" => "(binary)",
+        ));
+        echo $result;
+    }
+
+    function createNewMashup($contestIndex, $contestLevel)
+    {
+        $result = $this->request('data/mashup', array(
+            "action" => "saveMashup",
+            "isCloneContest" => "false",
+            "parentContestIdAndName" => "",
+            "parentContestId" => "",
+            "contestName" => "Contest #" . $contestIndex . " " . $contestLevel,
+            "contestDuration" => 7 * 1440,
+            "problemsJson" => "[]"
+        ));
+        if ($result != "{\"success\":\"true\"}") {
+            throw new Exception("error in creating new mashup");
+        }
+    }
+
     function setNewProblemsForContest($contestId, $problemIds, $contestAddressPrefix = "gym")
     {
         $this->setVisibilityProblems($contestId, false, $contestAddressPrefix);
