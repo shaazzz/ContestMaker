@@ -7,7 +7,7 @@ class problemset
     static $problems = array();
     static $maxLike = 0, $maxAccepted = 0;
 
-    static function take_backup()
+    static function takeBackup()
     {
         $dir = "data/dataBackups/";
         $array_map = array_map('filemtime', ($files = glob($dir . "data*.txt")));
@@ -21,7 +21,7 @@ class problemset
 
     static function readFromFile()
     {
-
+        problemset::takeBackup();
         if (file_exists("data/data.txt")) {
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {

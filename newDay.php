@@ -7,10 +7,6 @@ require __DIR__ . '/Models/contest.php';
 require __DIR__ . '/data/defines.php';
 require __DIR__ . '/CodeforcesUserApi.php';
 
-problemset::take_backup();
-echo __DIR__;
-
-/*
 
 date_default_timezone_set('Asia/Taipei');
 problemset::readFromFile();
