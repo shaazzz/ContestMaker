@@ -33,14 +33,23 @@ if ($dayNumber % 7 == 0) {
             $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
         }
     }
-    AllContests::addContest($contestIndex, CONTEST_LEVEL0 . "", 700, 1400, $dayNumber % 7 < 5 ? 4 : 3, array("implementation","greedy"), null, $api);
-    AllContests::addContest($contestIndex, CONTEST_LEVEL1 . "", 1400, 2000, 3, null, null, $api);
-    AllContests::addContest($contestIndex, CONTEST_LEVEL2 . "", 1900, 2400, 3, null, null, $api);
-    AllContests::addContest($contestIndex, CONTEST_LEVEL3 . "", 2500, 3500, 3, null, null, $api);
+    $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
+    $cntProblems = $dayNumber % 7 > 1 ? 4 : 3;
+    AllContests::addContest($contestIndex, CONTEST_LEVEL0 . "", $setting[CONTEST_LEVEL0]['L'],
+        $setting[CONTEST_LEVEL0]['R'], $cntProblems, $setting[CONTEST_LEVEL0]['tags'], null, $api);
+
+    AllContests::addContest($contestIndex, CONTEST_LEVEL1 . "", $setting[CONTEST_LEVEL1]['L'],
+        $setting[CONTEST_LEVEL1]['R'], $cntProblems, $setting[CONTEST_LEVEL1]['tags'], null, $api);
+
+    AllContests::addContest($contestIndex, CONTEST_LEVEL2 . "", $setting[CONTEST_LEVEL2]['L'],
+        $setting[CONTEST_LEVEL2]['R'], $cntProblems, $setting[CONTEST_LEVEL2]['tags'], null, $api);
+
+    AllContests::addContest($contestIndex, CONTEST_LEVEL3 . "", $setting[CONTEST_LEVEL3]['L'],
+        $setting[CONTEST_LEVEL3]['R'], $cntProblems, $setting[CONTEST_LEVEL3]['tags'], null, $api);
 }
 var_dump(AllContests::$contests);
 var_dump(AllContests::$contests[$contestIndex]);
-var_dump(AllContests::$contests[$contestIndex.""]);
+var_dump(AllContests::$contests[$contestIndex . ""]);
 
 foreach (AllContests::$contests[$contestIndex] as $contest) {
     var_dump($contest->giveContest());
