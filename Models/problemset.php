@@ -48,11 +48,11 @@ class problemset
 
     static function addProblem($problemName, $tags, $difficulty, $prior, $used, $inside = false)
     {
-        $problemId=preg_split('/ /', $problemName)[0];
+        $problemId = preg_split('/ /', $problemName)[0];
         if (!isset(problemset::$problems[$problemId])) {
-            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used);
-        }else {
-            problemset::$problems[$problemId]->merge($tags, $difficulty, $prior, $used);
+            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used, $inside);
+        } else {
+            problemset::$problems[$problemId]->merge($tags, $difficulty, $prior, $used, $inside);
         }
         if (!$inside) {
             problemset::update();
@@ -77,9 +77,9 @@ class problemset
         problemset::update();
     }
 
-    static function addUserLiked($problemId, $inside = false)
+    static function addUserLiked($username, $problemId, $inside = false)
     {
-        problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked());
+        problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked($username));
         if (!$inside) {
             problemset::update();
         }
@@ -101,14 +101,14 @@ class problemset
             }
             if ($str != "") {
                 $candid[$i] = $str;
-            }else{
+            } else {
                 throw new Exception("field to build contest choose problem");
             }
         }
         if (count($candid) == 0)
             return false;
         $ans = $candid[rand(0, count($candid) - 1)];
-        problemset::$problems[$ans]->used=true;
+        problemset::$problems[$ans]->used = true;
         problemset::update();
         return problemset::$problems[$ans]->problemName;
     }

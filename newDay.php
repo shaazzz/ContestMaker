@@ -30,19 +30,19 @@ if ($dayNumber % 7 == 0) {
         }
     }
     $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
+    $contestSettings = null;
+    if (isset($setting["Week" . $contestIndex])) {
+        $contestSettings = $setting["Week" . $contestIndex];
+    } else {
+        echo "week setting not found! using week default setting";
+        $contestSettings = $setting["WeekDefault"];
+    }
 
     $cntProblems = 3;
-    AllContests::addContest($contestIndex, CONTEST_LEVEL0 . "", (int)$setting[CONTEST_LEVEL0]['L'],
-        (int)$setting[CONTEST_LEVEL0]['R'], $cntProblems, $setting[CONTEST_LEVEL0]['tags'], null, $api);
-
-    AllContests::addContest($contestIndex, CONTEST_LEVEL1 . "", (int)$setting[CONTEST_LEVEL1]['L'],
-        (int)$setting[CONTEST_LEVEL1]['R'], $cntProblems, $setting[CONTEST_LEVEL1]['tags'], null, $api);
-
-    AllContests::addContest($contestIndex, CONTEST_LEVEL2 . "", (int)$setting[CONTEST_LEVEL2]['L'],
-        (int)$setting[CONTEST_LEVEL2]['R'], $cntProblems, $setting[CONTEST_LEVEL2]['tags'], null, $api);
-
-    AllContests::addContest($contestIndex, CONTEST_LEVEL3 . "", (int)$setting[CONTEST_LEVEL3]['L'],
-        (int)$setting[CONTEST_LEVEL3]['R'], $cntProblems, $setting[CONTEST_LEVEL3]['tags'], null, $api);
+    foreach ($contestSettings as $key => $value) {
+        AllContests::addContest($contestIndex, $key, (int)$contestSettings[$key]['L'],
+            (int)$contestSettings[$key]['R'], $cntProblems, $contestSettings[$key]['tags'], null, $api);
+    }
 }
 
 foreach (AllContests::$contests[$contestIndex] as $contest) {

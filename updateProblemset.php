@@ -10,6 +10,8 @@ problemset::resetUserSolved();
 $cfApi = new CodeforcesApi();
 
 $legends = json_decode(file_get_contents("data/legends.txt"), true);
+$seen = array();
+
 
 foreach ($legends as $person) {
     $userRate = $cfApi->request("user.info", array("handles" => $person))['result'][0]['rating'];
@@ -20,21 +22,28 @@ foreach ($legends as $person) {
     echo $person . " has " . count($submitions) . " submitions\n";
     foreach ($submitions as $sub) {
         if ($sub["verdict"] == "OK") {
+            if(!isset($sub["problem"]["contestId"])) {
+                var_dump($sub);
+            }
+            $sub["id"] = $sub["problem"]["contestId"] . $sub["problem"]["index"];
             if (!isset(problemset::$problems[$sub["id"]])) {
-                //$seen[$sub["id"]] = true;
                 if (!isset($sub["problem"]["rating"])) {
                     continue;
                 }
-                $sub["id"] = $sub["problem"]["contestId"] . $sub["problem"]["index"];
                 problemset::addProblem(
                     $sub["id"],
                     $sub["problem"]["tags"],
                     $sub["problem"]["rating"],
                     0, false, true);
             }
-            problemset::addUserSolved($sub["id"], true);
+            if (!isset($seen[$person][$sub["id"]])) {
+                problemset::addUserSolved($sub["id"], true);
+                $seen[$person][$sub["id"]] = true;
+            }
         }
     }
 }
+echo "\n<br> maxAccepted: " . problemset::$maxAccepted;
+echo "\n<br> maxLike: " . problemset::$maxLike;
 problemset::update();
 

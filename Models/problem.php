@@ -2,25 +2,31 @@
 
 class problem
 {
-    public $like = 0, $accepted = 0; // from iran dataset
+    public $like = 0, $accepted = 0, $usersLike = array(); // from iran dataset
     public $tags, $difficulty, $prior;
     public $used, $problemName;
 
-    public function __construct($problemName, $tags, $difficulty, $prior = 0, $used = false)
+    public function __construct($problemName, $tags, $difficulty, $prior = 0, $used = false, $inside = false)
     {
         $this->problemName = $problemName;
         $this->tags = $tags;
         $this->difficulty = $difficulty;
         $this->prior = $prior;
         $this->used = $used;
+        if (!$inside) {
+            echo "<br> new problem ($problemName) added to problemset\n";
+        }
     }
 
-    public function merge($tags, $difficulty, $prior = 0, $used = false)
+    public function merge($tags, $difficulty, $prior = 0, $used = false, $inside = false)
     {
-        $this->tags = array_unique(array_merge($this->tags, $tags));
+        $this->tags = array_values(array_unique((array_merge($this->tags, $tags))));
         $this->difficulty = $difficulty;
         $this->prior = max($prior, $this->prior);
         $this->used = ($this->used || $used);
+        if (!$inside) {
+            echo "<br> problem ($this->problemName) merged with problemset\n";
+        }
     }
 
     function addUserSolved()
@@ -29,9 +35,11 @@ class problem
         return $this->accepted;
     }
 
-    function addUserLiked()
+    function addUserLiked($username)
     {
-        $this->like++;
+        array_push($this->usersLike, $username);
+        $this->usersLike = array_unique($this->usersLike);
+        $this->like = count($this->usersLike);
         return $this->like;
     }
 

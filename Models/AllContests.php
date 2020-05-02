@@ -21,7 +21,7 @@ class AllContests
 
     static function readFromFile()
     {
-        problemset::takeBackup();
+        AllContests::takeBackup();
         if (file_exists("data/contest.txt")) {
             $data = json_decode(file_get_contents("data/contest.txt"), true);
             foreach ($data as $contestJsonArray) {
