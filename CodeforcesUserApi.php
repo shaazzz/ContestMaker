@@ -201,7 +201,7 @@ class CodeforcesUserApi
         if ($result != "{\"success\":\"true\"}") {
             throw new Exception("error in creating new mashup");
         }
-
+        sleep(5);
         $body = $this->request("mashups/", array());
         if (!preg_match_all("/href=\"\/gym\/([0-9]+)\//", $body, $matches)) {
             throw new Exception("cannot find contest problem ids");
