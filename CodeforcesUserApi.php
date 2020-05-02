@@ -41,7 +41,7 @@ class CodeforcesUserApi
     {
         $body = curl_exec($this->curl);
         if (!preg_match("/csrf='(.+?)'/", $body, $match)) {
-            file_put_contents("data/last_error_desc.txt", $body)
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("cf token not found");
         }
         $this->csrf_token = $match[1];
