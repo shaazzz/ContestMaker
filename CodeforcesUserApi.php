@@ -207,7 +207,7 @@ class CodeforcesUserApi
         sleep(5);
         $body = $this->request("mashups/", array());
         if (!preg_match_all("/href=\"\/gym\/([0-9]+)\//", $body, $matches)) {
-            file_put_contents("data/last_error_desc.txt", $body."inuiniu");
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("cannot find contest problem ids");
         }
         $contestId = -1;
@@ -252,7 +252,7 @@ class CodeforcesUserApi
     {
         $body = $this->request("contest/" . $contestId, array());
         if (!preg_match_all("/contest\/$contestId\/problem\/.+\"/", $body, $matches)) {
-            file_put_contents("data/last_error_desc.txt", $body."inuiniu");
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("cannot find contest problem ids");
         }
         $result = array();
