@@ -13,7 +13,7 @@ define("CODEFORCES_API_SECRET", "...");
 // telegram api token
 define("TELEGRAM_API", "...");
 // telegram channel id
-define("TELEGRAM_CHANNEL_ID", "...");
+define("TELEGRAM_CHANNEL_ID", "@...");
 // https://hcti.io token
 define("IMG_PWD", "..." . ":" . "...");
 // codeforces group token
