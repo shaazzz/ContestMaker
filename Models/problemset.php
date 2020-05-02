@@ -98,7 +98,7 @@ class problemset
         for ($i = 0; $i < 3; $i++) {
             $str = "";
             foreach ($sortOnBtr as $k => $v) {
-                if (strlen($str) == 0 || $v > $sortOnBtr[$str])
+                if ((strlen($str) == 0 || $v > $sortOnBtr[$str]) and !in_array($str, $candid))
                     $str = $k;
             }
             if ($str != "") {
