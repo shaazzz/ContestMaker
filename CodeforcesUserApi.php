@@ -251,7 +251,8 @@ class CodeforcesUserApi
     function getContestProblemQueriesFromCFContest($contestId)
     {
         $body = $this->request("contest/" . $contestId, array());
-        if (!preg_match_all("/contest\/1337\/problem\/.+\"/", $body, $matches)) {
+        if (!preg_match_all("/contest\/$contestId\/problem\/.+\"/", $body, $matches)) {
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("cannot find contest problem ids");
         }
         $result = array();
