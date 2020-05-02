@@ -10,10 +10,10 @@ problemset::resetUserSolved();
 $cfApi = new CodeforcesApi();
 
 $legends = json_decode(file_get_contents("data/legends.txt"), true);
-$seen = array();
 
 
 foreach ($legends as $person) {
+    $seen = array();
     $userRate = $cfApi->request("user.info", array("handles" => $person))['result'][0]['rating'];
     if ((int)$userRate < 1900) {
         continue;
@@ -36,12 +36,13 @@ foreach ($legends as $person) {
                     $sub["problem"]["rating"],
                     0, false, 0, 0, null, true);
             }
-            if (!isset($seen[$person][$sub["id"]])) {
+            if (!isset($seen[$sub["id"]])) {
                 problemset::addUserSolved($sub["id"], true);
-                $seen[$person][$sub["id"]] = true;
+                $seen[$sub["id"]] = true;
             }
         }
     }
+    unset($seen);
 }
 echo "\n<br> maxAccepted: " . problemset::$maxAccepted;
 echo "\n<br> maxLike: " . problemset::$maxLike;
