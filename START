@@ -1,0 +1,5 @@
+cd data
+rm contest.txt
+echo > counter.txt 0
+cd ..
+php newDay.php
