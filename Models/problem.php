@@ -15,6 +15,14 @@ class problem
         $this->used = $used;
     }
 
+    public function merge($tags, $difficulty, $prior = 0, $used = false)
+    {
+        $this->tags = array_unique(array_merge($this->tags, $tags));
+        $this->difficulty = $difficulty;
+        $this->prior = max($prior, $this->prior);
+        $this->used = ($this->used || $used);
+    }
+
     function addUserSolved()
     {
         $this->accepted++;

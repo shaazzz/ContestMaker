@@ -6,11 +6,11 @@ require __DIR__ . '/CodeforcesApi.php';
 require __DIR__ . '/Models/problemset.php';
 
 problemset::readFromFile();
-
+problemset::resetUserSolved();
 $cfApi = new CodeforcesApi();
 
 $legends = json_decode(file_get_contents("data/legends.txt"), true);
-$seen = array();
+
 foreach ($legends as $person) {
     $userRate = $cfApi->request("user.info", array("handles" => $person))['result'][0]['rating'];
     if ((int)$userRate < 1900) {

@@ -51,10 +51,13 @@ class problemset
         $problemId=preg_split('/ /', $problemName)[0];
         if (!isset(problemset::$problems[$problemId])) {
             problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used);
+        }else {
+            problemset::$problems[$problemId]->merge($tags, $difficulty, $prior, $used);
         }
         if (!$inside) {
             problemset::update();
         }
+        return $problemId;
     }
 
     static function addUserSolved($problemId, $inside = false)
@@ -63,6 +66,15 @@ class problemset
         if (!$inside) {
             problemset::update();
         }
+    }
+
+    static function resetUserSolved()
+    {
+        problemset::$maxAccepted = 0;
+        foreach (problemset::$problems as $problem) {
+            $problem->accepted = 0;
+        }
+        problemset::update();
     }
 
     static function addUserLiked($problemId, $inside = false)
