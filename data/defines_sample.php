@@ -19,10 +19,6 @@ define("IMG_PWD", "..." . ":" . "...");
 // codeforces group token
 define("CF_GROUP_ID", "...");
 
-define("CONTEST_LEVEL0", "Beginners");
-define("CONTEST_LEVEL1", "Specialists");
-define("CONTEST_LEVEL2", "Candidate masters");
-define("CONTEST_LEVEL3", "Grandmasters");
 define("TELEGRAM_SCOREBOARD_CAPTION", "نفرات اول این هفته🥳");
 define("CF_GROUP_PREFIX_ADDRESS", "group/" . CF_GROUP_ID . "/contest");
 define("MAXIMUM_BACKUP_FILES", 10);
