@@ -7,26 +7,26 @@
     },
     "Week1":{
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]}
     },
     "Week2":{
-        "Beginners":{"L": 700, "R": 1400, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]}
+        "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]}
     },
     "Week3":{
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]}
     },
     "Week4":{
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid,"bfs","suffix array","sqrt"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","fenwick","centroid","bfs","suffix array","sqrt","shayan.p"]}
     }
 }
