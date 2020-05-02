@@ -46,10 +46,6 @@ if($person == "Shayan.P")
     }
     unset($seen);
 }
-
-echo "\n<br> maxAccepted: " . problemset::$maxAccepted;
-echo "\n<br> maxLike: " . problemset::$maxLike;
-
 //shuffle(problemset::$problems);
 problemset::update();
 
