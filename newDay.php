@@ -28,14 +28,14 @@ try {
     if ($dayNumber % 7 == 0) {
         try {
             if ($contestIndex - 1 > 0) {
-                if(!isset(AllContests::$contests[$contestIndex - 1])){
+                if (!isset(AllContests::$contests[$contestIndex - 1])) {
                     throw new Exception("");
                 }
                 foreach (AllContests::$contests[$contestIndex - 1] as $contest) {
                     $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
                 }
             }
-        }catch (Exception $e){
+        } catch (Exception $e) {
             echo "\n<br>error in sending scoreboard";
         }
         $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
@@ -59,4 +59,5 @@ try {
     }
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();
+    file_put_contents("data/errors.txt", file_get_contents("data/errors.txt") . "\n" . date("M/d/Y h:m:s") . ": " . $e->getMessage());
 }
