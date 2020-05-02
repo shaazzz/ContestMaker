@@ -2,12 +2,18 @@
 
 class problem
 {
-    public $like = 0, $accepted = 0, $usersLike = array(); // from iran dataset
+    public $like, $accepted, $usersLike; // from iran dataset
     public $tags, $difficulty, $prior;
     public $used, $problemName;
 
-    public function __construct($problemName, $tags, $difficulty, $prior = 0, $used = false, $inside = false)
+    public function __construct($problemName, $tags, $difficulty, $prior = 0, $used = false, $like = 0, $accepted = 0, $usersLike = null, $inside = false)
     {
+        if(!isset($usersLike)){
+            $usersLike=array();
+        }
+        $this->like=$like;
+        $this->accepted=$accepted;
+        $this->usersLike=$usersLike;
         $this->problemName = $problemName;
         $this->tags = $tags;
         $this->difficulty = $difficulty;

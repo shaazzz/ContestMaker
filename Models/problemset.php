@@ -36,7 +36,8 @@ class problemset
             $data = json_decode(file_get_contents("data/data.txt"), true);
             foreach ($data as $problemJson) {
                 problemset::addProblem($problemJson["problemName"], $problemJson["tags"],
-                    $problemJson["difficulty"], $problemJson["prior"], (bool)$problemJson["used"], true);
+                    $problemJson["difficulty"], $problemJson["prior"], (bool)$problemJson["used"],
+                    (int)$problemJson["like"], (int)$problemJson["accepted"], $problemJson["usersLike"], true);
             }
         }
     }
@@ -46,11 +47,11 @@ class problemset
         file_put_contents("data/data.txt", json_encode(problemset::$problems));
     }
 
-    static function addProblem($problemName, $tags, $difficulty, $prior, $used, $inside = false)
+    static function addProblem($problemName, $tags, $difficulty, $prior, $used, $like = 0, $accepted = 0, $usersLike = null, $inside = false)
     {
         $problemId = preg_split('/ /', $problemName)[0];
         if (!isset(problemset::$problems[$problemId])) {
-            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used, $inside);
+            problemset::$problems[$problemId] = new problem($problemId, $tags, $difficulty, $prior, $used, $like, $accepted, $usersLike, $inside);
         } else {
             problemset::$problems[$problemId]->merge($tags, $difficulty, $prior, $used, $inside);
         }

@@ -22,8 +22,8 @@ foreach ($legends as $person) {
     echo $person . " has " . count($submitions) . " submitions\n";
     foreach ($submitions as $sub) {
         if ($sub["verdict"] == "OK") {
-            if(!isset($sub["problem"]["contestId"])) {
-                var_dump($sub);
+            if (!isset($sub["problem"]["contestId"]) || !isset($sub["problem"]["tags"]) || !isset($sub["problem"]["index"])) {
+                continue;
             }
             $sub["id"] = $sub["problem"]["contestId"] . $sub["problem"]["index"];
             if (!isset(problemset::$problems[$sub["id"]])) {
@@ -34,7 +34,7 @@ foreach ($legends as $person) {
                     $sub["id"],
                     $sub["problem"]["tags"],
                     $sub["problem"]["rating"],
-                    0, false, true);
+                    0, false, 0, 0, null, true);
             }
             if (!isset($seen[$person][$sub["id"]])) {
                 problemset::addUserSolved($sub["id"], true);

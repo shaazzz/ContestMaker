@@ -14,8 +14,8 @@ try {
             throw new Exception("$input وارد نشده است ");
         }
     }
-    if (!is_numeric($_POST["prior"]) || (float)$_POST["prior"] < 0 || (float)$_POST["prior"] > 1) {
-        throw new Exception("prior باید بین ۰ و ۱ باشد!");
+    if (!is_numeric($_POST["prior"]) || (float)$_POST["prior"] < 0 || (float)$_POST["prior"] > 0.5) {
+        throw new Exception("prior باید بین ۰ و ۰.۵ باشد!");
     }
     $api = new CodeforcesUserApi();
     if (strlen($_POST["username"]) > 0) {
@@ -34,7 +34,7 @@ try {
     $problemQueries = $api->getContestProblemQueries($_POST["contestId"]);
     problemset::readFromFile();
     $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
-    $additionalTags = strtolower(explode(',', $_POST['additionalTags']));
+    $additionalTags = explode(',', strtolower($_POST['additionalTags']));
     foreach ($additionalTags as $tag) {
         if (!in_array($tag, $allTags)) {
             throw new Exception("تگ $tag  به درستی وارد نشده است!");
