@@ -32,8 +32,8 @@ class problemset
     static function readFromFile()
     {
         problemset::takeBackup();
-        if (file_exists("data/data.txt")) {
-            $data = json_decode(file_get_contents("data/data.txt"), true);
+        if (file_exists(realpath("data/data.txt"))) {
+            $data = json_decode(file_get_contents(realpath("data/data.txt")), true);
             foreach ($data as $problemJson) {
                 problemset::addProblem($problemJson["problemName"], $problemJson["tags"],
                     $problemJson["difficulty"], $problemJson["prior"], (bool)$problemJson["used"],

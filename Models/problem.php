@@ -60,7 +60,8 @@ class problem
     }
 
     function calcBtr($tags, $maxAccepted, $maxLike, $L, $R)
-    { // each item is 0.5 if empty
+    {
+        // each item is 0.5 if empty
         if ($maxLike == 0)
             $maxLike = 1;
         if ($maxAccepted == 0)

@@ -9,7 +9,7 @@ problemset::readFromFile();
 problemset::resetUserSolved();
 $cfApi = new CodeforcesApi();
 
-$legends = json_decode(file_get_contents("data/legends.txt"), true);
+$legends = json_decode(file_get_contents(realpath("data/legends.txt")), true);
 
 
 foreach ($legends as $person) {
