@@ -11,6 +11,9 @@ try {
     require __DIR__ . '/data/defines.php';
     require __DIR__ . '/CodeforcesUserApi.php';
 
+    problemset::readFromFile();
+    AllContests::readFromFile();
+
     $api = new CodeforcesUserApi();
     $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 
