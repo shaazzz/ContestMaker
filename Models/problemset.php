@@ -90,8 +90,9 @@ class problemset
     {
         $sortOnBtr = array();
         foreach (problemset::$problems as $k => $v) {
-            if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true)
+            if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true) {
                 $sortOnBtr[$k] = $v->calcBtr($tags, problemset::$maxAccepted, problemset::$maxLike, $L, $R);
+            }
         }
         $candid = array();
         for ($i = 0; $i < 3; $i++) {
@@ -111,6 +112,7 @@ class problemset
         $ans = $candid[rand(0, count($candid) - 1)];
         problemset::$problems[$ans]->used = true;
         problemset::update();
+        echo $sortOnBtr[$ans];
         return problemset::$problems[$ans]->problemName;
     }
 }

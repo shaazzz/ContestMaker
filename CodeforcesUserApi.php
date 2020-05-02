@@ -359,7 +359,7 @@ class CodeforcesUserApi
         //$proxyPort = '41177';
         $ch = curl_init();
         //curl_setopt($ch, CURLOPT_PROXY, $proxyIP);
-        //curl_setopt($ch, CURLOPT_PROXYPORT, $proxyPort);
+        //curl_setopt($ch, CURLOPT_PROXYPOimagecreatefrompngT, $proxyPort);
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . TELEGRAM_API . "/sendPhoto");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
