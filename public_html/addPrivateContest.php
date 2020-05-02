@@ -35,10 +35,13 @@ try {
     $problemQueries = $api->getContestProblemQueries($_POST["contestId"]);
     problemset::readFromFile();
     $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
-    $additionalTags = explode(',', strtolower($_POST['additionalTags']));
-    foreach ($additionalTags as $tag) {
-        if (!in_array($tag, $allTags)) {
-            throw new Exception("تگ $tag  به درستی وارد نشده است!");
+    $additionalTags=array();
+    if(strlen($_POST['additionalTags']>0)){
+        $additionalTags = explode(',', strtolower($_POST['additionalTags']));
+        foreach ($additionalTags as $tag) {
+            if (!in_array($tag, $allTags)) {
+                throw new Exception("تگ $tag  به درستی وارد نشده است!");
+            }
         }
     }
     for ($i = $L; $i <= $R; $i++) {
