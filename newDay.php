@@ -40,8 +40,6 @@ try {
         }
         $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
         var_dump($setting);
-        return;
-        $contestSettings = null;
         if (isset($setting["Week" . $contestIndex])) {
             $contestSettings = $setting["Week" . $contestIndex];
         } else {
