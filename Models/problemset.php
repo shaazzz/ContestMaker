@@ -5,7 +5,6 @@ require __DIR__ . '/problem.php';
 class problemset
 {
     static $problems = array();
-    static $maxLike = 0, $maxAccepted = 0;
 
     static function takeBackup()
     {
@@ -63,7 +62,7 @@ class problemset
 
     static function addUserSolved($problemId, $inside = false)
     {
-        problemset::$maxAccepted = max(problemset::$maxAccepted, problemset::$problems[$problemId]->addUserSolved());
+        problemset::$problems[$problemId]->addUserSolved();
         if (!$inside) {
             problemset::update();
         }
@@ -71,7 +70,6 @@ class problemset
 
     static function resetUserSolved()
     {
-        problemset::$maxAccepted = 0;
         foreach (problemset::$problems as $problem) {
             $problem->accepted = 0;
         }
@@ -80,7 +78,7 @@ class problemset
 
     static function addUserLiked($username, $problemId, $inside = false)
     {
-        problemset::$maxLike = max(problemset::$maxLike, problemset::$problems[$problemId]->addUserLiked($username));
+        problemset::$problems[$problemId]->addUserLiked($username);
         if (!$inside) {
             problemset::update();
         }
@@ -88,10 +86,22 @@ class problemset
 
     static function chooseProblem($L, $R, $tags)
     {
+        $maxLike = array();
+        $maxAccepted = array();
+
+        foreach(problemset::$problems as $k => $v){
+            if(!isset($maxLike[$v->difficulty]) || !isset($maxAccepted[$v->difficulty])){
+                $maxLike[$v->difficulty] = 0;
+                $maxAccepted[$v->difficulty] = 0;
+            }
+            $maxLike[$v->difficulty] = max($maxLike[$v->difficulty], $v->like);
+            $maxAccepted[$v->difficulty] = max($maxAccepted[$v->difficulty], $v->accepted);
+        }
+
         $sortOnBtr = array();
         foreach (problemset::$problems as $k => $v) {
             if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true) {
-                $sortOnBtr[$k] = $v->calcBtr($tags, problemset::$maxAccepted, problemset::$maxLike, $L, $R);
+                $sortOnBtr[$k] = $v->calcBtr($tags, $maxAccepted[$v->difficulty], $maxLike[$v->difficulty], $L, $R);
             }
         }
         $candid = array();
