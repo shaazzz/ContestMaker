@@ -112,7 +112,6 @@ class problemset
         $ans = $candid[rand(0, count($candid) - 1)];
         problemset::$problems[$ans]->used = true;
         problemset::update();
-        echo $sortOnBtr[$ans];
         return problemset::$problems[$ans]->problemName;
     }
 }
