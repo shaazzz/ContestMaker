@@ -48,6 +48,6 @@ foreach ($legends as $person) {
 echo "\n<br> maxAccepted: " . problemset::$maxAccepted;
 echo "\n<br> maxLike: " . problemset::$maxLike;
 
-shuffle(problemset::$problems);
+//shuffle(problemset::$problems);
 problemset::update();
 
