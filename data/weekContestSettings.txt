@@ -5,7 +5,7 @@
         "Candidate masters":{"L": 1900, "R": 2600, "tags": []},
         "Grandmasters":{"L": 2400, "R": 3200, "tags": []}
     },
-    "Week1":{
+    "Week1":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
         "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","dp","Shayan.P"]},
         "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","dp","Shayan.P"]},
@@ -21,12 +21,11 @@
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
         "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","dp","Shayan.P"]},
         "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","dp","Shayan.P"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp","Shayan.P"]}
-    },
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp","Shayan.P"]    },
     "Week4":{
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","dp","Shayan.P"]},
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","dp","Shayan.P"],
         "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","dp","Shayan.P"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp","Shayan.P"]}
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp","Shayan.P"]
     }
 }

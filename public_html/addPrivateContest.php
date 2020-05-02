@@ -32,11 +32,11 @@ try {
     if ($R < $L || $R >= 26) {
         throw new Exception("(to problem index) به درستی وارد نشده است!");
     }
-    $problemQueries = $api->getContestProblemQueries($_POST["contestId"]);
+    $problemQueries = $api->getContestProblemQueries($_POST["contestId"], $_POST["contestAddressPrefix"]);
     problemset::readFromFile();
     $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
-    $additionalTags=array();
-    if(strlen($_POST['additionalTags']>0)){
+    $additionalTags = array();
+    if (strlen($_POST['additionalTags'] > 0)) {
         $additionalTags = explode(',', strtolower($_POST['additionalTags']));
         foreach ($additionalTags as $tag) {
             if (!in_array($tag, $allTags)) {

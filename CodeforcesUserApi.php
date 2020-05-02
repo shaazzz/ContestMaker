@@ -108,6 +108,7 @@ class CodeforcesUserApi
         if ($this->checkLoginHelper($result)) {
             echo "login successful\n";
         } else {
+            file_put_contents("data/last_error_desc.txt", $result);
             throw new Exception("login failed");
         }
         $this->findCsrf();
@@ -116,6 +117,7 @@ class CodeforcesUserApi
     function getValueFromBody($body, $name)
     {
         if (!preg_match("/name=\"$name\" value=\"([\s\S]+?)\"/", $body, $match)) {
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("can't find " . $name);
         }
         return $match[1];
@@ -199,11 +201,13 @@ class CodeforcesUserApi
             "problemsJson" => "[]"
         ));
         if ($result != "{\"success\":\"true\"}") {
+            file_put_contents("data/last_error_desc.txt", $result);
             throw new Exception("error in creating new mashup");
         }
         sleep(5);
         $body = $this->request("mashups/", array());
         if (!preg_match_all("/href=\"\/gym\/([0-9]+)\//", $body, $matches)) {
+            file_put_contents("data/last_error_desc.txt", $body);
             throw new Exception("cannot find contest problem ids");
         }
         $contestId = -1;
