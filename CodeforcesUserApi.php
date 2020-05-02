@@ -355,11 +355,11 @@ class CodeforcesUserApi
             "caption" => TELEGRAM_SCOREBOARD_CAPTION,
             "photo" => curl_file_create(realpath($filename), 'image/png', "example-cropped.png")
         );
-        $proxyIP = '127.0.0.1';
-        $proxyPort = '41177';
+        //$proxyIP = '127.0.0.1';
+        //$proxyPort = '41177';
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_PROXY, $proxyIP);
-        curl_setopt($ch, CURLOPT_PROXYPORT, $proxyPort);
+        //curl_setopt($ch, CURLOPT_PROXY, $proxyIP);
+        //curl_setopt($ch, CURLOPT_PROXYPORT, $proxyPort);
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . TELEGRAM_API . "/sendPhoto");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
