@@ -1,0 +1,3687 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="X-Csrf-Token" content="df3a9075f633cd68705f96dafd0794f4"/>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.01"/>
+
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery-1.8.3.js"></script>
+    <script type="application/javascript">
+        window.standaloneContest = false;
+        function adjustViewport() {
+            var screenWidthPx = Math.min($(window).width(), window.screen.width);
+            var siteWidthPx = 1100; // min width of site
+            var ratio = Math.min(screenWidthPx / siteWidthPx, 1.0);
+            var viewport = "width=device-width, initial-scale=" + ratio;
+            $('#viewport').attr('content', viewport);
+            var style = $('<style>html * { max-height: 1000000px; }</style>');
+            $('html > head').append(style);
+        }
+
+        if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+            adjustViewport();
+        }
+    </script>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="i1">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90"/>
+    <meta property="fb:admins" content="100001352546622" />
+    <meta property="og:image" content="//sta.codeforces.com/s/97352/images/codeforces-telegram-square.png" />
+    <link rel="image_src" href="//sta.codeforces.com/s/97352/images/codeforces-telegram-square.png" />
+    <meta property="og:title" content="Mashups - Codeforces"/>
+    <meta property="og:description" content=""/>
+    
+    <meta property="og:site_name" content="Codeforces"/>
+    <meta name="uc" content="379fb5fc42f81c204e6dc6adea5cac79fcc4872c"/>
+    <meta name="usmc" content="94dc88f74c584641a67bdaa4c4ac616c152a96cb"/>
+    
+    
+    
+    
+    <meta name="utc_offset" content="+03:00"/>
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2" />
+    <title>Mashups - Codeforces</title>
+        <meta name="description" content="Codeforces. Programming competitions and contests, programming community" />
+        <meta name="keywords" content="programming algorithm contest competition informatics olympiads c++ java graphs vkcup" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/font-awesome.min.css" type="text/css" charset="utf-8" />
+
+        <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="//sta.codeforces.com/s/97352/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//sta.codeforces.com/s/97352/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//sta.codeforces.com/s/97352/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//sta.codeforces.com/s/97352/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//sta.codeforces.com/s/97352/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//sta.codeforces.com/s/97352/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//sta.codeforces.com/s/97352/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//sta.codeforces.com/s/97352/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//sta.codeforces.com/s/97352/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="//sta.codeforces.com/s/97352/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//sta.codeforces.com/s/97352/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="//sta.codeforces.com/s/97352/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//sta.codeforces.com/s/97352/favicon-16x16.png">
+    <link rel="manifest" href="//sta.codeforces.com/s/97352/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="//sta.codeforces.com/s/97352/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/prettify.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/clear.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/ttypography.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/problem-statement.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/second-level-menu.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/roundbox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/datatable.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/table-form.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/topic.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/jquery.jgrowl.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/facebox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/jquery.wysiwyg.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/jquery.autocomplete.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/codeforces.datepick.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/colorbox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/jquery.drafts.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/community.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/gym-filter.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="//sta.codeforces.com/s/97352/css/jquery.timeentry.css" type="text/css" charset="utf-8" />
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+    });
+    </script>
+    <script type="text/javascript" async
+            src="https://assets.codeforces.com/mathjax/MathJax.js?config=TeX-AMS_HTML-full"
+    >
+    </script>
+    <!-- /MathJax -->
+
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/pushstream.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.swipe.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/facebox.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/controls/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/controls/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/controls/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/controls/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/ua-parser.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.datepick.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/jquery.drafts.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/autosize.min.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/sjcl.js"></script>
+    <script type="text/javascript" src="/scripts/bd443a0f034169a6717ba302cb5c7ada/en/codeforces-options.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/codeforces.js?v=20160131"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/EventCatcher.js?v=20160131"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/js/preparedVerdictFormats-en.js"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/markitup/skins/markitup/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.codeforces.com/s/97352/markitup/sets/markdown/style.css" type="text/css" charset="utf-8" />
+
+
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="//sta.codeforces.com/s/97352/markitup/sets/markdown/set.js"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+
+        <script id="nocomb.jquery.timeentry.js" src="//sta.codeforces.com/s/97352/js/jquery.timeentry.js" type="text/javascript"></script>
+
+</head>
+<body class=" "><span style='display:none;' class='csrf-token' data-csrf='df3a9075f633cd68705f96dafd0794f4'>&nbsp;</span>
+<!-- .notificationTextCleaner used in Codeforces.showAnnouncements() -->
+<div class="notificationTextCleaner" style="font-size: 0px"></div>
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 3.0rem;"><i class="icon-circle-arrow-up"></i></div>
+<div class="verdictPrototypeDiv" style="display: none;"></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    String.prototype.hashCode = function() {
+        var hash = 0, i, chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+            chr   = this.charCodeAt(i);
+            hash  = ((hash << 5) - hash) + chr;
+            hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+    };
+
+    var queryMobile = Codeforces.queryString.mobile;
+    if (queryMobile === "true" || queryMobile === "false") {
+        Codeforces.putToStorage("useMobile", queryMobile == "true");
+    } else {
+        var useMobile = Codeforces.getFromStorage("useMobile");
+        if (useMobile === true || useMobile === false) {
+            if (useMobile != false) {
+                Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", useMobile));
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+
+
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '554666954583323',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    (function () {
+        jQuery.expr[':'].containsCI = function(elem, index, match) {
+            return !match || !match.length || match.length < 4 || !match[3] || (
+                    elem.textContent || elem.innerText || jQuery(elem).text() || ''
+            ).toLowerCase().indexOf(match[3].toLowerCase()) >= 0;
+        }
+    }(jQuery));
+
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    setTimeout(function() {
+        $(".second-level-menu-list").lavaLamp({
+            fx: "backout",
+            speed: 700
+        });
+    }, 100);
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+        var count = 0;
+
+        function getDelay() {
+            var delay = 0;
+            var last = Codeforces.getFromStorage("LastOnlineTimeUpdaterMillis", 0);
+            if (last && last != null) {
+                var period = count < 20 ? 180 * 1000 : 360 * 1000;
+                delay = period - (new Date().getTime() - last);
+                if (delay < 0)
+                    delay = 0;
+            }
+            return delay;
+        }
+
+        window.setInterval(function () {
+            if (getDelay() <= 0 && count < 120) {
+                ++count;
+                Codeforces.ping("/data/update-online");
+            }
+        }, 5000);
+
+        var handle = "TaranehSedaghat";
+        $("a.rated-user:contains(" + handle + "), span.participant:contains(" + handle + ")").each(function () {
+            if ($(this).text() == handle) {
+                var td = $(this).parent();
+                var tr = $(this).parent().parent();
+                if (td.is("td") && tr.is("tr")) {
+                    tr.addClass("highlighted-row");
+                }
+            }
+        });
+
+    function showAnnouncements(json) {
+        //info("j=" + JSON.stringify(json));
+
+        if (json.t != "a") {
+            return;
+        }
+        // console.log("Got announcement from channel");
+        setTimeout(function() {
+            Codeforces.showAnnouncements(json.d, "en");
+        }, Math.random() * 500);
+    }
+
+    function showEventCatcherUserMessage(json) {
+        if (json.t == "s") {
+            var points = json.d[5];
+            var passedTestCount = json.d[7];
+            var judgedTestCount = json.d[8];
+            var verdict = preparedVerdictFormats[json.d[12]];
+            var verdictPrototypeDiv = $(".verdictPrototypeDiv");
+            verdictPrototypeDiv.html(verdict);
+            if (judgedTestCount != null && judgedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-judged").text(judgedTestCount);
+            }
+            if (passedTestCount != null && passedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-passed").text(passedTestCount);
+            }
+            if (points != null && points != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-points").text(points);
+            }
+            Codeforces.showMessage(verdictPrototypeDiv.text());
+        }
+    }
+
+    $(".clickable-title").each(function() {
+        var title = $(this).attr("data-title");
+        if (title) {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = title;
+            $(this).attr("title", tmp.textContent || tmp.innerText || "");
+        }
+    });
+
+    $(".clickable-title").click(function() {
+        var title = $(this).attr("data-title");
+        if (title) {
+            Codeforces.alert(title);
+        } else {
+            Codeforces.alert($(this).attr("title"));
+        }
+    }).css("position", "relative").css("bottom", "3px");
+
+        Codeforces.showDelayedMessage();
+
+    Codeforces.reformatTimes();
+
+    //Codeforces.initializePubSub();
+    if (window.codeforcesOptions.subscribeServerUrl) {
+        window.eventCatcher = new EventCatcher(
+            window.codeforcesOptions.subscribeServerUrl,
+            [
+                Codeforces.getGlobalChannel(),
+                Codeforces.getUserChannel(),
+                Codeforces.getUserShowMessageChannel(),
+                Codeforces.getContestChannel(),
+                Codeforces.getParticipantChannel(),
+                Codeforces.getTalkChannel()
+            ]
+        );
+
+        if (Codeforces.getParticipantChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getParticipantChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getContestChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getContestChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getGlobalChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getGlobalChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserShowMessageChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserShowMessageChannel(), function(json) {
+                showEventCatcherUserMessage(json);
+            });
+        }
+    }
+
+    Codeforces.setupContestTimes("/data/contests");
+    Codeforces.setupSpoilers();
+    Codeforces.setupTutorials("/data/problemTutorial");
+        });
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<div id="body">
+        <script type="text/javascript">
+            $(function() {
+                window._ftaa = "o6k7pi432j7fl5djkv";
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(function() {
+                window._bfaa = "f1b3f18c715565b589b7823cda7448ce";
+            });
+        </script>
+            <script type="application/javascript">
+                window.setTimeout(function () {
+                    var url = location.href;
+                    var hashCode32 = Math.abs(url.hashCode()).toString();
+                    var hashCode = "p" + hashCode32 + Math.abs((hashCode32 + url).hashCode());
+                    var pvs = Codeforces.getFromStorage("pvs" + hashCode);
+                    if (!pvs) {
+                        $.post("/data/apv", {
+                            ftaa: window._ftaa,
+                            bfaa: window._bfaa,
+                            url: url
+                        }, function (json) {
+                            if (json["success"] === "true") {
+                                Codeforces.putToStorage("pvs" + hashCode, true);
+                            }
+                        }, "json");
+                    }
+                }, 5000);
+            </script>
+        
+
+<div class="side-bell" style="visibility: hidden; display: none; opacity: 0.7; width: 40px; position: fixed; right: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 1.5rem;">
+    <span class="icon-stack" style="width: 100%;">
+        <i class="icon-circle icon-stack-base"></i>
+        <i class="icon-bell-alt icon-light"></i>
+    </span>
+    <br/>
+    <span class="side-bell__count" style="position: relative; top: -10px;"></span>
+</div>
+
+
+<div class="header-bell" style="display: none;">
+    <div class="header-bell__img"><span class="header-bell__count"></span></div>
+
+    <div class="bell-details">
+        <div class="bell-details__proto-row-comment">
+            <a class="bell-details__thumbnail-a" href="#"><img src=""/></a>
+            <div class="bell-details__comment"></div>
+            <div class="bell-details__time"></div>
+        </div>
+        <div class="bell-details__proto-row-blog-entry">
+            <a class="bell-details__thumbnail-a" href="#"><img src=""/></a>
+            <div class="bell-details__blog-entry"></div>
+            <div class="bell-details__time"></div>
+        </div>
+        <div class="bell-details__proto-row-comment-reply">
+            <a class="bell-details__thumbnail-a" href="#"><img src=""/></a>
+            <div class="bell-details__comment-reply"></div>
+        </div>
+
+        <div class="bell-details__no-new">
+            There are no new notifications
+        </div>
+
+        <div class="bell-details__recent-link">
+            <a href="/notifications">History (at most 100 notifications)</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .header-bell {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .header-bell__img {
+        opacity: 0.5;
+        background-image: url("//sta.codeforces.com/s/97352/images/icons/bell_inactive-20x20.png");
+        position: relative;
+        bottom: 1px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-bell__img-active  {
+        opacity: 1 !important;
+        background-image: url("//sta.codeforces.com/s/97352/images/icons/bell_active-20x20.png") !important;
+    }
+
+    .header-bell__count {
+        position: absolute;
+        top: 8px;
+        left: 18px;
+        font-weight: bold;
+        font-size: 10px;
+    }
+
+    .bell-details {
+        display: none;
+        z-index: 5;
+        border: 1px solid rgb(185, 185, 185);
+        width: 40rem;
+        max-height: 60rem;
+        padding: 0;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background-color: white;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .bell-details.sidebar-bell {
+        position: fixed;
+        right: 50px;
+    }
+
+    .bell-details__no-new {
+        font-size: 1.3rem;
+        display: block;
+        text-align: center;
+        color: #888 !important;
+        padding: 1em;
+    }
+
+    .bell-details__recent-link {
+        margin: 0;
+        padding: 0.5em;
+        text-align: center;
+        border-top: 1px solid rgb(185, 185, 185);
+    }
+
+    .bell-details__recent-link a {
+        font-size: 1.2rem;
+    }
+
+    .bell-details__proto-row-comment {
+        display: none;
+    }
+
+    .bell-details__proto-row-blog-entry {
+        display: none;
+    }
+
+    .bell-details__proto-row-comment-reply {
+        display: none;
+    }
+
+    .bell-details__row {
+        text-align: left;
+        margin: 0.5em;
+        padding: 0.25em 0.25em 0.75em 0.25em;
+        clear: both;
+    }
+
+    .bell-details__row:hover {
+        cursor: pointer;
+        background-color: #def;
+    }
+
+    .bell-details__row-active {
+        background-color: #def;
+    }
+
+    .bell-details__thumbnail-a {
+        text-decoration: none;
+    }
+
+    .bell-details__row img {
+        zoom: 50%;
+        margin-right: 2em;
+        float: left;
+    }
+
+    .bell-details__comment {
+        padding-left: 45px;
+        font-size: 1.3rem;
+    }
+
+    .bell-details__blog-entry {
+        padding-left: 45px;
+        font-size: 1.3rem;
+    }
+
+    .bell-details__comment-reply {
+        padding-left: 45px;
+        font-size: 1.3rem;
+    }
+
+    .bell-details__time {
+        padding-left: 45px;
+        margin-top: 0.2em;
+        font-size: 1.1rem;
+        color: #888 !important;
+    }
+</style>
+
+<script>
+    $(function () {
+        if ($(window).width() < 1600) {
+            $('.side-bell').css('width', '30px').css('line-height', '30px').css('font-size', '10px');
+        }
+
+        if ($(window).width() >= 1200) {
+            $ (window).scroll (function () {
+                if ($ (this).scrollTop () > 100) {
+                    $(".bell-details").addClass("sidebar-bell");
+                    $ ('.side-bell').fadeIn();
+                } else {
+                    $(".bell-details").removeClass("sidebar-bell");
+                    $ ('.side-bell').fadeOut();
+                }
+            });
+
+            $('.side-bell').hover(function () {
+                $(this).animate({
+                    'opacity':'1'
+                }).css({'color':'#6a86a4'});
+            }, function () {
+                $(this).animate({
+                    'opacity':'0.7'
+                }).css({'color':'#d3dbe4'});
+            });
+        }
+
+        $(".lang-chooser>div:first-child").prepend($("<span style='position: relative; bottom: 8px; padding: 0 0.5em;'>|</span>")).prepend($(".header-bell").show());
+        function Bell() {
+            var bell = this;
+            var notifications = JSON.parse("[]");
+
+            bell.notifications = {};
+
+            for (var i in notifications) {
+                if (notifications.hasOwnProperty(i)) {
+                    bell.notifications[notifications[i].id] = notifications[i];
+                }
+            }
+
+            function onClick(notification) {
+                var notificationIds = [];
+                var reason = notification.data.reasonType + "#" + notification.reasonId;
+                for (id in bell.notifications) {
+                    if (bell.notifications.hasOwnProperty(id)) {
+                        var otherNotification = bell.notifications[id];
+                        var otherReason = otherNotification.data.reasonType + "#" + otherNotification.reasonId;
+                        if (otherReason == reason) {
+                            notificationIds.push(otherNotification.id);
+                        }
+                    }
+                }
+                $.post("/data/notification", {action: "markAsRead", notificationIds: notificationIds.join(",")}, function(result) {
+                    Codeforces.redirect(notification.data.url);
+                }, "json");
+            }
+
+            var $bellDetails = $(".bell-details");
+            bell.newCommentRow = function (notification) {
+                var row = $(".bell-details__proto-row-comment").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__comment").html(
+                        "ReasonUser mentioned you in a comment".replace("ReasonUser", notification.data.reasonUserHtml)
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-comment");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+            bell.newFriendCommentRow = function (notification) {
+                var row = $(".bell-details__proto-row-comment").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__comment").html(
+                        "ReasonUser wrote a comment".replace("ReasonUser", notification.data.reasonUserHtml)
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-comment");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+            bell.newCommentReplyRow = function (notification) {
+                var row = $(".bell-details__proto-row-comment-reply").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__comment-reply").html(
+                        "ReasonUser replied to your comment".replace("ReasonUser", notification.data.reasonUserHtml)
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-comment-reply");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+            bell.newBlogEntryRow = function (notification) {
+                var row = $(".bell-details__proto-row-blog-entry").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__blog-entry").html(
+                        "ReasonUser mentioned you in a blog entry".replace("ReasonUser", notification.data.reasonUserHtml)
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-blog-entry");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+            bell.newFriendBlogEntryRow = function (notification) {
+                var row = $(".bell-details__proto-row-blog-entry").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__blog-entry").html(
+                        "ReasonUser wrote a blog entry".replace("ReasonUser", notification.data.reasonUserHtml)
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-blog-entry");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+            bell.newProposalCommentRow = function (notification) {
+                var row = $(".bell-details__proto-row-comment-reply").clone();
+                row.addClass("bell-details__row").attr("data-notificationId", notification.id);
+                row.find(".bell-details__thumbnail-a").attr("href", notification.data.reasonUserUrl);
+                row.find("img").attr("src", notification.data.reasonUserThumbnailUrl);
+                row.find(".bell-details__comment-reply").html(
+                        "ReasonUser commented on ProposalType Proposal".replace("ReasonUser", notification.data.reasonUserHtml)
+                                .replace("ProposalType", "Contest" == notification.data.proposalType ? "contest proposal" : "problem proposal")
+                                .replace("Proposal", $("<div/>").text(notification.data.proposalName).html())
+                );
+                row.find(".bell-details__time").html(
+                        "<span class='format-systemtimewithseconds'>"
+                        + notification.creationTimeString
+                        + "</span>"
+                );
+                row.removeClass("bell-details__proto-row-comment-reply");
+                row.click(function() {
+                    onClick(notification);
+                    return false;
+                });
+                return row;
+            };
+
+            bell.renderRow = function (notification) {
+                var $row = $(".bell-details__row[data-notificationId='" + notification.id + "']");
+
+                if ($bellDetails.css("display") != "block" && notification.read) {
+                    $row.hide();
+                    return;
+                }
+
+                notification.data = JSON.parse(notification.dataJson);
+
+                var reason = notification.data.reasonType + "#" + notification.reasonId;
+
+                var has = false;
+                $row.each(function () {
+                    has = true;
+                });
+                if ($(".bell-details__row[data-reason='" + reason + "']").length) {
+                    has = true;
+                }
+
+                if (!has) {
+                    $(".side-bell").css("visibility", "visible");
+                    var newRow;
+                    if (notification.type == "Comment") {
+                        newRow = bell.newCommentRow(notification);
+                    } else if (notification.type == "BlogEntry") {
+                        newRow = bell.newBlogEntryRow(notification);
+                    } else if (notification.type == "CommentReply") {
+                        newRow = bell.newCommentReplyRow(notification);
+                    } else if (notification.type == "FriendComment") {
+                        newRow = bell.newFriendCommentRow(notification);
+                    } else if (notification.type == "FriendBlogEntry") {
+                        newRow = bell.newFriendBlogEntryRow(notification);
+                    } else if (notification.type == "ProposalComment") {
+                        newRow = bell.newProposalCommentRow(notification)
+                    }
+                    if (newRow) {
+                        newRow.attr("data-reason", reason);
+                        $(".bell-details").prepend(newRow);
+                    }
+                }
+            };
+
+            var $count = $(".header-bell__count, .side-bell__count");
+            var $img = $(".header-bell__img");
+            var $noNew = $(".bell-details__no-new");
+
+            bell.renewCount = function () {
+                Codeforces.reformatTimes();
+                var count = 0;
+                var counted = {};
+                for (var id in bell.notifications)
+                    if (bell.notifications.hasOwnProperty(id)) {
+                        var notification = bell.notifications[id];
+                        if (notification) {
+                            var reason = notification.data.reasonType + "#" + notification.reasonId;
+                            if (!notification.read && !counted[reason]) {
+                                count++;
+                                counted[reason] = true;
+                            }
+                        }
+                    }
+                if (count > 0) {
+                    $count.text(count);
+                    $img.addClass("header-bell__img-active");
+                    $noNew.hide();
+                } else {
+                    $count.text("");
+                    $img.removeClass("header-bell__img-active");
+                    if ($bellDetails.css("display") != "block") {
+                        $noNew.show();
+                    }
+                }
+            };
+
+            for (var id in bell.notifications)
+                if (bell.notifications.hasOwnProperty(id))
+                    bell.renderRow(bell.notifications[id]);
+
+            if (window.eventCatcher) {
+                window.eventCatcher.subscribe(Codeforces.getUserChannel(), function(json) {
+                    if (json.t === "n") {
+                        for (var i in json.d)
+                            if (json.d.hasOwnProperty(i)) {
+                                var notification = json.d[i];
+                                notification.data = JSON.parse(notification.dataJson);
+                                bell.notifications[notification.id] = notification;
+                                bell.renderRow(notification);
+                                bell.renewCount();
+                            }
+                    }
+                });
+            }
+
+
+            $(".header-bell, .side-bell").click(function() {
+                if ($bellDetails.css("display") == "none") {
+                    for (var id in bell.notifications)
+                        if (bell.notifications.hasOwnProperty(id))
+                            if (bell.notifications[id].read)
+                                bell.renderRow(bell.notifications[id]);
+                    bell.renewCount();
+
+                    $bellDetails.css("display", "block");
+
+                    var notificationIds = [];
+                    for (id in bell.notifications)
+                        if (bell.notifications.hasOwnProperty(id))
+                            notificationIds.push(id);
+
+                    setTimeout(function() {
+                        if ($bellDetails.css("display") == "block") {
+                            $.post("/data/notification", {action: "markAsRead", notificationIds: notificationIds.join(",")}, function(result) {
+                                // No operations.
+                            }, "json");
+
+                            for (var i in notificationIds) {
+                                if (notificationIds.hasOwnProperty(i)) {
+                                    bell.notifications[notificationIds[i]].read = true;
+                                }
+                            }
+                            bell.renewCount();
+                        }
+                    }, 2000);
+                } else {
+                    var has = false;
+                    for (var id in bell.notifications) {
+                        if (bell.notifications.hasOwnProperty(id) && !bell.notifications[id].read) {
+                            has = true;
+                        }
+                    }
+                    if (!has) {
+                        $(".side-bell").css("visibility", "hidden");
+                    }
+                    $bellDetails.css("display", "none");
+                    bell.renewCount();
+                }
+            });
+        }
+
+        bell = new Bell();
+        bell.renewCount();
+    })
+</script>
+
+<div id="header" style="position: relative;">
+    <div style="float:left;">
+            <a href="/"><img style="height: 50px; margin-top: 10px;" title="Make Codeforces, not Coronaforces" alt="Make Codeforces not Coronaforces" src="//sta.codeforces.com/s/97352/images/codeforces-vs-coronavirus-65.png"/></a>
+    </div>
+    <div class="lang-chooser">
+        <div style="text-align: right;">
+            <a href="?locale=en"><img src="//sta.codeforces.com/s/97352/images/flags/24/gb.png" title="In English" alt="In English"/></a>
+            <a href="?locale=ru"><img src="//sta.codeforces.com/s/97352/images/flags/24/ru.png" title="По-русски" alt="По-русски"/></a>
+        </div>
+
+        <div >
+                        <a href="/profile/TaranehSedaghat">TaranehSedaghat</a>
+                     | 
+                        <a href="/3a4fc2305a8826d80b4377f7487b77c3/logout">Logout</a>
+                    
+        </div>
+
+
+
+    </div>
+    <br style="clear: both;"/>
+</div>
+        
+
+    <div class="roundbox menu-box" style="">
+            <div class="roundbox-lt">&nbsp;</div>
+            <div class="roundbox-rt">&nbsp;</div>
+            <div class="roundbox-lb">&nbsp;</div>
+            <div class="roundbox-rb">&nbsp;</div>
+    <div class="menu-list-container">
+    <ul class="menu-list main-menu-list">
+                <li class=""><a href="/">Home</a></li>
+                <li class=""><a href="/top">Top</a></li>
+                <li class=""><a href="/contests">Contests</a></li>
+                <li class="current"><a href="/gyms">Gym</a></li>
+                <li class=""><a href="/problemset">Problemset</a></li>
+                <li class=""><a href="/groups">Groups</a></li>
+                <li class=""><a href="/ratings">Rating</a></li>
+                <li class=""><a href="/apiHelp">API</a></li>
+                <li class=""><a href="/calendar">Calendar</a></li>
+                <li class=""><a href="/help">Help</a></li>
+                <li class=""><a href="/10years"><span style="color:#ce2a2a;font-weight:bold;">10 years! <i style="font-size:100%" class="icon-gift"></i></span></a></li>
+    </ul>
+        <form method="post" action="/search"><input type='hidden' name='csrf_token' value='df3a9075f633cd68705f96dafd0794f4'/>
+            <input class="search" name="query" data-isPlaceholder="true" value=""/>
+        </form>
+    <br style="clear: both;"/>
+</div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.search").focus(function () {
+                if ($(this).attr("data-isPlaceholder") === "true") {
+                    $(this).val("");
+                    $(this).removeAttr("data-isPlaceholder");
+                }
+            });
+        });
+    </script>
+            <br style="height: 3em; clear: both;"/>
+
+        <div style="position: relative;">
+                        <div id="sidebar">
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt">&nbsp;</div>
+            <div class="roundbox-rt">&nbsp;</div>
+        <div class="caption titled">&rarr; Training filter
+            <div class="top-links">
+            </div>
+        </div>
+<div id="gymContestsFilter" style="padding: 0.7em;">
+<form method="GET" id="gym-filter-form">
+    <div class="setting-name">Season:</div>
+    <div class="setting-value">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <label for="filterSeasonLowerBorder">
+                        <span style="margin-right: 0.7em;">from</span>
+                    </label>
+                </td>
+                <td style="width: 50%;">
+                    <select name="filterSeasonLowerBorder" id="filterSeasonLowerBorder" style="width: 100%;">
+                        <option value=""></option>
+                            <option value="2020-2021">
+                            2020-2021
+                            </option>
+                            <option value="2019-2020">
+                            2019-2020
+                            </option>
+                            <option value="2018-2019">
+                            2018-2019
+                            </option>
+                            <option value="2017-2018">
+                            2017-2018
+                            </option>
+                            <option value="2016-2017">
+                            2016-2017
+                            </option>
+                            <option value="2015-2016">
+                            2015-2016
+                            </option>
+                            <option value="2014-2015">
+                            2014-2015
+                            </option>
+                            <option value="2013-2014">
+                            2013-2014
+                            </option>
+                            <option value="2012-2013">
+                            2012-2013
+                            </option>
+                            <option value="2011-2012">
+                            2011-2012
+                            </option>
+                            <option value="2010-2011">
+                            2010-2011
+                            </option>
+                            <option value="2009-2010">
+                            2009-2010
+                            </option>
+                            <option value="2008-2009">
+                            2008-2009
+                            </option>
+                            <option value="2007-2008">
+                            2007-2008
+                            </option>
+                            <option value="2006-2007">
+                            2006-2007
+                            </option>
+                            <option value="2005-2006">
+                            2005-2006
+                            </option>
+                            <option value="2004-2005">
+                            2004-2005
+                            </option>
+                            <option value="2003-2004">
+                            2003-2004
+                            </option>
+                            <option value="2002-2003">
+                            2002-2003
+                            </option>
+                            <option value="2001-2002">
+                            2001-2002
+                            </option>
+                            <option value="2000-2001">
+                            2000-2001
+                            </option>
+                            <option value="1999-2000">
+                            1999-2000
+                            </option>
+                            <option value="1998-1999">
+                            1998-1999
+                            </option>
+                            <option value="1997-1998">
+                            1997-1998
+                            </option>
+                            <option value="1996-1997">
+                            1996-1997
+                            </option>
+                            <option value="1995-1996">
+                            1995-1996
+                            </option>
+                            <option value="1991-1992">
+                            1991-1992
+                            </option>
+                    </select>
+                </td>
+                <td>
+                    <label for="filterSeasonUpperBorder">
+                        <span style="margin-left: 0.7em;margin-right: 0.7em;">to</span>
+                    </label>
+                </td>
+                <td style="width: 50%;">
+                    <select name="filterSeasonUpperBorder" id="filterSeasonUpperBorder" style="width: 100%;">
+                        <option value=""></option>
+                            <option value="2020-2021">
+                            2020-2021
+                            </option>
+                            <option value="2019-2020">
+                            2019-2020
+                            </option>
+                            <option value="2018-2019">
+                            2018-2019
+                            </option>
+                            <option value="2017-2018">
+                            2017-2018
+                            </option>
+                            <option value="2016-2017">
+                            2016-2017
+                            </option>
+                            <option value="2015-2016">
+                            2015-2016
+                            </option>
+                            <option value="2014-2015">
+                            2014-2015
+                            </option>
+                            <option value="2013-2014">
+                            2013-2014
+                            </option>
+                            <option value="2012-2013">
+                            2012-2013
+                            </option>
+                            <option value="2011-2012">
+                            2011-2012
+                            </option>
+                            <option value="2010-2011">
+                            2010-2011
+                            </option>
+                            <option value="2009-2010">
+                            2009-2010
+                            </option>
+                            <option value="2008-2009">
+                            2008-2009
+                            </option>
+                            <option value="2007-2008">
+                            2007-2008
+                            </option>
+                            <option value="2006-2007">
+                            2006-2007
+                            </option>
+                            <option value="2005-2006">
+                            2005-2006
+                            </option>
+                            <option value="2004-2005">
+                            2004-2005
+                            </option>
+                            <option value="2003-2004">
+                            2003-2004
+                            </option>
+                            <option value="2002-2003">
+                            2002-2003
+                            </option>
+                            <option value="2001-2002">
+                            2001-2002
+                            </option>
+                            <option value="2000-2001">
+                            2000-2001
+                            </option>
+                            <option value="1999-2000">
+                            1999-2000
+                            </option>
+                            <option value="1998-1999">
+                            1998-1999
+                            </option>
+                            <option value="1997-1998">
+                            1997-1998
+                            </option>
+                            <option value="1996-1997">
+                            1996-1997
+                            </option>
+                            <option value="1995-1996">
+                            1995-1996
+                            </option>
+                            <option value="1991-1992">
+                            1991-1992
+                            </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="setting-name"><label for="filterContestType">Contest type:</label></div>
+    <div class="setting-value" style="width: 100%;">
+        <select name="filterContestType" id="filterContestType" style="width: 100%;">
+            <option value=""></option>
+                <option value="Official ACM-ICPC Contest">
+                Official ICPC Contest
+                </option>
+                <option value="Official School Contest">
+                Official School Contest
+                </option>
+                <option value="Opencup Contest">
+                Opencup Contest
+                </option>
+                <option value="School/University/City/Region Championship">
+                School/University/City/Region Championship
+                </option>
+                <option value="Training Camp Contest">
+                Training Camp Contest
+                </option>
+                <option value="Official International Personal Contest">
+                Official International Personal Contest
+                </option>
+                <option value="Training Contest">
+                Training Contest
+                </option>
+        </select>
+    </div>
+
+    <div class="setting-name icpc-region" style="display: none;">
+        <label for="filterIcpcRegion">ICPC region:</label>
+    </div>
+    <div class="setting-value icpc-region" style="display: none;width: 100%;">
+        <select name="filterIcpcRegion" id="filterIcpcRegion" style="width: 100%;">
+            <option value=""></option>
+                <option value="South Africa Region">
+                South Africa Region
+                </option>
+                <option value="Arab Region">
+                Arab Region
+                </option>
+                <option value="Asia Dalian Region">
+                Asia Dalian Region
+                </option>
+                <option value="Asia Shanghai Region">
+                Asia Shanghai Region
+                </option>
+                <option value="Asia Beijing Region">
+                Asia Beijing Region
+                </option>
+                <option value="Asia Phuket Region">
+                Asia Phuket Region
+                </option>
+                <option value="Asia Daejeon Region">
+                Asia Daejeon Region
+                </option>
+                <option value="Asia Chengdu Region">
+                Asia Chengdu Region
+                </option>
+                <option value="Asia Fukuoka Region">
+                Asia Fukuoka Region
+                </option>
+                <option value="Asia Kuala Lumpur Region">
+                Asia Kuala Lumpur Region
+                </option>
+                <option value="Asia Dhaka Region">
+                Asia Dhaka Region
+                </option>
+                <option value="Asia Fuzhou Region">
+                Asia Fuzhou Region
+                </option>
+                <option value="Asia Hsinchu Region">
+                Asia Hsinchu Region
+                </option>
+                <option value="Asia Tehran Region">
+                Asia Tehran Region
+                </option>
+                <option value="Asia Manila Region">
+                Asia Manila Region
+                </option>
+                <option value="Asia Kanpur Region">
+                Asia Kanpur Region
+                </option>
+                <option value="Asia Amritapuri Region">
+                Asia Amritapuri Region
+                </option>
+                <option value="Southeastern Europe Region">
+                Southeastern Europe Region
+                </option>
+                <option value="Central Europe Region">
+                Central Europe Region
+                </option>
+                <option value="Southwestern Europe Region">
+                Southwestern Europe Region
+                </option>
+                <option value="Northwestern Europe Region">
+                Northwestern Europe Region
+                </option>
+                <option value="Northeastern Europe Region">
+                Northeastern Europe Region
+                </option>
+                <option value="South America/North Region">
+                South America/North Region
+                </option>
+                <option value="Mexico and Central America Region">
+                Mexico and Central America Region
+                </option>
+                <option value="South America/Brazil Region">
+                South America/Brazil Region
+                </option>
+                <option value="Caribbean Region">
+                Caribbean Region
+                </option>
+                <option value="South America/South Region">
+                South America/South Region
+                </option>
+                <option value="East Central NA Region">
+                East Central NA Region
+                </option>
+                <option value="South Central USA Region">
+                South Central USA Region
+                </option>
+                <option value="Rocky Mountain Region">
+                Rocky Mountain Region
+                </option>
+                <option value="Southeast USA Region">
+                Southeast USA Region
+                </option>
+                <option value="Greater NY Region">
+                Greater NY Region
+                </option>
+                <option value="Mid-Atlantic USA Region">
+                Mid-Atlantic USA Region
+                </option>
+                <option value="Mid-Central USA Region">
+                Mid-Central USA Region
+                </option>
+                <option value="Northeast North America Region">
+                Northeast North America Region
+                </option>
+                <option value="Pacific Northwest Region">
+                Pacific Northwest Region
+                </option>
+                <option value="North Central NA Region">
+                North Central NA Region
+                </option>
+                <option value="Southern California Region">
+                Southern California Region
+                </option>
+                <option value="South Pacific Region">
+                South Pacific Region
+                </option>
+        </select>
+    </div>
+
+    <div class="setting-name">Duration, hours:</div>
+    <div class="setting-value">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <label for="filterDurationLowerBorder">
+                        <span style="margin-right: 0.7em;">from</span>
+                    </label>
+                </td>
+                <td style="width: 50%;">
+                    <select name="filterDurationLowerBorder" id="filterDurationLowerBorder" style="width: 100%;">
+                        <option value=""></option>
+                            <option value="60">
+                            1
+                            </option>
+                            <option value="120">
+                            2
+                            </option>
+                            <option value="180">
+                            3
+                            </option>
+                            <option value="240">
+                            4
+                            </option>
+                            <option value="300">
+                            5
+                            </option>
+                    </select>
+                </td>
+                <td>
+                    <label for="filterDurationUpperBorder">
+                        <span style="margin-left: 0.7em;margin-right: 0.7em;">to</span>
+                    </label>
+                </td>
+                <td style="width: 50%;">
+                    <select name="filterDurationUpperBorder" id="filterDurationUpperBorder" style="width: 100%;">
+                        <option value=""></option>
+                            <option value="60">
+                            1
+                            </option>
+                            <option value="120">
+                            2
+                            </option>
+                            <option value="180">
+                            3
+                            </option>
+                            <option value="240">
+                            4
+                            </option>
+                            <option value="300">
+                            5
+                            </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="setting-name">Difficulty:</div>
+    <div class="setting-inner-value">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 15%;">
+                    <label for="vote-value-filterDifficultyLowerBorder">
+                        <span style="margin-right: 0.7em;">from</span>
+                    </label>
+                </td>
+                <td>
+<div>
+    <ul id="vote-list-filterDifficultyLowerBorder" style="display: inline-block;">
+        <li id="vote-current-filterDifficultyLowerBorder" style="width: 0px"></li>
+            <li>
+                <a href="#" voteValue="1" title="very easy" class="vote-item vote-item-1">
+                1
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="2" title="easy" class="vote-item vote-item-2">
+                2
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="3" title="medium" class="vote-item vote-item-3">
+                3
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="4" title="hard" class="vote-item vote-item-4">
+                4
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="5" title="very hard" class="vote-item vote-item-5">
+                5
+                </a>
+            </li>
+    </ul>
+    <a href="#" id="vote-reset-filterDifficultyLowerBorder" style="vertical-align: 75%;">Reset</a>
+</div>
+<input type="hidden" name="filterDifficultyLowerBorder" value="0" id="vote-value-filterDifficultyLowerBorder"/>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    var voteItemElements = $("#vote-list-filterDifficultyLowerBorder .vote-item");
+
+    voteItemElements.click(function () {
+        var voteValue = $(this).attr("voteValue");
+        $("#vote-value-filterDifficultyLowerBorder").val(voteValue);
+        $("#vote-current-filterDifficultyLowerBorder").css("width", voteValue * 25 + "px");
+        return false;
+    });
+
+
+    $("#vote-reset-filterDifficultyLowerBorder").click(function () {
+        $("#vote-value-filterDifficultyLowerBorder").val("0");
+        $("#vote-current-filterDifficultyLowerBorder").css("width", "0px");
+        $("#vote-notice-filterDifficultyLowerBorder").attr("defaultNotice", "");
+        $("#vote-notice-filterDifficultyLowerBorder").text("");
+        return false;
+    });
+});
+</script>
+
+<style type="text/css">
+    #vote-list-filterDifficultyLowerBorder {
+        list-style: none;
+        margin-left: 5px !important;
+        padding: 0;
+        width: 125px;
+        height: 25px;
+        position: relative;
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) top left repeat-x;
+    }
+
+    #vote-list-filterDifficultyLowerBorder li {
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+    #vote-list-filterDifficultyLowerBorder li a.vote-item {
+        display: block;
+        width: 25px;
+        height: 25px;
+        text-decoration: none;
+        text-indent: -9000px;
+        z-index: 20;
+        position: absolute;
+        padding: 0;
+    }
+
+    #vote-list-filterDifficultyLowerBorder li a.vote-item:hover {
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) left bottom;
+        z-index: 2;
+        left: 0;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item:focus,
+    #vote-list-filterDifficultyLowerBorder a.vote-item:active {
+        border: 0;
+        -moz-outline-style: none;
+        outline: none;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-1 {
+        left: 0px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-1:hover {
+        width: 25px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-2 {
+        left: 25px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-2:hover {
+        width: 50px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-3 {
+        left: 50px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-3:hover {
+        width: 75px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-4 {
+        left: 75px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-4:hover {
+        width: 100px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-5 {
+        left: 100px;
+    }
+
+    #vote-list-filterDifficultyLowerBorder a.vote-item-5:hover {
+        width: 125px;
+    }
+
+
+    #vote-current-filterDifficultyLowerBorder {
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) left center;
+        position: absolute;
+        height: 25px;
+        display: block;
+        text-indent: -9000px;
+        z-index: 1;
+    }
+</style>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="setting-value">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 15%;">
+                    <label for="vote-value-filterDifficultyUpperBorder">
+                        <span style="margin-right: 0.7em;">to</span>
+                    </label>
+                </td>
+                <td>
+<div>
+    <ul id="vote-list-filterDifficultyUpperBorder" style="display: inline-block;">
+        <li id="vote-current-filterDifficultyUpperBorder" style="width: 0px"></li>
+            <li>
+                <a href="#" voteValue="1" title="very easy" class="vote-item vote-item-1">
+                1
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="2" title="easy" class="vote-item vote-item-2">
+                2
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="3" title="medium" class="vote-item vote-item-3">
+                3
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="4" title="hard" class="vote-item vote-item-4">
+                4
+                </a>
+            </li>
+            <li>
+                <a href="#" voteValue="5" title="very hard" class="vote-item vote-item-5">
+                5
+                </a>
+            </li>
+    </ul>
+    <a href="#" id="vote-reset-filterDifficultyUpperBorder" style="vertical-align: 75%;">Reset</a>
+</div>
+<input type="hidden" name="filterDifficultyUpperBorder" value="0" id="vote-value-filterDifficultyUpperBorder"/>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    var voteItemElements = $("#vote-list-filterDifficultyUpperBorder .vote-item");
+
+    voteItemElements.click(function () {
+        var voteValue = $(this).attr("voteValue");
+        $("#vote-value-filterDifficultyUpperBorder").val(voteValue);
+        $("#vote-current-filterDifficultyUpperBorder").css("width", voteValue * 25 + "px");
+        return false;
+    });
+
+
+    $("#vote-reset-filterDifficultyUpperBorder").click(function () {
+        $("#vote-value-filterDifficultyUpperBorder").val("0");
+        $("#vote-current-filterDifficultyUpperBorder").css("width", "0px");
+        $("#vote-notice-filterDifficultyUpperBorder").attr("defaultNotice", "");
+        $("#vote-notice-filterDifficultyUpperBorder").text("");
+        return false;
+    });
+});
+</script>
+
+<style type="text/css">
+    #vote-list-filterDifficultyUpperBorder {
+        list-style: none;
+        margin-left: 5px !important;
+        padding: 0;
+        width: 125px;
+        height: 25px;
+        position: relative;
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) top left repeat-x;
+    }
+
+    #vote-list-filterDifficultyUpperBorder li {
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+    #vote-list-filterDifficultyUpperBorder li a.vote-item {
+        display: block;
+        width: 25px;
+        height: 25px;
+        text-decoration: none;
+        text-indent: -9000px;
+        z-index: 20;
+        position: absolute;
+        padding: 0;
+    }
+
+    #vote-list-filterDifficultyUpperBorder li a.vote-item:hover {
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) left bottom;
+        z-index: 2;
+        left: 0;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item:focus,
+    #vote-list-filterDifficultyUpperBorder a.vote-item:active {
+        border: 0;
+        -moz-outline-style: none;
+        outline: none;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-1 {
+        left: 0px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-1:hover {
+        width: 25px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-2 {
+        left: 25px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-2:hover {
+        width: 50px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-3 {
+        left: 50px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-3:hover {
+        width: 75px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-4 {
+        left: 75px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-4:hover {
+        width: 100px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-5 {
+        left: 100px;
+    }
+
+    #vote-list-filterDifficultyUpperBorder a.vote-item-5:hover {
+        width: 125px;
+    }
+
+
+    #vote-current-filterDifficultyUpperBorder {
+        background: url(//sta.codeforces.com/s/97352/images/vote/rating.gif) left center;
+        position: absolute;
+        height: 25px;
+        display: block;
+        text-indent: -9000px;
+        z-index: 1;
+    }
+</style>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="setting-name"><label for="order">Order by:</label></div>
+    <div class="setting-value" style="width: 100%;">
+        <select name="order" id="order" style="width: 100%;">
+            <option value=""></option>
+                <option value="ID_ASC">
+                creation time (asc.)
+                </option>
+                <option value="ID_DESC" selected>
+                creation time (desc.)
+                </option>
+                <option value="RATING_ASC">
+                rating (asc.)
+                </option>
+                <option value="RATING_DESC">
+                rating (desc.)
+                </option>
+                <option value="DIFFICULTY_ASC">
+                difficulty (asc.)
+                </option>
+                <option value="DIFFICULTY_DESC">
+                difficulty (desc.)
+                </option>
+                <option value="START_TIME_ASC">
+                start time (asc.)
+                </option>
+                <option value="START_TIME_DESC">
+                start time (desc.)
+                </option>
+                <option value="DURATION_ASC">
+                duration (asc.)
+                </option>
+                <option value="DURATION_DESC">
+                duration (desc.)
+                </option>
+                <option value="POPULARITY_ASC">
+                popularity (asc.)
+                </option>
+                <option value="POPULARITY_DESC">
+                popularity (desc.)
+                </option>
+                <option value="UPDATE_TIME_ASC">
+                update time (asc.)
+                </option>
+                <option value="UPDATE_TIME_DESC">
+                update time (desc.)
+                </option>
+        </select>
+    </div>
+
+    <div class="setting-name additional-order">
+        <label for="additionalOrder">Secondary order by:</label>
+    </div>
+    <div class="setting-value additional-order" style="width: 100%;">
+        <select name="additionalOrder" id="additionalOrder" style="width: 100%;">
+            <option value=""></option>
+                <option value="ID_ASC">
+                creation time (asc.)
+                </option>
+                <option value="ID_DESC">
+                creation time (desc.)
+                </option>
+                <option value="RATING_ASC">
+                rating (asc.)
+                </option>
+                <option value="RATING_DESC">
+                rating (desc.)
+                </option>
+                <option value="DIFFICULTY_ASC">
+                difficulty (asc.)
+                </option>
+                <option value="DIFFICULTY_DESC">
+                difficulty (desc.)
+                </option>
+                <option value="START_TIME_ASC">
+                start time (asc.)
+                </option>
+                <option value="START_TIME_DESC">
+                start time (desc.)
+                </option>
+                <option value="DURATION_ASC">
+                duration (asc.)
+                </option>
+                <option value="DURATION_DESC">
+                duration (desc.)
+                </option>
+                <option value="POPULARITY_ASC">
+                popularity (asc.)
+                </option>
+                <option value="POPULARITY_DESC">
+                popularity (desc.)
+                </option>
+                <option value="UPDATE_TIME_ASC">
+                update time (asc.)
+                </option>
+                <option value="UPDATE_TIME_DESC">
+                update time (desc.)
+                </option>
+        </select>
+    </div>
+
+        <div style="position: relative; margin-bottom: 1em;">
+            <div class="setting-name" style="display: inline;">
+                <label for="hideParticipatedCheckbox">Hide, if participated:</label>
+            </div>
+            <div style="display: inline-block; vertical-align: middle; float: right">
+                <input id="hideParticipatedCheckbox" type="checkbox" name="hideParticipated"     
+>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+            <div class="setting-name" style="display: inline;">
+                <label for="hideExcluded">Hide excluded gyms (<a class="editExclusions" href="/contestExclusions">edit</a>):</label>
+            </div>
+            <div class="setting-last-value" style="display: inline-block; vertical-align: middle; float: right">
+                <input id="hideExcluded" type="checkbox" name="hideExcluded"     
+>
+            </div>
+        </div>
+
+    <div align="center">
+        <input style="padding: 0 1em; margin-top: 1em;" type="submit" value="Filter"/>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("select[name=filterContestType]").change(function () {
+            if ($(this).val() === "Official ACM-ICPC Contest") {
+                $("div.icpc-region").show();
+            } else {
+                $("div.icpc-region").hide();
+                $("select[name=filterIcpcRegion]").val("");
+            }
+        });
+
+        $("select[name=order]").change(function () {
+            if ($(this).val() === "") {
+                $("div.additional-order").hide();
+                $("select[name=additionalOrder]").val("");
+            } else {
+                $("div.additional-order").show();
+            }
+        });
+
+        $("#gym-filter-form").submit(function () {
+            var form = $("#gym-filter-form");
+
+            form.find("select[value=]").remove();
+
+            form.find("input[name=filterDurationLowerBorder],"
+                    + "input[name=filterDurationUpperBorder],"
+                    + "input[name=filterDifficultyLowerBorder],"
+                    + "input[name=filterDifficultyUpperBorder],"
+                    + "input[name=filterRatingLowerBorder],"
+                    + "input[name=filterRatingUpperBorder]").each(function () {
+                        var e = $(this);
+                        if (e.val() === "" || e.val() === "0") {
+                            e.remove();
+                        }
+                    }
+            );
+        });
+    });
+</script>
+</div>
+    </div>
+
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt">&nbsp;</div>
+            <div class="roundbox-rt">&nbsp;</div>
+        <div class="caption titled">&rarr; Find training
+            <div class="top-links">
+            </div>
+        </div>
+<div style="margin: 1em;">
+    <div>
+        <form action="#" class="searchContestByNameOrIdForm" method="post" style=""><input type='hidden' name='csrf_token' value='df3a9075f633cd68705f96dafd0794f4'/>
+            <label for="searchByNameOrIdQueryBox">Name:</label>
+            <input id="searchByNameOrIdQueryBox" style="width: 100%" type="text" name="searchByNameOrIdQuery" value="">
+            <input type="hidden" name="searchByProblem" value="false">
+            <div style="padding-top: 1em; text-align:center;">
+                <input class="searchByNameOrIdButton" style="height:1.65em; padding: 0 0.75em;" type="submit" value="Find"/>
+            </div>
+        </form>
+        <form action="#" class="searchContestByProblemForm" method="post" style="display: none;"><input type='hidden' name='csrf_token' value='df3a9075f633cd68705f96dafd0794f4'/>
+            <label for="searchByProblemQueryBox">Problem name:</label>
+            <input id="searchByProblemQueryBox" style="width: 100%" type="text" name="searchByProblemQuery" value="">
+            <input type="hidden" name="searchByProblem" value="true">
+            <div style="padding-top: 1em; text-align:center;">
+                <input class="searchByProblemButton" style="height:1.65em; padding: 0 0.75em;" type="submit" value="Find"/>
+            </div>
+        </form>
+        <label style="font-size:1.1rem;" for="searchByProblemCheckbox">
+            <input type="checkbox" id="searchByProblemCheckbox"/>
+            search by problem name?
+        </label>
+    </div>
+</div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#searchByProblemCheckbox").change(function () {
+            if ($(this).is(':checked')) {
+                $(".searchContestByNameOrIdForm").hide();
+                $(".searchContestByProblemForm").show();
+            } else {
+                $(".searchContestByProblemForm").hide();
+                $(".searchContestByNameOrIdForm").show();
+            }
+        });
+
+        var getContests = function (callbackFunc) {
+            var queryInput = $("input[name=problemQuery]");
+            var query = queryInput.attr("value");
+
+            $.post("/gyms", {
+                action: "findContests", searchQuery: query
+            }, function (response) {
+                var result = response["success"] === "true";
+                callbackFunc(result)
+            }, "json");
+        };
+
+        $("form#searchContestForm").submit(function () {
+            getContests(function (result) {
+            });
+            return false;
+        });
+
+        $("input[name=searchByNameOrIdQuery]").autocomplete("/data/gym/suggest/contest?showMashups=true", {
+            delay: 200,
+            width: 250,
+            selectFirst: false,
+            matchContains: true,
+            minChars: 1,
+            max: 150
+        });
+    });
+</script>
+
+
+
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt">&nbsp;</div>
+            <div class="roundbox-rt">&nbsp;</div>
+        <div class="caption titled">&rarr; Create Mashup Contest
+            <div class="top-links">
+            </div>
+        </div>
+    <div style="margin: 1em">
+        <div style="font-size: 1.1rem;">
+            <p>
+                Mashup is a special type of training contest, which consists of public problems from past Codeforces rounds. Also it is possible to add <a href="https://polygon.codeforces.com/">Polygon</a> problems to mashup contest. 
+Such contests can not be made public, they are only for personal training purpose. Also it is allowed to add mashups to groups. To specify additional information about mashup contest, use Gym contest edit form.
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <form class="createMashupContestForm"><input type='hidden' name='csrf_token' value='df3a9075f633cd68705f96dafd0794f4'/>
+                <input style="padding: 0 1em; margin-top: 1em;" type="submit" value="Create Mashup Contest">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+    $(".createMashupContestForm").submit(function () {
+        Codeforces.redirect("/mashup/new");
+        return false;
+    });
+        });
+    </script>
+    </div>
+</div>
+                        <div id="pageContent" class="content-with-sidebar">
+                    <div class="second-level-menu">
+<ul class="second-level-menu-list">
+        <li><a
+                                        href="/gyms">Gym</a></li>
+        <li class="current selectedLava"><a
+                                        href="/mashups">Mashups</a></li>
+</ul>
+</div>
+    <div style="position: relative; height: 2em;" class="action-link">
+        <div style="position: absolute; right: 0; margin: 0 0 1em 0;">
+    <img src="//sta.codeforces.com/s/97352/images/actions/add_group.png"/>
+    <a href="/mashup/new">Create new mashup</a>
+        </div>
+    </div>
+<div class="contestList">
+    <div class="contests-table">
+
+<script type="application/javascript">
+    $(function() {
+        $(".closeUserList").click(function() {
+            document.location = Codeforces.updateUrlParameter(document.location.href, "list", "");
+            return false;
+        });
+    })
+</script>
+<div class="datatable"
+     
+     style="background-color: #E1E1E1; padding-bottom: 3px;">
+            <div class="lt">&nbsp;</div>
+            <div class="rt">&nbsp;</div>
+            <div class="lb">&nbsp;</div>
+            <div class="rb">&nbsp;</div>
+
+            <div style="padding: 4px 0 0 6px;font-size:1.4rem;position:relative;">
+                Trainings
+                    <i style="cursor: pointer; font-size: 1.5rem; position: relative; top: 2px;" class="icon-list userListMarker"></i>
+
+                <div style="position:absolute;right:0.25em;top:0.35em;">
+                    <span style="padding:0;position:relative;bottom:2px;" class="rowCount"></span>
+
+                    <img class="closed" src="//sta.codeforces.com/s/97352/images/icons/control.png"/>
+
+                    <span class="filter" style="display:none;">
+                        <img class="opened" src="//sta.codeforces.com/s/97352/images/icons/control-270.png"/>
+                        <input style="padding:0 0 0 20px;position:relative;bottom:2px;border:1px solid #aaa;height:17px;font-size:1.3rem;"/>
+                    </span>
+                </div>
+            </div>
+            <div style="background-color: white;margin:0.3em 3px 0 3px;position:relative;">
+            <div class="ilt">&nbsp;</div>
+            <div class="irt">&nbsp;</div>
+            <table class="">
+<tr>
+    <th style="width:20em;">Name</th>
+    <th style="width:5em;">Start</th>
+    <th style="width:4em;">Length</th>
+    <th style="width:10em;">&nbsp;</th>
+        <th style="width:15em;">&nbsp;</th>
+        <th style="width:0.5em;">&nbsp;</th>
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278829"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278829">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278829/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278829"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278829">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278829" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278828"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278828">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278828/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278828"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278828">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278828" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278827"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278827">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278827/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278827"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278827">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278827" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278826"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278826">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278826/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278826"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278826">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278826" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278825"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278825">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278825/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278825"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278825">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278825" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278818"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278818">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278818/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278818"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278818">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278818" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278817"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278817">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278817/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278817"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278817">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278817" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278816"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278816">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278816/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278816"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278816">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278816" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278815"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278815">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278815/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278815"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278815">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278815" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278814"
+>
+    <td>
+Contest #2 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278814">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278814/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278814"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278814">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278814" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278813"
+>
+    <td>
+Contest #2 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278813">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278813/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278813"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278813">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278813" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278812"
+>
+    <td>
+Contest #2 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278812">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278812/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278812"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278812">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278812" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278811"
+>
+    <td>
+Contest #2 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278811">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278811/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278811"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278811">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278811" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278809"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278809">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278809/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278809"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278809">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278809" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278808"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278808">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278808/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278808"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278808">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278808" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278807"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278807">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278807/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278807"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278807">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278807" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278806"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278806">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278806/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278806"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278806">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278806" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278805"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278805">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278805/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278805"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278805">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278805" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278804"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278804">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278804/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278804"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278804">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278804" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278803"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278803">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278803/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278803"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278803">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278803" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278802"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278802">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278802/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278802"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278802">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278802" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278801"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278801">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278801/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278801"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278801">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278801" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278800"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278800">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278800/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278800"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278800">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278800" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278799"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278799">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278799/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278799"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278799">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278799" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278798"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278798">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278798/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278798"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278798">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278798" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278797"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278797">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278797/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278797"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278797">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278797" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278796"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278796">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278796/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278796"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278796">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278796" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278795"
+>
+    <td>
+Contest #1 Specialists
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278795">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278795/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278795"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278795">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278795" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278794"
+>
+    <td>
+Contest #1 Beginners
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278794">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278794/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278794"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278794">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278794" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278793"
+>
+    <td>
+Contest #1 Grandmasters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278793">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
+
+    <td>
+                <a href="https://www.timeanddate.com/worldclock/fixedtime.html?day=3&month=5&year=2020&hour=7&min=30&sec=0&p1=166" target="_blank">
+                <span class="format-time" data-locale="en">May/03/2020 07:30</span>
+                </a>
+    </td>
+    <td>
+        15:00
+    </td>
+    <td class="state">
+                Before start <span home="//sta.codeforces.com/s/97352" redirectUrl="/gym/278793/problem/0" textBeforeRedirect="The contest is started, would you like to enter into the contest area?" class="countdown">04:28:51</span>
+    </td>
+    <td style="font-size:0.8em;">
+            <div class="small">
+                Prepared by <a href="/profile/TaranehSedaghat" title="Expert TaranehSedaghat" class="rated-user user-blue">TaranehSedaghat</a>
+            </div>
+                <br/>
+                    <span class="welldone">Registration completed</span>
+<a class="contestParticipantCountLinkMargin" title="Registered" href="/gymRegistrants/278793"><img style="vertical-align: middle;" src="//sta.codeforces.com/s/97352/images/icons/user.png"/>&nbsp;x0</a>
+
+    </td>
+        <td>
+            
+            <div>
+                <a href="/gym/edit/278793">
+                    <img src="//sta.codeforces.com/s/97352/images/actions/edit.png" alt="Edit" title="Edit"/>
+                </a>
+            </div>
+
+            <div style="margin: 1em 0 1em 0">
+            <div style="margin: 1em 0 1em 0">
+                <label>
+                    <input class="toggle-mashup-manager" data-contestId="278793" type="checkbox" checked>
+                    <span class="smaller">Manager</span>
+                </label>
+            </div>
+
+        </td>
+
+</tr>
+<tr
+     class="highlighted-row"
+    data-contestId="278792"
+>
+    <td>
+Contest #1 Candidate masters
+                <br/>
+                    <a class="red-link" style="font-size: 0.8em;" href="/gym/278792">
+                            Enter &raquo;
+                    </a>
+                <br/>
+    </td>
+
