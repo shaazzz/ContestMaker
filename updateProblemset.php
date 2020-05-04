@@ -61,7 +61,7 @@ foreach ($legends as $person) {
 
 $MAX_PRIOR = 0.2;
 foreach($CNT as $problemId => $accepted){
-    problemset::$problems[$problemId]->changePrior($accepted / $MAX_PRIOR);
+    problemset::$problems[$problemId]->changePrior(($accepted / $MAX) * $MAX_PRIOR);
 }
 
 //shuffle(problemset::$problems);
