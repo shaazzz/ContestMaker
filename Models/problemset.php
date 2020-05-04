@@ -9,6 +9,9 @@ class problemset
     static function takeBackup()
     {
         $dir = "data/dataBackups/";
+        if (!file_exists($dir)) {
+            mkdir($dir, 0777, true);
+        }
         $array_map = array_map('filemtime', ($files = glob($dir . "data*.txt")));
         array_multisort($array_map, SORT_ASC, $files);
         if (file_exists("data/data.txt")) {
@@ -78,6 +81,9 @@ class problemset
 
     static function addUserLiked($username, $problemId, $inside = false)
     {
+        if (!isset(problemset::$problems[$problemId])) {
+            throw new Exception("problem doesn't exist!");
+        }
         problemset::$problems[$problemId]->addUserLiked($username);
         if (!$inside) {
             problemset::update();
@@ -89,8 +95,8 @@ class problemset
         $maxLike = array();
         $maxAccepted = array();
 
-        foreach(problemset::$problems as $k => $v){
-            if(!isset($maxLike[$v->difficulty]) || !isset($maxAccepted[$v->difficulty])){
+        foreach (problemset::$problems as $k => $v) {
+            if (!isset($maxLike[$v->difficulty]) || !isset($maxAccepted[$v->difficulty])) {
                 $maxLike[$v->difficulty] = 0;
                 $maxAccepted[$v->difficulty] = 0;
             }

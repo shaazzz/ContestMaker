@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/Models/problemset.php";
+
 $doc = new DOMDocument();
 $doc->loadHTML(file_get_contents("data/fav.html"));
 
@@ -9,22 +11,51 @@ $finder = new DomXPath($doc);
 $classname = "problems";
 $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
 $finder = new DomXPath($doc);
-$problems = array();
+$problemIds = array();
 
 $classname = "id left";
 $problemsTd = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
 foreach ($problemsTd as $problemTd) {
-    array_push($problems, trim($problemTd->nodeValue));
+    array_push($problemIds, trim($problemTd->nodeValue));
 }
-echo $problems[count($problems) - 1];
 $classname = "id dark left";
 $problemsTd = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
 foreach ($problemsTd as $problemTd) {
-    array_push($problems, trim($problemTd->nodeValue));
+    array_push($problemIds, trim($problemTd->nodeValue));
 }
-$problems = array_unique($problems);
+$problemIds = array_unique($problemIds);
 
-foreach ($problems as $problem) {
-    problemset::addUserLiked(strtolower('shayan.p'), $problem);
+$allProblemsArray = json_decode(file_get_contents("https://codeforces.com/api/problemset.problems"), true)['result'];
+$allProblems = array();
+foreach ($allProblemsArray['problems'] as $problem) {
+    $allProblems[$problem['contestId'] . $problem['index']] = $problem;
 }
+foreach ($allProblemsArray['problemStatistics'] as $problem) {
+    $allProblems[$problem['contestId'] . $problem['index']]['solvedCount']['solvedCount'] = $problem;
+}
+
+problemset::readFromFile();
+echo "all problems downloaded\n";
+echo "processing likes...\n";
+$newProblemsCount = 0;
+$likedProblemsCount = 0;
+foreach ($problemIds as $problemId) {
+    if (!isset(problemset::$problems[$problemId])) {
+        if (!isset($allProblems[$problemId]) || !isset($allProblems[$problemId]["tags"]) || !isset($allProblems[$problemId]["rating"])) {
+            continue;
+        }
+        $problem = $allProblems[$problemId];
+        $newProblemsCount++;
+        problemset::addProblem(
+            $problemId,
+            $problem["tags"],
+            $problem["rating"],
+            0, false, 0, 0, null, true);
+    }
+    $likedProblemsCount++;
+    problemset::addUserLiked(strtolower('shayan.p'), $problemId, true);
+}
+echo "$newProblemsCount new problems added to problemset\n";
+echo $likedProblemsCount . " problems liked\n";
+problemset::update();
 ?>
