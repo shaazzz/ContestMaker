@@ -338,11 +338,11 @@ class CodeforcesUserApi
         $im = imagecreatefrompng($res['url']);
         $im2 = imagecrop($im, ['x' => 50, 'y' => 180, 'width' => imagesx($im) - 100, 'height' => imagesy($im) - 230]);
         if ($im2 !== FALSE) {
-            imagepng($im2, 'example-cropped.png');
+            imagepng($im2, 'file/cropped.png');
             imagedestroy($im2);
         }
         imagedestroy($im);
-        $this->sendPhoto('example-cropped.png');
+        $this->sendPhoto('file/cropped.png');
     }
 
     function addContestToGroup($contestId)
@@ -358,7 +358,7 @@ class CodeforcesUserApi
         $data = array(
             "chat_id" => TELEGRAM_CHANNEL_ID,
             "caption" => TELEGRAM_SCOREBOARD_CAPTION,
-            "photo" => curl_file_create(realpath($filename), 'image/png', "example-cropped.png")
+            "photo" => curl_file_create(realpath($filename), 'image/png', "file/cropped.png")
         );
         //$proxyIP = '127.0.0.1';
         //$proxyPort = '41177';
