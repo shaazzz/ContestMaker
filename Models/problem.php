@@ -19,9 +19,9 @@ class problem
         $this->difficulty = $difficulty;
         $this->prior = $prior;
         $this->used = $used;
-        //if (!$inside) {
+        if (!$inside) {
             echo "<br> new problem ($problemName) added to problemset\n";
-        //}
+        }
     }
 
     public function merge($tags, $difficulty, $prior = 0, $used = false, $inside = false)

@@ -30,13 +30,13 @@ foreach ($legends as $person) {
                 if (!isset($sub["problem"]["rating"])) {
                     continue;
                 }
-if($person == "Shayan.P")
-   array_push($sub["problem"]["tags"], "Shayan.P");
-                problemset::addProblem(
-                    $sub["id"],
-                    $sub["problem"]["tags"],
-                    $sub["problem"]["rating"],
-                    0, false, 0, 0, null, true);
+                if($person == "Shayan.P")
+                   array_push($sub["problem"]["tags"], "Shayan.P");
+                    problemset::addProblem(
+                        $sub["id"],
+                        $sub["problem"]["tags"],
+                        $sub["problem"]["rating"],
+                        0, false, 0, 0, null, true);
             }
             if (!isset($seen[$sub["id"]])) {
                 problemset::addUserSolved($sub["id"], true);
