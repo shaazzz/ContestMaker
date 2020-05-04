@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . '/data/defines.php';
 require __DIR__ . "/Models/problemset.php";
 
 $doc = new DOMDocument();
@@ -42,6 +43,7 @@ $likedProblemsCount = 0;
 foreach ($problemIds as $problemId) {
     if (!isset(problemset::$problems[$problemId])) {
         if (!isset($allProblems[$problemId]) || !isset($allProblems[$problemId]["tags"]) || !isset($allProblems[$problemId]["rating"])) {
+            echo isset($allProblems[$problemId]["rating"])." ".isset($allProblems[$problemId]["tags"])." ".isset($allProblems[$problemId])."\n";
             continue;
         }
         $problem = $allProblems[$problemId];
