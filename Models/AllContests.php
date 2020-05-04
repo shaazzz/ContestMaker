@@ -8,6 +8,9 @@ class AllContests
     static function takeBackup()
     {
         $dir = "data/dataBackups/";
+        if (!file_exists($dir)) {
+            mkdir($dir, 0777, true);
+        }
         $array_map = array_map('filemtime', ($files = glob($dir . "contest*.txt")));
         array_multisort($array_map, SORT_ASC, $files);
         if(file_exists("data/contest.txt")) {
