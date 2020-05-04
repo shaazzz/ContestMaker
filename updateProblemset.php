@@ -9,8 +9,16 @@ problemset::readFromFile();
 problemset::resetUserSolved();
 $cfApi = new CodeforcesApi();
 
-$legends = json_decode(file_get_contents(realpath("data/legends.txt")), true);
+$names = json_decode(file_get_contents(realpath("data/legends.txt")), true);
+$legends = $names["normal"];
 
+$isSuper = array();
+foreach($names["super"] as $person){
+    $isSuper[$person] = true;
+}
+
+$CNT = array();
+$MAX = 0;
 
 foreach ($legends as $person) {
     $seen = array();
@@ -30,8 +38,6 @@ foreach ($legends as $person) {
                 if (!isset($sub["problem"]["rating"])) {
                     continue;
                 }
-if($person == "Shayan.P")
-   array_push($sub["problem"]["tags"], "Shayan.P");
                 problemset::addProblem(
                     $sub["id"],
                     $sub["problem"]["tags"],
@@ -39,6 +45,12 @@ if($person == "Shayan.P")
                     0, false, 0, 0, null, true);
             }
             if (!isset($seen[$sub["id"]])) {
+                if(isset($isSuper[$person])) {
+                    if (!isset($CNT[$sub["id"]]))
+                        $CNT[$sub["id"]] = 0;
+                    $CNT[$sub["id"]]++;
+                    $MAX = max($MAX, $CNT[$sub["id"]]);
+                }
                 problemset::addUserSolved($sub["id"], true);
                 $seen[$sub["id"]] = true;
             }
@@ -46,6 +58,12 @@ if($person == "Shayan.P")
     }
     unset($seen);
 }
+
+$MAX_PRIOR = 0.2;
+foreach($CNT as $problemId => $accepted){
+    problemset::$problems[$problemId]->changePrior($accepted / $MAX_PRIOR);
+}
+
 //shuffle(problemset::$problems);
 problemset::update();
 

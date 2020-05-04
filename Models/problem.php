@@ -41,6 +41,10 @@ class problem
         return $this->accepted;
     }
 
+    function changePrior($prior){
+        $this->prior = max($prior, $this->prior);
+    }
+
     function addUserLiked($username)
     {
         array_push($this->usersLike, $username);
