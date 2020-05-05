@@ -7,26 +7,26 @@
     },
     "Week1":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["segment","dp"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["segment","dp"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["implementation","dp"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
     },
-    "Week2":{
+    "Week2":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["dp"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["dp"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["implementation","dp"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
     },
-    "Week3":{
+    "Week3":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["dp"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["dp"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp"]}
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["implementation","dp"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
     },
-    "Week4":{
+    "Week4":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["dp"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["dp"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["segment","dp"]}
-      }
+        "Specialists":{"L": 1400, "R": 2000, "tags": ["implementation","dp"]},
+        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
+    }
 }
