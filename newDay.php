@@ -9,7 +9,7 @@ try {
     require __DIR__ . '/Models/contest.php';
     require __DIR__ . '/Models/AllContests.php';
     require __DIR__ . '/data/defines.php';
-    require __DIR__ . '/CodeforcesUserApi.php';
+    require __DIR__ . '/Models/CodeforcesUserApi.php';
 
     problemset::readFromFile();
     AllContests::readFromFile();
