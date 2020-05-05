@@ -8,7 +8,7 @@ try {
     chdir('..');
     require __DIR__ . '/../data/defines.php';
     require __DIR__ . '/../Models/problemset.php';
-    require __DIR__ . '/../CodeforcesUserApi.php';
+    require __DIR__ . '/../Models/CodeforcesUserApi.php';
 
     foreach ($inputs as $input) {
         if (!isset($_POST[$input])) {
