@@ -36,7 +36,7 @@ try {
     problemset::readFromFile();
     $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
     $additionalTags = array();
-    if (strlen($_POST['additionalTags'] > 0)) {
+    if (strlen($_POST['additionalTags']) > 0) {
         $additionalTags = explode(',', strtolower($_POST['additionalTags']));
         foreach ($additionalTags as $tag) {
             if (!in_array($tag, $allTags)) {
