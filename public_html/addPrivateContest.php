@@ -58,7 +58,9 @@ try {
         $problemId = problemset::addProblem($problemQueries[$i],
             array_values(array_unique(array_merge(json_decode($data['tags'], true), $additionalTags)))
             , (int)$data['rating'], (float)$_POST["prior"], false);
-        problemset::addUserLiked(strtolower($_POST["username"]), $problemId);
+        if(strlen($_POST["username"])>0) {
+            problemset::addUserLiked(strtolower($_POST["username"]), $problemId);
+        }
     }
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();
