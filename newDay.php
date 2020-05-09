@@ -31,9 +31,9 @@ try {
                 if (!isset(AllContests::$contests[$contestIndex - 1])) {
                     throw new Exception("");
                 }
-                foreach (AllContests::$contests[$contestIndex - 1] as $contest) {
-                    $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
-                }
+//                foreach (AllContests::$contests[$contestIndex - 1] as $contest) {
+//                    $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
+//                }
             }
         } catch (Exception $e) {
             echo "\n<br>error in sending scoreboard";
