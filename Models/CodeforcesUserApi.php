@@ -180,7 +180,7 @@ class CodeforcesUserApi
             "country" => "",
             "city" => "",
             "difficulty" => "0",
-            "websiteUrl" => "https://blog.shaazzz.ir",
+            "websiteUrl" => "http://blog.shaazzz.ir",
             "englishDescription" => "",
             "russianDescription" => "",
             "englishRegistrationConfirmation" => "",

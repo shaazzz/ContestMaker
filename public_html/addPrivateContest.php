@@ -8,7 +8,7 @@ try {
     chdir('..');
     require __DIR__ . '/../data/defines.php';
     require __DIR__ . '/../Models/problemset.php';
-    require __DIR__ . '/../CodeforcesUserApi.php';
+    require __DIR__ . '/../Models/CodeforcesUserApi.php';
 
     foreach ($inputs as $input) {
         if (!isset($_POST[$input])) {
@@ -36,7 +36,7 @@ try {
     problemset::readFromFile();
     $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
     $additionalTags = array();
-    if (strlen($_POST['additionalTags'] > 0)) {
+    if (strlen($_POST['additionalTags']) > 0) {
         $additionalTags = explode(',', strtolower($_POST['additionalTags']));
         foreach ($additionalTags as $tag) {
             if (!in_array($tag, $allTags)) {
@@ -58,7 +58,9 @@ try {
         $problemId = problemset::addProblem($problemQueries[$i],
             array_values(array_unique(array_merge(json_decode($data['tags'], true), $additionalTags)))
             , (int)$data['rating'], (float)$_POST["prior"], false);
-        problemset::addUserLiked(strtolower($_POST["username"]), $problemId);
+        if(strlen($_POST["username"])>0) {
+            problemset::addUserLiked(strtolower($_POST["username"]), $problemId);
+        }
     }
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();
