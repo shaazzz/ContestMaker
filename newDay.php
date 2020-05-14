@@ -57,8 +57,6 @@ try {
     foreach (AllContests::$contests[$contestIndex] as $contest) {
         $api->setNewProblemsForContest($contest, $contest->giveContest());
     }
-
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();
-    file_put_contents("data/errors.txt", file_get_contents("data/errors.txt") . "\n" . date("M/d/Y h:m:s") . ": " . $e->getMessage());
 }

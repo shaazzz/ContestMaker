@@ -82,7 +82,7 @@ class problemset
     static function addUserLiked($username, $problemId, $inside = false)
     {
         if (!isset(problemset::$problems[$problemId])) {
-            throw new Exception("problem doesn't exist!");
+            throw new APIException("problem doesn't exist!");
         }
         problemset::$problems[$problemId]->addUserLiked($username);
         if (!$inside) {
@@ -120,7 +120,7 @@ class problemset
             if ($str != "") {
                 $candid[$i] = $str;
             } else {
-                throw new Exception("field to build contest choose problem");
+                throw new APIException("field to build contest choose problem");
             }
         }
         if (count($candid) == 0)
