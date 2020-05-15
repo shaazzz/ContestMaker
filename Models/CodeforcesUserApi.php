@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/APIException.php';
+
 function generateRandomString($length = 6)
 {
     $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -149,8 +151,8 @@ class CodeforcesUserApi
             "csrf_token" => $this->csrf_token,
             "contestEditFormSubmitted" => "true",
             "clientTimezoneOffset" => "270",
-            "englishName" => "Contest #$contest->contestIndex $contest->contestLevel",
-            "russianName" => "Contest #$contest->contestIndex $contest->contestLevel",
+            "englishName" => "Contest #" . $contest->getContestIndex() . " " . $contest->getContestLevel(),
+            "russianName" => "Contest #" . $contest->getContestIndex() . " " . $contest->getContestLevel(),
             "untaggedContestType" => "ICPC",
             "initialDatetime" => "",
             "startDay" => date("M/d/Y"),
@@ -203,11 +205,10 @@ class CodeforcesUserApi
         $cloned = $nodes[0]->cloneNode(TRUE);
         $table_doc->appendChild($table_doc->importNode($cloned, True));
         $finder = new DOMXPath($table_doc);
-        $problemIds = array();
 
         $classname = "rated-user";
         $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
-        $usersId=array();
+        $usersId = array();
         foreach ($users as $userId) {
             array_push($usersId, trim($userId->nodeValue));
         }

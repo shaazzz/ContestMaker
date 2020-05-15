@@ -47,10 +47,9 @@ try {
             $contestSettings = $setting["WeekDefault"];
         }
 
-        $cntProblems = 3;
         foreach ($contestSettings as $key => $value) {
-            AllContests::addContest($contestIndex, $key, (int)$contestSettings[$key]['L'],
-                (int)$contestSettings[$key]['R'], $cntProblems, $contestSettings[$key]['tags'], null, $api);
+            AllContests::addContest($contestIndex, $key, $contestSettings[$key]['$difficulties'],
+                $contestSettings[$key]['tags'], null, $api);
         }
     }
 

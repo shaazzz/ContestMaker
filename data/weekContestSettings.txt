@@ -1,8 +1,8 @@
 {
     "WeekDefault":{
-        "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": []},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": []},
+        "Beginners":{"difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
+        "Specialists":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": []},
+        "Candidate masters":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": []},
         "Grandmasters":{"L": 2400, "R": 3200, "tags": []}
     },
     "Week1":{        
