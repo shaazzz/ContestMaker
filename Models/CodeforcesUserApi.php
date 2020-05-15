@@ -186,6 +186,34 @@ class CodeforcesUserApi
         ), false, false);
     }
 
+    function getParticipates($contestId)
+    {
+        $result = $this->request('gymRegistrants/' . $contestId, array());
+        $doc = new DOMDocument();
+        $doc->loadHTML($result);
+
+
+        $tables = $doc->getElementsByTagName('table');
+        var_dump($tables);
+        $finder = new DomXPath($doc);
+        $classname = "registrants";
+        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+
+        $table_doc = new DOMDocument();
+        $cloned = $nodes[0]->cloneNode(TRUE);
+        $table_doc->appendChild($table_doc->importNode($cloned, True));
+        $finder = new DOMXPath($table_doc);
+        $problemIds = array();
+
+        $classname = "rated-user";
+        $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+        $usersId=array();
+        foreach ($users as $userId) {
+            array_push($usersId, trim($userId->nodeValue));
+        }
+        return $usersId;
+    }
+
     function createNewMashup($contestIndex, $contestLevel)
     {
         $result = $this->request('data/mashup', array(
