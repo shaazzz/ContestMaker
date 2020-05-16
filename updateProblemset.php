@@ -27,7 +27,7 @@ foreach ($legends as $person) {
         continue;
     }
     $submissions = $cfApi->request("user.status", array("handle" => $person))['result'];
-    echo $person . " has " . count($submissions) . " submitions\n";
+    echo $person . " has " . count($submissions) . " submissions\n";
     foreach ($submissions as $sub) {
         if ($sub["verdict"] == "OK") {
             if (!isset($sub["problem"]["contestId"]) || !isset($sub["problem"]["tags"]) || !isset($sub["problem"]["index"])) {
