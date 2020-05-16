@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/APIException.php';
+
 function generateRandomString($length = 6)
 {
     $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -41,8 +43,7 @@ class CodeforcesUserApi
     {
         $body = curl_exec($this->curl);
         if (!preg_match("/csrf='(.+?)'/", $body, $match)) {
-            file_put_contents("data/last_error_desc.txt", $body);
-            throw new Exception("cf token not found");
+            throw new APIException("cf token not found", $body);
         }
         $this->csrf_token = $match[1];
     }
@@ -108,8 +109,7 @@ class CodeforcesUserApi
         if ($this->checkLoginHelper($result)) {
             echo "login successful\n";
         } else {
-            file_put_contents("data/last_error_desc.txt", $result);
-            throw new Exception("login failed");
+            throw new APIException("login failed", $result);
         }
         $this->findCsrf();
     }
@@ -117,8 +117,7 @@ class CodeforcesUserApi
     function getValueFromBody($body, $name)
     {
         if (!preg_match("/name=\"$name\" value=\"([\s\S]+?)\"/", $body, $match)) {
-            file_put_contents("data/last_error_desc.txt", $body);
-            throw new Exception("can't find " . $name);
+            throw new APIException("can't find " . $name, $body);
         }
         return $match[1];
     }
@@ -146,14 +145,14 @@ class CodeforcesUserApi
     {
         $duration = 15 * 60;
         if (!TIMER_UPDATE_EVERY_DAY) {
-            $duration = 1440 * 7;
+            $duration = 24 * 60 * 7 - 9 * 40;
         }
         $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
             "csrf_token" => $this->csrf_token,
             "contestEditFormSubmitted" => "true",
             "clientTimezoneOffset" => "270",
-            "englishName" => "Contest #$contest->contestIndex $contest->contestLevel",
-            "russianName" => "Contest #$contest->contestIndex $contest->contestLevel",
+            "englishName" => "Contest #" . $contest->getContestIndex() . " " . $contest->getContestLevel(),
+            "russianName" => "Contest #" . $contest->getContestIndex() . " " . $contest->getContestLevel(),
             "untaggedContestType" => "ICPC",
             "initialDatetime" => "",
             "startDay" => date("M/d/Y"),
@@ -189,6 +188,81 @@ class CodeforcesUserApi
         ), false, false);
     }
 
+    function getParticipates($contestId)
+    {
+        $result = $this->request('gymRegistrants/' . $contestId, array());
+        $doc = new DOMDocument();
+        $doc->loadHTML($result);
+        $finder = new DomXPath($doc);
+        $classname = "registrants";
+        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+
+        $table_doc = new DOMDocument();
+        $cloned = $nodes[0]->cloneNode(TRUE);
+        $table_doc->appendChild($table_doc->importNode($cloned, True));
+        $finder = new DOMXPath($table_doc);
+
+        $classname = "rated-user";
+        $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+        $usersId = array();
+        foreach ($users as $userId) {
+            array_push($usersId, trim($userId->nodeValue));
+        }
+        return $usersId;
+    }
+
+    function getActiveParticipates($contestId, $contestAddressPrefix = "gym")
+    {
+        $users = array();
+        $scoreboard = $this->getScoreboard($contestId, $contestAddressPrefix);
+        foreach ($scoreboard as $userId => $results) {
+            $cnt = 0;
+            for ($i = max(0, count($results) - 3); $i < count($results); $i++) {
+                if ($results[$i] == true) {
+                    $cnt++;
+                }
+            }
+            if ($cnt >= 1) {
+                array_push($users, $userId);
+            }
+        }
+        return $users;
+    }
+
+    function getScoreboard($contestId, $contestAddressPrefix = "gym")
+    {
+        $doc = new DOMDocument();
+        $body = $this->request($contestAddressPrefix . "/$contestId/standings", array());
+        $doc->loadHTML($body);
+        $finder = new DomXPath($doc);
+        $classname = "standings";
+        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+        $table_doc = new DOMDocument();
+        $cloned = $nodes[0]->cloneNode(TRUE);
+        $table_doc->appendChild($table_doc->importNode($cloned, True));
+
+        $participants = $table_doc->getElementsByTagName("tr");
+
+        $scoreboard = array();
+        for ($rank = 1; $rank < count($participants) - 1; $rank++) {
+            $participant = $participants[$rank];
+            $participant_doc = new DOMDocument();
+            $cloned = $participant->cloneNode(TRUE);
+            $participant_doc->appendChild($participant_doc->importNode($cloned, True));
+            $finder = new DOMXPath($participant_doc);
+            $classname = "rated-user";
+            $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+            $userId = $users[0]->nodeValue;
+            $columns = $participant_doc->getElementsByTagName("td");
+            foreach ($columns as $column) {
+                if ($column->hasAttribute("problemid")) {
+                    $scoreboard[$userId][] = $column->hasAttribute("acceptedsubmissionid");
+                }
+            }
+        }
+        return $scoreboard;
+    }
+
     function createNewMashup($contestIndex, $contestLevel)
     {
         $result = $this->request('data/mashup', array(
@@ -197,18 +271,16 @@ class CodeforcesUserApi
             "parentContestIdAndName" => "",
             "parentContestId" => "",
             "contestName" => "Contest #" . $contestIndex . " " . $contestLevel,
-            "contestDuration" => 7 * 1440,
+            "contestDuration" => 24 * 60 * 7 - 9 * 40,
             "problemsJson" => "[]"
         ));
         if ($result != "{\"success\":\"true\"}") {
-            file_put_contents("data/last_error_desc.txt", $result);
-            throw new Exception("error in creating new mashup");
+            throw new APIException("error in creating new mashup", $result);
         }
         sleep(5);
         $body = $this->request("mashups/", array());
         if (!preg_match_all("/href=\"\/gym\/([0-9]+)\//", $body, $matches)) {
-            file_put_contents("data/last_error_desc.txt", $body);
-            throw new Exception("cannot find contest problem ids");
+            throw new APIException("cannot find contest problem ids", $body);
         }
         $contestId = -1;
         foreach ($matches[1] as $match) {
@@ -217,14 +289,13 @@ class CodeforcesUserApi
             }
         }
         if ($contestId == -1) {
-            throw new Exception("contest id not found");
+            throw new APIException("contest id not found", $body);
         }
         return $contestId;
     }
 
     function setNewProblemsForContest($contest, $problemIds, $contestAddressPrefix = "gym")
     {
-        $this->setVisibilityProblems($contest->contestId, false, $contestAddressPrefix);
         if (TIMER_UPDATE_EVERY_DAY) {
             $this->changeTimeToToday($contest);
         }
@@ -252,8 +323,7 @@ class CodeforcesUserApi
     {
         $body = $this->request("contest/" . $contestId, array());
         if (!preg_match_all("/contest\/$contestId\/problem\/.+\"/", $body, $matches)) {
-            file_put_contents("data/last_error_desc.txt", $body);
-            throw new Exception("cannot find contest problem ids");
+            throw new APIException("cannot find contest problem ids", $body);
         }
         $result = array();
         foreach ($matches[0] as $match) {
@@ -330,7 +400,7 @@ class CodeforcesUserApi
 
         $result = curl_exec($ch);
         if (curl_errno($ch)) {
-            throw new Exception('Error:' . curl_error($ch));
+            throw new APIException(curl_error($ch), $result);
         }
         curl_close($ch);
         $res = json_decode($result, true);
@@ -360,17 +430,20 @@ class CodeforcesUserApi
             "caption" => TELEGRAM_SCOREBOARD_CAPTION,
             "photo" => curl_file_create(realpath($filename), 'image/png', "file/cropped.png")
         );
-        //$proxyIP = '127.0.0.1';
-        //$proxyPort = '41177';
         $ch = curl_init();
-        //curl_setopt($ch, CURLOPT_PROXY, $proxyIP);
-        //curl_setopt($ch, CURLOPT_PROXYPORT, $proxyPort);
+        if (defined("PROXY_IP")) {
+            curl_setopt($ch, CURLOPT_PROXY, PROXY_IP);
+        }
+        if (defined("PROXY_PORT")) {
+            curl_setopt($ch, CURLOPT_PROXYPORT, PROXY_PORT);
+        }
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . TELEGRAM_API . "/sendPhoto");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        if (json_decode(curl_exec($ch), true)['ok'] != true || curl_error($ch)) {
-            throw new Exception(curl_error($ch));
+        $result = json_decode(curl_exec($ch), true);
+        if ($result['ok'] != true || curl_error($ch)) {
+            throw new APIException(curl_error($ch), $result);
         }
         curl_close($ch);
     }

@@ -7,4 +7,7 @@ mashup maker for codeforces.com
  را تکمیل کرده و اسم آن را به 
  data/defines.php
 تغییر دهید
+<br> اطلاعات بیشتر در
+ <a href="http://blog.shaazzz.ir/1399/02/13">شاززز</a>
 </h3><br> 
+

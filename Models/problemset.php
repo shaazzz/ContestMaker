@@ -1,6 +1,7 @@
 <?php
 
-require __DIR__ . '/problem.php';
+require_once __DIR__ . '/problem.php';
+require_once __DIR__ . '/APIException.php';
 
 class problemset
 {
@@ -82,7 +83,7 @@ class problemset
     static function addUserLiked($username, $problemId, $inside = false)
     {
         if (!isset(problemset::$problems[$problemId])) {
-            throw new Exception("problem doesn't exist!");
+            throw new APIException("problem doesn't exist!");
         }
         problemset::$problems[$problemId]->addUserLiked($username);
         if (!$inside) {
@@ -90,7 +91,7 @@ class problemset
         }
     }
 
-    static function chooseProblem($L, $R, $tags)
+    static function chooseProblem($L, $R, $tags, array $forbiddenProblemIds)
     {
         $maxLike = array();
         $maxAccepted = array();
@@ -106,10 +107,12 @@ class problemset
 
         $sortOnBtr = array();
         foreach (problemset::$problems as $k => $v) {
-            if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true) {
+            if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true && !in_array($v->problemName, $forbiddenProblemIds)) {
                 $sortOnBtr[$k] = $v->calcBtr($tags, $maxAccepted[$v->difficulty], $maxLike[$v->difficulty], $L, $R);
             }
         }
+        echo "selecting a problem in range [$L, $R] with tags (" . implode(", ", $tags) . ")...\n";
+        echo "number of candidates: " . count($sortOnBtr) . "\n";
         $candid = array();
         for ($i = 0; $i < 3; $i++) {
             $str = "";
@@ -120,7 +123,7 @@ class problemset
             if ($str != "") {
                 $candid[$i] = $str;
             } else {
-                throw new Exception("field to build contest choose problem");
+                throw new APIException("field to build contest choose problem");
             }
         }
         if (count($candid) == 0)

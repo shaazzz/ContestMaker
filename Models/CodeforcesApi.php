@@ -1,6 +1,6 @@
 <?php
 
-function generateRandomString($length = 6)
+function generateRandomNumber($length = 6)
 {
     $characters = '0123456789';
     $charactersLength = strlen($characters);
@@ -36,11 +36,36 @@ class CodeforcesApi
             $parameters['apiKey'] = $this->apiKeys[$user];
             $parameters['time'] = time();
             ksort($parameters);
-            $randomString = generateRandomString();
+            $randomString = generateRandomNumber();
             $data = $randomString . "/" . $methodName . "?" . http_build_query($parameters) . "#" . $this->apiSecrets[$user];
             $parameters['apiSig'] = $randomString . hash('sha512', $data);
         }
         $query = self::$url . $methodName . "?" . http_build_query($parameters);
         return json_decode(file_get_contents($query), true);
+    }
+
+    function getAcceptedProblemIds($person)
+    {
+        $problems = array();
+        $submissions = $this->request("user.status", array("handle" => $person))['result'];
+        foreach ($submissions as $sub) {
+            if ($sub["verdict"] == "OK") {
+                if (!isset($sub["problem"]["contestId"]) || !isset($sub["problem"]["index"])) {
+                    continue;
+                }
+                $sub["id"] = $sub["problem"]["contestId"] . $sub["problem"]["index"];
+                array_push($problems, $sub["id"]);
+            }
+        }
+        return $problems;
+    }
+
+    function getForbiddenProblemIds($forbiddenUserIds)
+    {
+        $problems = array();
+        foreach ($forbiddenUserIds as $forbiddenUserId) {
+            $problems = array_merge($problems, $this->getAcceptedProblemIds($forbiddenUserId));
+        }
+        return array_unique($problems);
     }
 }

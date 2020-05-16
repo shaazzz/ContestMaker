@@ -4,34 +4,48 @@ require __DIR__ . '/problemset.php';
 
 class contest
 {
-    public $contestId, $L, $R, $tags, $cntProblems, $contestIndex, $contestLevel;
+    public $contestId;
+    private $difficulties, $tags, $contestIndex, $contestLevel;
 
-    public function __construct($api, $contestIndex, $contestLevel, $L, $R, $cntProblems, $tags = null, $contestId=null)
+    public function __construct($api, $contestIndex, $contestLevel, $difficulties, $tags = null, $contestId = null)
     {
         $this->contestIndex = $contestIndex;
         $this->contestLevel = $contestLevel;
-        $this->L = $L;
-        $this->R = $R;
-        $this->cntProblems = $cntProblems;
+        $this->difficulties = $difficulties;
         $this->contestId = $contestId;
         if (!isset($tags)) {
             $this->tags = array();
         } else {
             $this->tags = $tags;
         }
-        if(!isset($contestId)) {
+        if (!isset($contestId)) {
             $this->contestId = $api->createNewMashup($contestIndex, $contestLevel);
             $api->changeTimeToToday($this);
             $api->addContestToGroup($this->contestId);
         }
     }
 
-    function giveContest()
+    /**
+     * @return mixed
+     */
+    public function getContestIndex()
     {
-        // age nashe false mide
+        return $this->contestIndex;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContestLevel()
+    {
+        return $this->contestLevel;
+    }
+
+    function giveContest($forbiddenProblemIds)
+    {
         $ans = array();
-        for ($i = 0; $i < $this->cntProblems; $i++) {
-            $x = problemset::chooseProblem($this->L, $this->R, $this->tags);
+        for ($i = 0; $i < count($this->difficulties); $i++) {
+            $x = problemset::chooseProblem($this->difficulties[$i]['L'], $this->difficulties[$i]['R'], $this->tags, $forbiddenProblemIds);
             if ($x == false)
                 throw new Exception("error in building contest");
             $ans[$i] = $x;
