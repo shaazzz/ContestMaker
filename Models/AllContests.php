@@ -53,8 +53,10 @@ class AllContests
     static function update()
     {
         $contestIds=array();
-        foreach (AllContests::$contests as $contest){
-            array_push($contestIds, $contest->contestId);
+        foreach (AllContests::$contests as $weekId=>$weekContests){
+            foreach ($weekContests as $key=>$contest) {
+                $contestIds[$weekId][$key]=$contest->contestId;
+            }
         }
         file_put_contents("data/contest.txt", json_encode($contestIds));
     }

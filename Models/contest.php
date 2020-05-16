@@ -20,8 +20,6 @@ class contest
         }
         if (!isset($contestId)) {
             $this->contestId = $api->createNewMashup($contestIndex, $contestLevel);
-            echo "fhr";
-            var_dump($this->contestId);
             $api->changeTimeToToday($this);
             $api->addContestToGroup($this->contestId);
         }

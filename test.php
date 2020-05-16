@@ -17,4 +17,6 @@ $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $cfApi = new CodeforcesApi();
 
-var_dump($cfApi->getForbiddenProblemIds($api->getActiveParticipates(279670)));//,"group/W2YvE0cOoh/contest"));
+$users = $api->getActiveParticipates(280426, "group/W2YvE0cOoh/contest");
+var_dump($users);
+echo count($cfApi->getForbiddenProblemIds($users));//,"group/W2YvE0cOoh/contest"));

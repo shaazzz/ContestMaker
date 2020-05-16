@@ -2,6 +2,7 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+libxml_use_internal_errors(true);
 
 try {
 
@@ -50,7 +51,7 @@ try {
         }
 
         foreach ($contestSettings as $key => $value) {
-            AllContests::addContest($contestIndex, $key, $contestSettings[$key]['$difficulties'],
+            AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'],
                 $contestSettings[$key]['tags'], null, $api);
         }
     }
@@ -65,6 +66,7 @@ try {
         $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
         echo "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n";
         $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
+        echo "number of forbidden problem:" . count($forbiddenProblemIds) . "\n";
         if (isset($contestSettings["hideProblemsEveryDay"]) && $contestSettings["hideProblemsEveryDay"]) {
             $api->setVisibilityProblems($contest->contestId, false);
         }

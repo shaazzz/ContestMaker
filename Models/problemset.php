@@ -111,6 +111,8 @@ class problemset
                 $sortOnBtr[$k] = $v->calcBtr($tags, $maxAccepted[$v->difficulty], $maxLike[$v->difficulty], $L, $R);
             }
         }
+        echo "selecting a problem in range [$L, $R] with tags (" . implode(", ", $tags) . ")...\n";
+        echo "number of candidates: " . count($sortOnBtr) . "\n";
         $candid = array();
         for ($i = 0; $i < 3; $i++) {
             $str = "";
