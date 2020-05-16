@@ -12,14 +12,14 @@
         "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
     },
     "Week2":{
-        "Beginners":{"L": 700, "R": 1500, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1500, "R": 2100, "tags": ["dp","number theory", "interactive"]}
+	    "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}    
     },
     "Week3":{        
-        "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
-        "Specialists":{"L": 1400, "R": 2000, "tags": ["implementation","dp"]},
-        "Candidate masters":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
-        "Grandmasters":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
+        "Beginner":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
+        "Bronze":{"L": 1400, "R": 2000, "tags": ["implementation", "number theory", "dp"]},
+        "Silver":{"L": 1900, "R": 2600, "tags": ["data structures","dp"]},
+        "Gold":{"L": 2400, "R": 3200, "tags": ["meet-in-the-middle","graphs","dp"]}
     },
     "Week4":{        
         "Beginners":{"L": 700, "R": 1400, "tags": ["implementation","greedy","math"]},
