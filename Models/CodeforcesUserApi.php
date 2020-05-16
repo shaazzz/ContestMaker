@@ -217,7 +217,7 @@ class CodeforcesUserApi
         $scoreboard = $this->getScoreboard($contestId, $contestAddressPrefix);
         foreach ($scoreboard as $userId => $results) {
             $cnt = 0;
-            for ($i = max(0, count($results) - 6); $i < count($results); $i++) {
+            for ($i = max(0, count($results) - 3); $i < count($results); $i++) {
                 if ($results[$i] == true) {
                     $cnt++;
                 }
