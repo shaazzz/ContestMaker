@@ -244,7 +244,7 @@ class CodeforcesUserApi
         $participants = $table_doc->getElementsByTagName("tr");
 
         $scoreboard = array();
-        for ($rank = 1; $rank < count($participants) - 1; $rank++) {
+        for ($rank = 1; $rank < $participants->length - 1; $rank++) {
             $participant = $participants[$rank];
             $participant_doc = new DOMDocument();
             $cloned = $participant->cloneNode(TRUE);
