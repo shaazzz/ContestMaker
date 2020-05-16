@@ -60,7 +60,7 @@ class problem
 
     function evalWithCoff($A, $B, $C, $D, $E)
     {
-        return 7 * $B + 5 * $A + 4 * $C + 2 * $D; // E deleted
+        return 7 * $B + 5 * $A + 4 * $C + 2 * $D + $E; // E not deleted
     }
 
     function calcBtr($tags, $maxAccepted, $maxLike, $L, $R)

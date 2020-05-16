@@ -1,0 +1,3 @@
+cp _contest.txt ./data/contest.txt
+cp _counter.txt ./data/counter.txt
+cp _data.txt ./data/data.txt
