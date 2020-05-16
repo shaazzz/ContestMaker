@@ -13,7 +13,7 @@ $names = json_decode(file_get_contents(realpath("data/legends.txt")), true);
 $legends = $names["normal"];
 
 $isSuper = array();
-foreach($names["super"] as $person){
+foreach ($names["super"] as $person) {
     $isSuper[$person] = true;
 }
 
@@ -26,9 +26,9 @@ foreach ($legends as $person) {
     if ((int)$userRate < 1900) {
         continue;
     }
-    $submitions = $cfApi->request("user.status", array("handle" => $person))['result'];
-    echo $person . " has " . count($submitions) . " submitions\n";
-    foreach ($submitions as $sub) {
+    $submissions = $cfApi->request("user.status", array("handle" => $person))['result'];
+    echo $person . " has " . count($submissions) . " submitions\n";
+    foreach ($submissions as $sub) {
         if ($sub["verdict"] == "OK") {
             if (!isset($sub["problem"]["contestId"]) || !isset($sub["problem"]["tags"]) || !isset($sub["problem"]["index"])) {
                 continue;
@@ -45,7 +45,7 @@ foreach ($legends as $person) {
                     0, false, 0, 0, null, true);
             }
             if (!isset($seen[$sub["id"]])) {
-                if(isset($isSuper[$person])) {
+                if (isset($isSuper[$person])) {
                     if (!isset($CNT[$sub["id"]]))
                         $CNT[$sub["id"]] = 0;
                     $CNT[$sub["id"]]++;
@@ -60,7 +60,7 @@ foreach ($legends as $person) {
 }
 
 $MAX_PRIOR = 0.2;
-foreach($CNT as $problemId => $accepted){
+foreach ($CNT as $problemId => $accepted) {
     problemset::$problems[$problemId]->changePrior(($accepted / $MAX) * $MAX_PRIOR);
 }
 

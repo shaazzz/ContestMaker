@@ -145,7 +145,7 @@ class CodeforcesUserApi
     {
         $duration = 15 * 60;
         if (!TIMER_UPDATE_EVERY_DAY) {
-            $duration = 1440 * 7;
+            $duration = 24 * 60 * 7 - 9 * 40;
         }
         $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
             "csrf_token" => $this->csrf_token,
@@ -193,10 +193,6 @@ class CodeforcesUserApi
         $result = $this->request('gymRegistrants/' . $contestId, array());
         $doc = new DOMDocument();
         $doc->loadHTML($result);
-
-
-        $tables = $doc->getElementsByTagName('table');
-        var_dump($tables);
         $finder = new DomXPath($doc);
         $classname = "registrants";
         $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
@@ -215,6 +211,58 @@ class CodeforcesUserApi
         return $usersId;
     }
 
+    function getActiveParticipates($contestId, $contestAddressPrefix = "gym")
+    {
+        $users = array();
+        $scoreboard = $this->getScoreboard($contestId, $contestAddressPrefix);
+        foreach ($scoreboard as $userId => $results) {
+            $cnt = 0;
+            for ($i = max(0, count($results) - 3); $i < count($results); $i++) {
+                if ($results[$i] == true) {
+                    $cnt++;
+                }
+            }
+            if ($cnt >= 1) {
+                array_push($users, $userId);
+            }
+        }
+        return $users;
+    }
+
+    function getScoreboard($contestId, $contestAddressPrefix = "gym")
+    {
+        $doc = new DOMDocument();
+        $body = $this->request($contestAddressPrefix . "/$contestId/standings", array());
+        $doc->loadHTML($body);
+        $finder = new DomXPath($doc);
+        $classname = "standings";
+        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+        $table_doc = new DOMDocument();
+        $cloned = $nodes[0]->cloneNode(TRUE);
+        $table_doc->appendChild($table_doc->importNode($cloned, True));
+
+        $participants = $table_doc->getElementsByTagName("tr");
+
+        $scoreboard = array();
+        for ($rank = 1; $rank < count($participants) - 1; $rank++) {
+            $participant = $participants[$rank];
+            $participant_doc = new DOMDocument();
+            $cloned = $participant->cloneNode(TRUE);
+            $participant_doc->appendChild($participant_doc->importNode($cloned, True));
+            $finder = new DOMXPath($participant_doc);
+            $classname = "rated-user";
+            $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+            $userId = $users[0]->nodeValue;
+            $columns = $participant_doc->getElementsByTagName("td");
+            foreach ($columns as $column) {
+                if ($column->hasAttribute("problemid")) {
+                    $scoreboard[$userId][] = $column->hasAttribute("acceptedsubmissionid");
+                }
+            }
+        }
+        return $scoreboard;
+    }
+
     function createNewMashup($contestIndex, $contestLevel)
     {
         $result = $this->request('data/mashup', array(
@@ -223,7 +271,7 @@ class CodeforcesUserApi
             "parentContestIdAndName" => "",
             "parentContestId" => "",
             "contestName" => "Contest #" . $contestIndex . " " . $contestLevel,
-            "contestDuration" => 7 * 1440,
+            "contestDuration" => 24 * 60 * 7 - 9 * 40,
             "problemsJson" => "[]"
         ));
         if ($result != "{\"success\":\"true\"}") {
@@ -248,7 +296,6 @@ class CodeforcesUserApi
 
     function setNewProblemsForContest($contest, $problemIds, $contestAddressPrefix = "gym")
     {
-        $this->setVisibilityProblems($contest->contestId, false, $contestAddressPrefix);
         if (TIMER_UPDATE_EVERY_DAY) {
             $this->changeTimeToToday($contest);
         }

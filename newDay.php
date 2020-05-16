@@ -4,18 +4,21 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 try {
+
     date_default_timezone_set('Asia/Taipei');
 
-    require __DIR__ . '/Models/contest.php';
-    require __DIR__ . '/Models/AllContests.php';
-    require __DIR__ . '/data/defines.php';
-    require __DIR__ . '/Models/CodeforcesUserApi.php';
+    require_once __DIR__ . '/Models/contest.php';
+    require_once __DIR__ . '/Models/AllContests.php';
+    require_once __DIR__ . '/data/defines.php';
+    require_once __DIR__ . '/Models/CodeforcesUserApi.php';
+    require_once __DIR__ . '/Models/CodeforcesApi.php';
 
     problemset::readFromFile();
     AllContests::readFromFile();
 
     $api = new CodeforcesUserApi();
     $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
+    $cfApi = new CodeforcesApi();
 
     $dayNumber = 0;
     if (file_exists("data/counter.txt")) {
@@ -25,6 +28,7 @@ try {
     $contestIndex = intdiv($dayNumber, 7) + 1;
 
 
+    $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
     if ($dayNumber % 7 == 0) {
         try {
             if ($contestIndex - 1 > 0) {
@@ -38,8 +42,6 @@ try {
         } catch (Exception $e) {
             echo "\n<br>error in sending scoreboard";
         }
-        $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
-        var_dump($setting);
         if (isset($setting["Week" . $contestIndex])) {
             $contestSettings = $setting["Week" . $contestIndex];
         } else {
@@ -54,7 +56,19 @@ try {
     }
 
     foreach (AllContests::$contests[$contestIndex] as $contest) {
-        $api->setNewProblemsForContest($contest, $contest->giveContest());
+        if (isset($setting["Week" . $contestIndex])) {
+            $contestSettings = $setting["Week" . $contestIndex][$contest->getContestLevel()];
+        } else {
+            echo "week setting not found! using week default setting...\n";
+            $contestSettings = $setting["WeekDefault"][$contest->getContestLevel()];
+        }
+        $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
+        echo "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n";
+        $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
+        if (isset($contestSettings["hideProblemsEveryDay"]) && $contestSettings["hideProblemsEveryDay"]) {
+            $api->setVisibilityProblems($contest->contestId, false);
+        }
+        $api->setNewProblemsForContest($contest, $contest->giveContest($forbiddenProblemIds));
     }
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();

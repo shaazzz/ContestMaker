@@ -43,11 +43,11 @@ class contest
         return $this->contestLevel;
     }
 
-    function giveContest()
+    function giveContest($forbiddenProblemIds)
     {
         $ans = array();
         for ($i = 0; $i < count($this->difficulties); $i++) {
-            $x = problemset::chooseProblem($this->difficulties[$i]['L'], $this->difficulties[$i]['R'], $this->tags);
+            $x = problemset::chooseProblem($this->difficulties[$i]['L'], $this->difficulties[$i]['R'], $this->tags, $forbiddenProblemIds);
             if ($x == false)
                 throw new Exception("error in building contest");
             $ans[$i] = $x;

@@ -52,6 +52,10 @@ class AllContests
 
     static function update()
     {
-        file_put_contents("data/contest.txt", json_encode(AllContests::$contests));
+        $contestIds=array();
+        foreach (AllContests::$contests as $contest){
+            array_push($contestIds, $contest->contestId);
+        }
+        file_put_contents("data/contest.txt", json_encode($contestIds));
     }
 }
