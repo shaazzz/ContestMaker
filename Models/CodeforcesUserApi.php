@@ -233,8 +233,7 @@ class CodeforcesUserApi
     {
         $doc = new DOMDocument();
         $body = $this->request($contestAddressPrefix . "/$contestId/standings", array());
-	file_put_contents("h.html",$body);       	
-$doc->loadHTML($body);
+        $doc->loadHTML($body);
         $finder = new DomXPath($doc);
         $classname = "standings";
         $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
@@ -243,7 +242,6 @@ $doc->loadHTML($body);
         $table_doc->appendChild($table_doc->importNode($cloned, True));
 
         $participants = $table_doc->getElementsByTagName("tr");
-	echo "num:".count($participants);
         $scoreboard = array();
         for ($rank = 1; $rank < $participants->length - 1; $rank++) {
             $participant = $participants[$rank];
@@ -254,8 +252,7 @@ $doc->loadHTML($body);
             $classname = "rated-user";
             $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
             $userId = $users[0]->nodeValue;
-       	echo $userId;    
-	$columns = $participant_doc->getElementsByTagName("td");
+            $columns = $participant_doc->getElementsByTagName("td");
             foreach ($columns as $column) {
                 if ($column->hasAttribute("problemid")) {
                     $scoreboard[$userId][] = $column->hasAttribute("acceptedsubmissionid");
