@@ -14,7 +14,7 @@
 
 <div class="container">
 
-    <form id="contact" action="addPrivateContest.php" method="post">
+    <form id="contact" action="suggestProblems.php" method="post">
         <h3 dir="rtl">فرم پیشنهاد سوال</h3>
         <script type="text/javascript">
             $(document).ready(function () {
