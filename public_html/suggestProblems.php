@@ -106,7 +106,7 @@
                 <br>
                 <b>نکته: </b>
                 ما یوزرنیم و پسورد شما را ذخیره نمیکنیم, میتوانید کدهای این صفحه را از
-                <a href="https://github.com/shaazzz/ContestMaker/blob/master/public_html/addPrivateContest.php">اینجا</a>
+                <a href="https://github.com/shaazzz/ContestMaker/blob/master/public_html/">اینجا</a>
                 ببینید
             </h4>
         </fieldset>
