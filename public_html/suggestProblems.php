@@ -133,7 +133,7 @@
             <h4 dir="rtl"><b>توضیحات: </b> میزان جذابیت و آموزنده بودن سوال<br>باید عددی بین ۰ و ۰.۵ باشد</h4>
         </fieldset>
         <fieldset>
-            <select class="js-example-basic-multiple" name="additionalTags[]" multiple="multiple" tabindex="7" required>
+            <select class="js-example-basic-multiple" name="additionalTags[]" multiple="multiple" tabindex="7">
                 <?php
                 $array = json_decode(file_get_contents("data/allTags.txt"), true);
                 foreach ($array as $tag) {
