@@ -103,6 +103,11 @@
                 را وارد کنید
                 همچنین برای ثبت لایک سوالات این دو ورودی ضروری است
 
+                <br>
+                <b>نکته: </b>
+                ما یوزرنیم و پسورد شما را ذخیره نمیکنیم, میتوانید کدهای این صفحه را از
+                <a href="https://github.com/shaazzz/ContestMaker/blob/master/public_html/addPrivateContest.php">اینجا</a>
+                ببینید
             </h4>
         </fieldset>
         <fieldset>
