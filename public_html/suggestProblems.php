@@ -67,7 +67,7 @@
             }
             for ($i = $L; $i <= $R; $i++) {
                 if (!isset($problemQueries[$i])) {
-                    throw new Exception("خطا در دریافت اطلاعات سوال " . chr($i + ord('A')));
+                    throw new Exception("خطا در دریافت اطلاعات سوال " . chr($i + ord('A'))."<br>دسترسی خود را به کانتست بررسی کنید");
                 }
             }
 
