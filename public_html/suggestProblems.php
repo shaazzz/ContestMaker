@@ -31,6 +31,9 @@
 
         try {
             chdir('..');
+            if (isset($_POST['token'])) {
+                $_GET['token'] = $_POST['token'];
+            }
             if (!isset($_GET['token']) || hash("sha512", $_GET['token']) != file_get_contents("data/suggestProblemPass.txt")) {
                 die("<h4 dir='rtl'>توکن اشتباه است</h4>");
             }
@@ -155,6 +158,7 @@
         <fieldset>
             <button class="submit" type="submit">Submit</button>
         </fieldset>
+        <input hidden name="token" value=<?php echo $_GET['token'] ?>>
     </form>
 
 </div>

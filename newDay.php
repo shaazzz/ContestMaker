@@ -63,7 +63,7 @@ try {
             echo "week setting not found! using week default setting...\n";
             $contestSettings = $setting["WeekDefault"][$contest->getContestLevel()];
         }
-        $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
+        $forbiddenUsers = array();//$api->getActiveParticipates($contest->contestId);
         echo "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n";
         $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
         echo "number of forbidden problem:" . count($forbiddenProblemIds) . "\n";
