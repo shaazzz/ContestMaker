@@ -128,8 +128,10 @@
             <h4 dir="rtl"><b>توضیحات: </b> شناسه کانتست <br>برای مثال: <br>842<br>280426<br></h4>
         </fieldset>
         <fieldset>
-            <input type="text" name="fromProblem" value="A" placeholder="From Problem" tabindex="4" required>
-            <input type="text" name="toProblem" value="F" placeholder="To Problem" tabindex="5" required>
+            <input type="text" name="fromProblem" value="A" placeholder="From Problem" tabindex="4" pattern="[A-Z]{1}"
+                   required>
+            <input type="text" name="toProblem" value="F" placeholder="To Problem" tabindex="5" pattern="[A-Z]{1}"
+                   required>
             <h4 dir="rtl"><b>توضیحات: </b> بازه سوالاتی که قصد اضافه کردن آنها را دارید<br></h4>
 
         </fieldset>
