@@ -31,6 +31,9 @@
 
         try {
             chdir('..');
+            if (!isset($_GET['token']) || hash("sha512", $_GET['token']) != file_get_contents("data/suggestProblemPass.txt")) {
+                die("<h4 dir='rtl'>توکن اشتباه است</h4>");
+            }
             require __DIR__ . '/../data/defines.php';
             require __DIR__ . '/../Models/problemset.php';
             require __DIR__ . '/../Models/CodeforcesUserApi.php';
@@ -53,10 +56,10 @@
             $L = ord($_POST["fromProblem"]) - ord('A');
             $R = ord($_POST["toProblem"]) - ord('A');
             if ($L < 0 || $L >= 26) {
-                throw new Exception("(from problem index) به درستی وارد نشده است!");
+                throw new Exception("(from problem) به درستی وارد نشده است!");
             }
             if ($R < $L || $R >= 26) {
-                throw new Exception("(to problem index) به درستی وارد نشده است!");
+                throw new Exception("(to problem) به درستی وارد نشده است!");
             }
             $problemQueries = $api->getContestProblemQueries($_POST["contestId"], $_POST["contestAddressPrefix"]);
             problemset::readFromFile();
@@ -67,7 +70,7 @@
             }
             for ($i = $L; $i <= $R; $i++) {
                 if (!isset($problemQueries[$i])) {
-                    throw new Exception("خطا در دریافت اطلاعات سوال " . chr($i + ord('A'))."<br>دسترسی خود را به کانتست بررسی کنید");
+                    throw new Exception("خطا در دریافت اطلاعات سوال " . chr($i + ord('A')) . "<br>دسترسی خود را به کانتست بررسی کنید");
                 }
             }
 
