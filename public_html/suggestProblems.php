@@ -144,7 +144,7 @@
             <h4 dir="rtl"><b>توضیحات: </b> تگ های اضافی<br></h4>
         </fieldset>
         <fieldset>
-            <input name="defaultDifficulty" type="number" min="700" max="3800" value="2400"
+            <input name="defaultDifficulty" type="number" min="700" max="3800" step="100" value="2400"
                    placeholder="Default Difficulty" tabindex="8" required>
             <h4 dir="rtl"><b>توضیحات: </b> سختی پیشفرض سوالات<br>اگر سوالی در Codeforces دارای سختی نبود, ازین مقدار
                 استفاده میشود<br></h4>
