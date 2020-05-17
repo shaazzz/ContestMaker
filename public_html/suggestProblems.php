@@ -61,8 +61,8 @@
             $problemQueries = $api->getContestProblemQueries($_POST["contestId"], $_POST["contestAddressPrefix"]);
             problemset::readFromFile();
             $allTags = json_decode(file_get_contents("data/allTags.txt"), true);
-            $additionalTags=array();
-            if(isset($_POST['additionalTags'])) {
+            $additionalTags = array();
+            if (isset($_POST['additionalTags'])) {
                 $additionalTags = $_POST['additionalTags'];
             }
             for ($i = $L; $i <= $R; $i++) {
@@ -122,18 +122,18 @@
             <h4 dir="rtl"><b>توضیحات: </b> شناسه کانتست <br>برای مثال: <br>842<br>280426<br></h4>
         </fieldset>
         <fieldset>
-            <input type="text" name="fromProblem" value="A" placeholder="From Problem">
-            <input type="text" name="toProblem" value="F" placeholder="To Problem">
+            <input type="text" name="fromProblem" value="A" placeholder="From Problem" tabindex="4" required>
+            <input type="text" name="toProblem" value="F" placeholder="To Problem" tabindex="5" required>
             <h4 dir="rtl"><b>توضیحات: </b> بازه سوالاتی که قصد اضافه کردن آنها را دارید<br></h4>
 
         </fieldset>
         <fieldset>
             <input name="prior" value="0.2" step="0.01" type="number" min="0" max="0.5"
-                   placeholder="Learning Level">
+                   placeholder="Learning Level" tabindex="6" required>
             <h4 dir="rtl"><b>توضیحات: </b> میزان جذابیت و آموزنده بودن سوال<br>باید عددی بین ۰ و ۰.۵ باشد</h4>
         </fieldset>
         <fieldset>
-            <select class="js-example-basic-multiple" name="additionalTags[]" multiple="multiple">
+            <select class="js-example-basic-multiple" name="additionalTags[]" multiple="multiple" tabindex="7" required>
                 <?php
                 $array = json_decode(file_get_contents("data/allTags.txt"), true);
                 foreach ($array as $tag) {
@@ -145,7 +145,7 @@
         </fieldset>
         <fieldset>
             <input name="defaultDifficulty" type="number" min="700" max="3800" value="2400"
-                   placeholder="Default Difficulty">
+                   placeholder="Default Difficulty" tabindex="8" required>
             <h4 dir="rtl"><b>توضیحات: </b> سختی پیشفرض سوالات<br>اگر سوالی در Codeforces دارای سختی نبود, ازین مقدار
                 استفاده میشود<br></h4>
         </fieldset>
