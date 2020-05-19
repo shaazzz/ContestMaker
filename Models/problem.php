@@ -58,12 +58,12 @@ class problem
         return $this->difficulty;
     }
 
-    function evalWithCoff($A, $B, $C, $D, $E)
+    function evalWithCoff($A, $F, $B, $C, $D, $E)
     {
-        return 7 * $B + 5 * $A + 4 * $C + 2 * $D + $E; // E not deleted
+        return 7 * $B + 5 * $A + 4 * $C + 2 * $D + $E - $F;
     }
 
-    function calcBtr($tags, $maxAccepted, $maxLike, $L, $R)
+    function calcBtr($tags, $negativeTags, $maxAccepted, $maxLike, $L, $R)
     { // each item is 0.5 if empty
         if ($maxLike == 0)
             $maxLike = 1;
@@ -78,8 +78,13 @@ class problem
             }
             $intersect = $intersect / count($tags);
         }
+        $badIntersect = 0;
+        foreach ($negativeTags as $value){
+             if(in_array($value, $this->tags))
+                $badIntersect++;
+        }
         $dif = $this->calcDif() - (($L + $R) / 2);
         $len2 = ($R - $L) / 2;
-        return $this->evalWithCoff($intersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike, 1 - ($dif * $dif) / ($len2 * $len2));
+        return $this->evalWithCoff($intersect, $badIntersect, $this->prior, $this->accepted / $maxAccepted, $this->like / $maxLike, 1 - ($dif * $dif) / ($len2 * $len2));
     }
 }
