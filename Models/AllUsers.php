@@ -4,7 +4,7 @@ require __DIR__ . '/user.php';
 
 class AllUsers
 {
-    static $users = array(), $settings;
+    public static $users = array(), $settings;
 
     static function takeBackup()
     {
@@ -25,22 +25,21 @@ class AllUsers
 
     static function readFromFile()
     {
-        AllUsers::$users = json_decode(file_get_contents("./../data/users.txt"), true);
-/*        AllUsers::$settings = json_decode(file_get_contents("data/ratingSettings.txt"), true);
-        AllContests::takeBackup();
-        if (file_exists("/../data/users.txt")) {
-            $data = json_decode(file_get_contents("/../data/users.txt"), true);
-            foreach ($data as $contestJsonArray) {
-                AllUsers::addUser($contestJsonArray["username"], $contestJsonArray["fullName"], null, true);
+//        AllUsers::$settings = json_decode(file_get_contents("./../data/ratingSettings.txt"), true);
+//        AllContests::takeBackup();
+        $dir = "/home/shayan/ContestMaker/data/users.txt";
+        if (file_exists($dir)) {  ////////////
+            $data = json_decode(file_get_contents($dir), true);
+            foreach ($data as $Array) {
+                AllUsers::addUser($Array["username"], $Array["fullName"], $Array["warm"], $Array["scores"], true);
             }
         }
-*/
     }
 
-    static function addUser($username, $fullName, $api = null, $inside = false)
+    static function addUser($username, $fullName, $warm, $scores, $inside = false)
     {
         if (!isset(AllUsers::$users[$username])) {
-            $user = new user($username, $fullName);
+            $user = new user($username, $fullName, $warm, $scores);
             AllUsers::$users[$username] = $user;
         }
         if (!$inside) {
@@ -50,14 +49,14 @@ class AllUsers
 
     static function update()
     {
-        file_put_contents("./../data/users.txt", json_encode(AllUsers::$users));
+        file_put_contents("./../data/users.txt", json_encode(AllUsers::$users)); // dir problem
     }
 
     static function updateRatings($scoreboard, $contestCof, $L, $R){
         $arr = array();
         foreach($scoreboard as $username => $solved){
             if(!isset(AllUsers::$users[$username])){
-                AllUsers::$users[$username] = new user($username, "yek ahmagh");
+                AllUsers::$users[$username] = new user($username, "yek ahmagh"); // yek ahmagh?
             }
             for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){
@@ -84,7 +83,7 @@ class AllUsers
         AllUsers::update();
     }
 }
-
+/*
 require __DIR__ . '/../Models/CodeforcesUserApi.php';
 require __DIR__ . '/../data/defines.php';
 
@@ -94,5 +93,5 @@ $sc = $api->getScoreboard(278841);
 for($i = 0; $i < 15; $i+= 3){
     AllUsers::updateRatings($sc, 100, $i, $i+3);
     AllUsers::endOftheDay();
-}
+}*/
 ?>

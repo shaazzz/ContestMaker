@@ -5,11 +5,12 @@ class user
     public $username, $fullName;
     public $warm, $scores = array();
 
-    public function __construct($username, $fullName)
+    public function __construct($username, $fullName, $warm = 0, $scores = array() )
     {
         $this->username = $username;
         $this->fullName = $fullName;
-        $this->warm = 0;
+        $this->warm = $warm;
+        $this->scores = $scores;
     }
     public function sleep(){
         array_push($this->scores, $this->warm);
