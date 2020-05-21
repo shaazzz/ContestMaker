@@ -77,10 +77,9 @@
                                     throw new Exception("_GET input error");
                                 }
                             }
-                            $username = (int)$_GET["username"];
+                            $username = $_GET["username"];
                             AllUsers::readFromFile();
-                            $userScore = array();
-                            return json_encode(AllUsers::$users[$username]->getRating());
+                            echo json_encode(AllUsers::$users[$username]->getRating());
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());
