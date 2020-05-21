@@ -63,14 +63,13 @@
                         dataPoints: <?php
                         ini_set('display_errors', 1);
                         error_reporting(E_ALL);
-
                         $inputs = array("username");
-
                         try {
                             chdir('..');
-                            require __DIR__ . '/../data/defines.php';
-                            require __DIR__ . '/../Models/problemset.php';
-                            require __DIR__ . '/../Models/CodeforcesUserApi.php';
+//                            require __DIR__ . '/../data/defines.php';
+//                            require __DIR__ . '/../Models/problemset.php';
+//                            require __DIR__ . '/../Models/CodeforcesUserApi.php';
+                            require __DIR__ . '/../Models/AllUsers.php';
 
                             foreach ($inputs as $input) {
                                 if (!isset($_GET[$input])) {
@@ -79,7 +78,7 @@
                             }
                             $username = $_GET["username"];
                             AllUsers::readFromFile();
-                            echo json_encode(AllUsers::$users[$username]->getRating(int(file_get_contents("/../data/counter.txt"))));
+                            echo json_encode(AllUsers::$users[$username]->getRating(10)); // 10 -> counter.txt
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());

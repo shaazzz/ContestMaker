@@ -83,15 +83,4 @@ class AllUsers
         AllUsers::update();
     }
 }
-/*
-require __DIR__ . '/../Models/CodeforcesUserApi.php';
-require __DIR__ . '/../data/defines.php';
-
-$api = new CodeforcesUserApi();
-$api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
-$sc = $api->getScoreboard(278841);
-for($i = 0; $i < 15; $i+= 3){
-    AllUsers::updateRatings($sc, 100, $i, $i+3);
-    AllUsers::endOftheDay();
-}*/
 ?>
