@@ -1,9 +1,10 @@
 <?php
 
+require __DIR__ . '/user.php';
 
 class AllUsers
 {
-    static $users, $settings;
+    static $users = array(), $settings;
 
     static function takeBackup()
     {
@@ -24,14 +25,16 @@ class AllUsers
 
     static function readFromFile()
     {
-        AllUsers::$settings = json_decode(file_get_contents("data/ratingSettings.txt"), true);
+        AllUsers::$users = json_decode(file_get_contents("./../data/users.txt"), true);
+/*        AllUsers::$settings = json_decode(file_get_contents("data/ratingSettings.txt"), true);
         AllContests::takeBackup();
-        if (file_exists("data/users.txt")) {
-            $data = json_decode(file_get_contents("data/users.txt"), true);
+        if (file_exists("/../data/users.txt")) {
+            $data = json_decode(file_get_contents("/../data/users.txt"), true);
             foreach ($data as $contestJsonArray) {
                 AllUsers::addUser($contestJsonArray["username"], $contestJsonArray["fullName"], null, true);
             }
         }
+*/
     }
 
     static function addUser($username, $fullName, $api = null, $inside = false)
@@ -47,13 +50,16 @@ class AllUsers
 
     static function update()
     {
-        file_put_contents("data/users.txt", json_encode(AllUsers::$users));
+        file_put_contents("./../data/users.txt", json_encode(AllUsers::$users));
     }
 
-    static function updateRatings($scoreboard, $contestCof, $cntProblems){
+    static function updateRatings($scoreboard, $contestCof, $L, $R){
         $arr = array();
         foreach($scoreboard as $username => $solved){
-            for($i = count($solved) - $cntProblems; $i < count($solved); $i++){
+            if(!isset(AllUsers::$users[$username])){
+                AllUsers::$users[$username] = new user($username, "yek ahmagh");
+            }
+            for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){
                     $arr[$i] = 0;
                 }
@@ -63,18 +69,30 @@ class AllUsers
             }
         }
         foreach($scoreboard as $username => $solved){
-            for($i = count($solved) - $cntProblems; $i < count($solved); $i++){
+            for($i = $L; $i < $R; $i++){
                 if($solved[$i] == true){
                     AllUsers::$users[$username]->addRating($contestCof / $arr[$i]);
                 }
             }
         }
+        AllUsers::update();
     }
     static function endOftheDay(){
         foreach(AllUsers::$users as $user){
             $user->sleep();
         }
+        AllUsers::update();
     }
 }
 
+require __DIR__ . '/../Models/CodeforcesUserApi.php';
+require __DIR__ . '/../data/defines.php';
+
+$api = new CodeforcesUserApi();
+$api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
+$sc = $api->getScoreboard(278841);
+for($i = 0; $i < 15; $i+= 3){
+    AllUsers::updateRatings($sc, 100, $i, $i+3);
+    AllUsers::endOftheDay();
+}
 ?>

@@ -79,7 +79,7 @@
                             }
                             $username = $_GET["username"];
                             AllUsers::readFromFile();
-                            echo json_encode(AllUsers::$users[$username]->getRating());
+                            echo json_encode(AllUsers::$users[$username]->getRating(int(file_get_contents("/../data/counter.txt"))));
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());
