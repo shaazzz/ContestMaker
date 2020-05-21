@@ -49,6 +49,32 @@ class AllUsers
     {
         file_put_contents("data/users.txt", json_encode(AllUsers::$users));
     }
+
+    static function updateRatings($scoreboard, $contestCof, $cntProblems){
+        $arr = array();
+        foreach($scoreboard as $username => $solved){
+            for($i = count($solved) - $cntProblems; $i < count($solved); $i++){
+                if(!isset($arr[$i])){
+                    $arr[$i] = 0;
+                }
+                if($solved[$i] == true){
+                    $arr[$i]++;
+                }
+            }
+        }
+        foreach($scoreboard as $username => $solved){
+            for($i = count($solved) - $cntProblems; $i < count($solved); $i++){
+                if($solved[$i] == true){
+                    AllUsers::$users[$username]->addRating($contestCof / $arr[$i]);
+                }
+            }
+        }
+    }
+    static function endOftheDay(){
+        foreach(AllUsers::$users as $user){
+            $user->sleep();
+        }
+    }
 }
 
 ?>

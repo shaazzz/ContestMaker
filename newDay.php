@@ -52,7 +52,7 @@ try {
 
         foreach ($contestSettings as $key => $value) {
             AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'],
-                $contestSettings[$key]['tags'], null, $api);
+                $contestSettings[$key]['tags'], $contestSettings[$key]['negativeTags'], null, $api);
         }
     }
 
@@ -63,7 +63,7 @@ try {
             echo "week setting not found! using week default setting...\n";
             $contestSettings = $setting["WeekDefault"][$contest->getContestLevel()];
         }
-        $forbiddenUsers = array();//$api->getActiveParticipates($contest->contestId);
+        $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
         echo "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n";
         $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
         echo "number of forbidden problem:" . count($forbiddenProblemIds) . "\n";

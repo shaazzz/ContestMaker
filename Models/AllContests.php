@@ -32,17 +32,17 @@ class AllContests
                 foreach ($contestJsonArray as $contestLevel => $contestId) {
                     $setting = $settings["Week" . $contestIndex][$contestLevel];
                     AllContests::addContest($contestIndex, $contestLevel,
-                        $setting["difficulties"], $setting["tags"], $contestId, null, true);
+                        $setting["difficulties"], $setting["tags"], $setting["negativeTags"], $contestId, null, true);
                 }
             }
         }
     }
 
-    static function addContest($contestIndex, $contestLevel, $difficulties, $tags, $contestId, $api = null, $inside = false)
+    static function addContest($contestIndex, $contestLevel, $difficulties, $tags, $negativeTags, $contestId, $api = null, $inside = false)
     {
         $contestIndex = (int)$contestIndex;
         if (!isset(AllContests::$contests[$contestIndex][$contestLevel])) {
-            $contest = new contest($api, $contestIndex, $contestLevel, $difficulties, $tags, $contestId);
+            $contest = new contest($api, $contestIndex, $contestLevel, $difficulties, $tags, $negativeTags, $contestId);
             AllContests::$contests[$contestIndex][$contestLevel] = $contest;
         }
         if (!$inside) {

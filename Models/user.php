@@ -3,27 +3,27 @@
 class user
 {
     public $username, $fullName;
+    public $warm, $scores = array();
 
     public function __construct($username, $fullName)
     {
         $this->username = $username;
         $this->fullName = $fullName;
+        $this->warm = 0;
     }
-
-    function getRating($api){
-        $dayNumber = (int)file_get_contents("data/counter.txt");
-        $weekIndex = 1;
-        $scores=array();
-        foreach (AllContests::$contests as $week) {
-            if ($weekIndex * 7 + 1 > $dayNumber) {
-                break;
-            }
-            foreach ($week as $contest) {
-                $scoreboard = $api->getScoreboard($contest->contestId, CF_GROUP_ID);
-                if (isset($scoreboard[$this->username])) {
-                    //AllUsers::$settings[""];
-                }
-            }
+    public function sleep(){
+        array_push($this->scores, $this->warm);
+        $this->warm*= 0.9;
+    }
+    public function  addRating($x){
+        $this->warm+= $x;
+    }
+    public function getRating($today)
+    {
+        $ans = array();
+        for($i = 0; $i < count($this->scores); $i++) {
+            array_push($ans, array("X" => $today-count($this->scores) + i + 1, "Y" => $this->scores[$i]));
         }
+        return $ans;
     }
 }

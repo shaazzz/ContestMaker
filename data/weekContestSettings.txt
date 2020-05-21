@@ -1,32 +1,32 @@
 {
     "WeekDefault":{
-        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
-        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": []},
-        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": []},
-        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": []}
+        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
+        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": [], "negativeTags": ["fft"]},
+        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": [], "negativeTags": ["fft"]},
+        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": [], "negativeTags": ["fft"]}
     },
     "Week1":{
-        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
-        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"]},
-        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"]},
-        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"]}
+        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
+        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"], "negativeTags": ["fft"]},
+        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"], "negativeTags": ["fft"]},
+        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"], "negativeTags": ["fft"]}
     },
     "Week2":{
-        "Beginners":{"difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
-        "Specialists":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"]},
-        "Candidate masters":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"]},
-        "Grandmasters":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"]}
+        "Beginners":{"difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
+        "Specialists":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"], "negativeTags": ["fft"]},
+        "Candidate masters":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"], "negativeTags": ["fft"]},
+        "Grandmasters":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"], "negativeTags": ["fft"]}
     },
     "Week3":{
-        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
-        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"]},
-        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"]},
-        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"]}
+        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
+        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"], "negativeTags": ["fft"]},
+        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"], "negativeTags": ["fft"]},
+        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"], "negativeTags": ["fft"]}
     },
     "Week4":{
-        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"]},
-        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"]},
-        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"]},
-        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"]}
+        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
+        "Bronze":{"difficulties": [{"L":1300,"R":1600}, {"L":1500,"R":1800}, {"L":1700,"R":2000}], "tags": ["dp","number theory", "interactive"], "negativeTags": ["fft"]},
+        "Silver":{"difficulties": [{"L":1900,"R":2200}, {"L":2100,"R":2400}, {"L":2300,"R":2600}], "tags": ["data structures","dp"], "negativeTags": ["fft"]},
+        "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"], "negativeTags": ["fft"]}
     }
 }

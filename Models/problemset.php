@@ -91,7 +91,7 @@ class problemset
         }
     }
 
-    static function chooseProblem($L, $R, $tags, array $forbiddenProblemIds)
+    static function chooseProblem($L, $R, $tags, $negativeTags, array $forbiddenProblemIds)
     {
         $maxLike = array();
         $maxAccepted = array();
@@ -108,7 +108,7 @@ class problemset
         $sortOnBtr = array();
         foreach (problemset::$problems as $k => $v) {
             if ($L <= $v->calcDif() && $v->calcDif() <= $R && $v->used != true && !in_array($v->problemName, $forbiddenProblemIds)) {
-                $sortOnBtr[$k] = $v->calcBtr($tags, $maxAccepted[$v->difficulty], $maxLike[$v->difficulty], $L, $R);
+                $sortOnBtr[$k] = $v->calcBtr($tags, $negativeTags, $maxAccepted[$v->difficulty], $maxLike[$v->difficulty], $L, $R);
             }
         }
         echo "selecting a problem in range [$L, $R] with tags (" . implode(", ", $tags) . ")...\n";
