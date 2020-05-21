@@ -16,10 +16,10 @@ $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $cfApi = new CodeforcesApi();
 
-$sc = $api->getScoreboard(280427, "group/W2YvE0cOoh/contest");
-var_dump($sc);
+//$sc = $api->getScoreboard(280427, "group/W2YvE0cOoh/contest");
+///var_dump($sc);
 
-//$users = $api->getActiveParticipates(280428, "group/W2YvE0cOoh/contest");
-//var_dump($users);
-//echo count($cfApi->getForbiddenProblemIds($users));//,"group/W2YvE0cOoh/contest"));
+$users = $api->getActiveParticipates(280427, "group/W2YvE0cOoh/contest");
+var_dump($users);
+echo count($cfApi->getForbiddenProblemIds($users));//,"group/W2YvE0cOoh/contest"));
 

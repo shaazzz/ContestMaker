@@ -22,7 +22,7 @@ class user
     {
         $ans = array();
         for($i = 0; $i < count($this->scores); $i++) {
-            array_push($ans, array("X" => $today-count($this->scores) + i + 1, "Y" => $this->scores[$i]));
+            array_push($ans, array("x" => $today-count($this->scores) + $i + 1, "y" => $this->scores[$i]));
         }
         return $ans;
     }
