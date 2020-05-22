@@ -44,6 +44,13 @@ body {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+#user {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 #contact h3 {
   display: block;
   font-size: 30px;
@@ -58,7 +65,24 @@ body {
   font-weight: 400;
 }
 
+upside {
+  min-width: 100%;
+  width: 100%;
+  background: #F9F9F9;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#name td {
   border: medium none !important;
   margin: 0 0 10px;
   min-width: 100%;

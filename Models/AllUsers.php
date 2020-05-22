@@ -25,10 +25,8 @@ class AllUsers
 
     static function readFromFile()
     {
-//        AllUsers::$settings = json_decode(file_get_contents("./../data/ratingSettings.txt"), true);
-//        AllContests::takeBackup();
-        $dir = "/home/shayan/ContestMaker/data/users.txt";
-        if (file_exists($dir)) {  ////////////
+        $dir = "data/users.txt";
+        if (file_exists($dir)) {
             $data = json_decode(file_get_contents($dir), true);
             foreach ($data as $Array) {
                 AllUsers::addUser($Array["username"], $Array["fullName"], $Array["warm"], $Array["scores"], true);
@@ -49,14 +47,14 @@ class AllUsers
 
     static function update()
     {
-        file_put_contents("./../data/users.txt", json_encode(AllUsers::$users)); // dir problem
+        file_put_contents("data/users.txt", json_encode(AllUsers::$users)); // dir problem
     }
 
     static function updateRatings($scoreboard, $contestCof, $L, $R){
         $arr = array();
         foreach($scoreboard as $username => $solved){
             if(!isset(AllUsers::$users[$username])){
-                AllUsers::$users[$username] = new user($username, "yek ahmagh"); // yek ahmagh?
+                AllUsers::$users[$username] = new user($username, $username);
             }
             for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){

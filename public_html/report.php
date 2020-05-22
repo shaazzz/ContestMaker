@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>فرم گزارش کاربران</title>
+    <title>امتیاز کاربر</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>
@@ -17,37 +17,10 @@
                 theme: "light2",
                 axisY: {
                     thickness: 0,
-                    stripLines: [
-                        {
-                            startValue: 0,
-                            endValue: 10,
-                            color: "rgb(192,192,192)"
-                        },{
-                            startValue: 10,
-                            endValue: 20,
-                            color: "rgb(36,186,9)"
-                        },{
-                            startValue: 20,
-                            endValue: 30,
-                            color: "#1e51d2"
-                        },{
-                            startValue: 30,
-                            endValue: 45,
-                            color: "#ce1760"
-                        },{
-                            startValue: 45,
-                            endValue: 55,
-                            color: "#dcd130"
-                        },{
-                            startValue: 55,
-                            endValue: 70,
-                            color: "#e21d1d"
-                        },{
-                            startValue: 70,
-                            endValue: 100,
-                            color: "#9e0505"
-                        },
-                    ],
+                    stripLines: <?php
+                    chdir("..");
+                    echo file_get_contents("data/rateColors.txt");
+                    ?>,
                     valueFormatString: "####",
                     gridThickness: 0
                 },
@@ -65,10 +38,6 @@
                         error_reporting(E_ALL);
                         $inputs = array("username");
                         try {
-                            chdir('..');
-//                            require __DIR__ . '/../data/defines.php';
-//                            require __DIR__ . '/../Models/problemset.php';
-//                            require __DIR__ . '/../Models/CodeforcesUserApi.php';
                             require __DIR__ . '/../Models/AllUsers.php';
 
                             foreach ($inputs as $input) {
@@ -78,7 +47,8 @@
                             }
                             $username = $_GET["username"];
                             AllUsers::readFromFile();
-                            echo json_encode(AllUsers::$users[$username]->getRating(10)); // 10 -> counter.txt
+                            $today=(int)file_get_contents("data/counter.txt");
+                            echo json_encode(AllUsers::$users[$username]->getRating($today)); // 10 -> counter.txt
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());
@@ -99,7 +69,39 @@
 
 <div class="container">
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <div id="contact" style="min-height:20%;">
+        <?php
+        require_once __DIR__ . '/../data/defines.php';
+        require_once __DIR__ . '/../Models/CodeforcesApi.php';
+
+        $cfApi = new CodeforcesApi();
+        $user = $cfApi->request("user.info", array("handles" => $_GET['username']))['result'][0];
+        //var_dump($user);
+        $rates = json_decode(file_get_contents("data/rateColors.txt"), true);
+        $userRateName=0;
+        $userRateColor=null;
+        foreach($rates as $rate){
+            if(AllUsers::$users[$username]->warm<$rate['endValue']){
+                $userRateName=$rate['name'];
+                $userRateColor=$rate['color'];
+                break;
+            }
+        }
+
+        $fullName = $_GET['username'];
+        if (isset($user["firstName"]) && isset($user["lastName"])) {
+            $fullName = $user["firstName"] . " " . $user['lastName'];
+        }
+
+        echo "<div dir='rtl' style=\"font-size: 20px;color:".$userRateColor.";\">";
+        echo "<h4 style=\"font-size: 35px;text-align:center;\">$fullName</h4>";
+        echo "<b>$userRateName</b>";
+        echo "</div>";
+        echo "<h4 dir='rtl' style=\"font-size: 20px;text-align:right;\"> امتیاز: ".(int)AllUsers::$users[$username]->warm."</h4>";
+        echo "<img  style=\"width: 40%;min-height:25%;margin:auto;vertical-align:middle;display:inline;\" src=\"" . $user['titlePhoto'] . "\">";
+        ?>
+        <div id="chartContainer" style="margin-top: 30px; height: 300px; width: 100%;"></div>
+    </div>
 </div>
 </body>
 </html>
