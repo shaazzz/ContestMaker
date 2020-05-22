@@ -47,8 +47,8 @@
                             }
                             $username = $_GET["username"];
                             AllUsers::readFromFile();
-                            $today=(int)file_get_contents("data/counter.txt");
-                            echo json_encode(AllUsers::$users[$username]->getRating($today)); // 10 -> counter.txt
+                            $today = (int)file_get_contents("data/counter.txt");
+                            echo json_encode(AllUsers::$users[$username]->getRating($today - 1)); // 10 -> counter.txt
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());
@@ -78,12 +78,12 @@
         $user = $cfApi->request("user.info", array("handles" => $_GET['username']))['result'][0];
         //var_dump($user);
         $rates = json_decode(file_get_contents("data/rateColors.txt"), true);
-        $userRateName=0;
-        $userRateColor=null;
-        foreach($rates as $rate){
-            if(AllUsers::$users[$username]->warm<$rate['endValue']){
-                $userRateName=$rate['name'];
-                $userRateColor=$rate['color'];
+        $userRateName = 0;
+        $userRateColor = null;
+        foreach ($rates as $rate) {
+            if (AllUsers::$users[$username]->warm < $rate['endValue']) {
+                $userRateName = $rate['name'];
+                $userRateColor = $rate['color'];
                 break;
             }
         }
@@ -94,11 +94,11 @@
         }
 
         echo "<img class='circular-big-square' style=\"width: 40%;min-height:25%;\" src=\"" . $user['titlePhoto'] . "\">";
-        echo "<div dir='rtl' style=\"font-size: 20px;color:".$userRateColor.";\">";
+        echo "<div dir='rtl' style=\"font-size: 20px;color:" . $userRateColor . ";\">";
         echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">$fullName</h4>";
         echo "<h4 style=\"font-size: 20px;text-align:center\"><b>$userRateName</b></h4>";
         echo "</div>";
-        echo "<h4 dir='rtl' style=\"text-align:center;font-size: 20px;\"> امتیاز: ".(int)AllUsers::$users[$username]->warm."</h4>";
+        echo "<h4 dir='rtl' style=\"text-align:center;font-size: 20px;\"> امتیاز: " . (int)AllUsers::$users[$username]->warm . "</h4>";
         ?>
         <div id="chartContainer" style="margin-top: 30px; height: 300px; width: 100%;"></div>
     </div>
