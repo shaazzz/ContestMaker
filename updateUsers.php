@@ -14,7 +14,7 @@ $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $contestIds = array(278840, 278841, 278842, 278843, 279670, 279671, 279777, 279778, 280426, 280427, 280428, 280429);
 $contestLen = array(15, 15, 15, 15, 18, 18, 15, 15, 3, 18, 18, 18); // bigginer should be complete
 $sc = array(0, 0, 0, 0);
-$contestCof = array(10, 20, 30, 40);
+$contestCof = array(10, 17, 26, 37); // changed
 
 for ($week = 0; $week < 3; $week++) {
     for ($i = 0; $i < 4; $i++)
