@@ -48,7 +48,7 @@
                             $username = $_GET["username"];
                             AllUsers::readFromFile();
                             $today = (int)file_get_contents("data/counter.txt");
-                            echo json_encode(AllUsers::$users[$username]->getRating($today - 1)); // 10 -> counter.txt
+                            echo json_encode(AllUsers::$users[$username]->getRating($today + 1));
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());
