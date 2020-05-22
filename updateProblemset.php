@@ -58,11 +58,12 @@ foreach ($legends as $person) {
     }
     unset($seen);
 }
-
+/*
 $MAX_PRIOR = 0.2;
 foreach ($CNT as $problemId => $accepted) {
     problemset::$problems[$problemId]->changePrior(($accepted / $MAX) * $MAX_PRIOR);
 }
+*/
 
 //shuffle(problemset::$problems);
 problemset::update();

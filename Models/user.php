@@ -14,7 +14,7 @@ class user
     }
     public function sleep(){
         array_push($this->scores, $this->warm);
-        $this->warm*= 0.9;
+        $this->warm*= 0.96;
     }
     public function  addRating($x){
         $this->warm+= $x;
