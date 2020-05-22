@@ -11,3 +11,6 @@ mashup maker for codeforces.com
  <a href="http://blog.shaazzz.ir/1399/02/13">شاززز</a>
 </h3><br> 
 
+<br> اجرا شده در
+ <a href="http://training.shaazzz.ir">training.shaazzz.ir</a>
+</h3><br> 
