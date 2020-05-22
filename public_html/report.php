@@ -93,12 +93,12 @@
             $fullName = $user["firstName"] . " " . $user['lastName'];
         }
 
+        echo "<img class='circular-big-square' style=\"width: 40%;min-height:25%;\" src=\"" . $user['titlePhoto'] . "\">";
         echo "<div dir='rtl' style=\"font-size: 20px;color:".$userRateColor.";\">";
-        echo "<h4 style=\"font-size: 35px;text-align:center;\">$fullName</h4>";
+        echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">$fullName</h4>";
         echo "<b>$userRateName</b>";
         echo "</div>";
         echo "<h4 dir='rtl' style=\"font-size: 20px;text-align:right;\"> امتیاز: ".(int)AllUsers::$users[$username]->warm."</h4>";
-        echo "<img  style=\"width: 40%;min-height:25%;margin:auto;vertical-align:middle;display:inline;\" src=\"" . $user['titlePhoto'] . "\">";
         ?>
         <div id="chartContainer" style="margin-top: 30px; height: 300px; width: 100%;"></div>
     </div>

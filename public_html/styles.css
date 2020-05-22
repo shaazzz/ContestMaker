@@ -12,13 +12,30 @@
   text-rendering: optimizeLegibility;
 }
 
+.circular--square {
+  border-radius: 50%;
+  width:25px;
+  height:30px;
+  overflow:hidden
+}
+
+.circular-big-square {
+  border-radius: 50%;
+  width:300px;
+  height:220px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden
+ }
+
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-size: 12px;
   line-height: 30px;
   color: #777777;
-  background: #56117e;
+  background: #16115e;
 }
 
 .container {
@@ -38,6 +55,7 @@ body {
 }
 
 #contact {
+  border-radius: 20px;
   background: #F9F9F9;
   padding: 25px;
   margin: 80px 0;
