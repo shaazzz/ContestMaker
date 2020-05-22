@@ -8,9 +8,7 @@ mashup maker for codeforces.com
  data/defines.php
 تغییر دهید
 <br> اطلاعات بیشتر در
- <a href="http://blog.shaazzz.ir/1399/02/13">شاززز</a>
-</h3><br> 
-
+ <a href="http://blog.shaazzz.ir/1399/02/13">شاززز</a><br> 
 <br> اجرا شده در
  <a href="http://training.shaazzz.ir">training.shaazzz.ir</a>
 </h3><br> 
