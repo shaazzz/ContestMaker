@@ -13,7 +13,11 @@
 <div class="container">
     <br>
     <div id="contact">
-        <h3 dir="rtl">رتبه بندی کل</h3>
+
+        <img style="align-content:center;padding-left:20%;padding-right:20%;width: 100%;min-height:25%;margin:auto;vertical-align:middle;display:inline;" src="http://bayanbox.ir/view/4819107262267230957/rlogo.png">
+        <br><br>
+        <h3 dir="rtl" style="font-size:45px;text-align:center">رتبه بندی کل</h3>
+
         <?php
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
@@ -38,7 +42,7 @@
                 $name = $user->fullName;
                 $warm = (int)$user->warm;
                 echo "<tr id=\"user\" style='margin: 100px'>
-                        <td style='text-align:center;padding: 10px'>$number</td>
+                        <td style='text-align:center;padding: 10px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 20px'>
                             <a href=\"/report.php?username=$user->username\" class=\"fill-div\">$name</a>
                         </td>
