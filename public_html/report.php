@@ -96,9 +96,9 @@
         echo "<img class='circular-big-square' style=\"width: 40%;min-height:25%;\" src=\"" . $user['titlePhoto'] . "\">";
         echo "<div dir='rtl' style=\"font-size: 20px;color:".$userRateColor.";\">";
         echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">$fullName</h4>";
-        echo "<b>$userRateName</b>";
+        echo "<h4 style=\"font-size: 20px;text-align:center\"><b>$userRateName</b></h4>";
         echo "</div>";
-        echo "<h4 dir='rtl' style=\"font-size: 20px;text-align:right;\"> امتیاز: ".(int)AllUsers::$users[$username]->warm."</h4>";
+        echo "<h4 dir='rtl' style=\"text-align:center;font-size: 20px;\"> امتیاز: ".(int)AllUsers::$users[$username]->warm."</h4>";
         ?>
         <div id="chartContainer" style="margin-top: 30px; height: 300px; width: 100%;"></div>
     </div>
