@@ -30,7 +30,7 @@ class AllContests
             $data = json_decode(file_get_contents("data/contest.txt"), true);
             foreach ($data as $contestIndex => $contestJsonArray) {
                 foreach ($contestJsonArray as $contestLevel => $contestId) {
-                    $setting = $settings["Week" . $contestIndex][$contestLevel];
+		    $setting = $settings["Week" . $contestIndex][$contestLevel];
                     AllContests::addContest($contestIndex, $contestLevel,
                         $setting["difficulties"], $setting["tags"], $setting["negativeTags"], $contestId, null, true);
                 }
