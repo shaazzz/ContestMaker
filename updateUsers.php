@@ -5,11 +5,7 @@ error_reporting(E_ALL);
 libxml_use_internal_errors(true);
 
 
-require_once __DIR__ . '/Models/AllUsers.php';
-require_once __DIR__ . '/Models/AllContests.php';
-require_once __DIR__ . '/Models/contest.php';
-require_once __DIR__ . '/Models/CodeforcesUserApi.php';
-require_once __DIR__ . '/data/defines.php';
+require_once 'data/defines.php';
 
 
 // have bugs

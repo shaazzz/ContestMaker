@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . '/problemset.php';
-
 class contest
 {
     public $contestId;

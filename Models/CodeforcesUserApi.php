@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/APIException.php';
-
 function generateRandomString($length = 6)
 {
     $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';

@@ -1,7 +1,6 @@
 <?php
 
-require __DIR__ . '/data/defines.php';
-require __DIR__ . "/Models/problemset.php";
+require_once 'data/defines.php';
 
 $doc = new DOMDocument();
 $doc->loadHTML(file_get_contents("data/fav.html"));

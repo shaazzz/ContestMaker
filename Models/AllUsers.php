@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . '/user.php';
-
 class AllUsers
 {
     public static $users = array(), $settings;
@@ -38,7 +36,7 @@ class AllUsers
     {
         if (!isset(AllUsers::$users[$username])) {
             $user = new user($username, $warm, $scores);
-            AllUsers::$users[$username] = $user;
+            AllUsers::$users[strtolower($username)] = $user;
         }
         if (!$inside) {
             AllUsers::update();

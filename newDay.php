@@ -8,11 +8,7 @@ try {
 
     date_default_timezone_set('Asia/Taipei');
 
-    require_once __DIR__ . '/Models/contest.php';
-    require_once __DIR__ . '/Models/AllContests.php';
-    require_once __DIR__ . '/data/defines.php';
-    require_once __DIR__ . '/Models/CodeforcesUserApi.php';
-    require_once __DIR__ . '/Models/CodeforcesApi.php';
+    require_once 'data/defines.php';
 
     problemset::readFromFile();
     AllContests::readFromFile();
