@@ -30,6 +30,10 @@ class contest
         }
     }
 
+    public function getDifficulties(){
+        return $this->difficulties;
+    }
+
     /**
      * @return mixed
      */
