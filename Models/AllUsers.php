@@ -70,7 +70,8 @@ class AllUsers
         foreach($scoreboard as $username => $solved){
             for($i = $L; $i < $R; $i++){
                 if($solved[$i] == true){
-                    $s = $contestCof * max(1/3, 1 - ($arr[$i] / count($oneAcc))); // change?
+//                    $s = $contestCof * max(1/3, 1 - ($arr[$i] / count($oneAcc))); // change?
+                    $s = $contestCof * (1 - 0.5 * sqrt($arr[$i] / count($oneAcc)));
                     AllUsers::$users[$username]->addRating($s);
                 }
             }
