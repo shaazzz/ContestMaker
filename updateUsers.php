@@ -35,21 +35,28 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
             throw new Exception("(size % block) should be 0");
         }
     }
+    $used=true;
     for ($i = 0; $i < 7; $i++) {
         echo "Starting day " . ($i + 1) . "...\n";
         $index = 0;
-        AllUsers::startOftheDay();
+        if($used){
+            AllUsers::startOftheDay();
+        }
+        $used=false;
         foreach ($weekContests as $key => $contest) {
             $block = count($contest->getDifficulties());
             $size = getSize($block, $sc[$key]);
             if (($i + 1) * $block <= $size) {
                 AllUsers::updateRatings($sc[$key], $contestCof[$index], $i * $block, ($i + 1) * $block);
+                $used=true;
             } else {
                 echo "day " . $i . " not exist in contest " . $contest->contestId . "\n";
             }
             $index++;
         }
-        AllUsers::endOftheDay();
+        if($used) {
+            AllUsers::endOftheDay();
+        }
     }
 }
 
