@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم پیشنهاد سوال</title>
+    <link rel="icon" href="http://bayanbox.ir/view/4819107262267230957/rlogo.png">
     <link href="//training.shaazzz.ir/styles.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
