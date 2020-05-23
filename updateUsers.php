@@ -11,11 +11,10 @@ require_once 'data/defines.php';
 // have bugs
 function getSize($block, $scr)
 {
-    $ans = 1000;
     foreach ($scr as $username => $solved) {
-        $ans = min($ans, count($solved));
+        return count($solved);
     }
-    return min(7 * $block, $ans);
+    return 7 * $block;
 }
 
 
@@ -35,26 +34,26 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
             throw new Exception("(size % block) should be 0");
         }
     }
-    $used=true;
+    $used = true;
     for ($i = 0; $i < 7; $i++) {
         echo "Starting day " . ($i + 1) . "...\n";
         $index = 0;
-        if($used){
+        if ($used) {
             AllUsers::startOftheDay();
         }
-        $used=false;
+        $used = false;
         foreach ($weekContests as $key => $contest) {
             $block = count($contest->getDifficulties());
             $size = getSize($block, $sc[$key]);
             if (($i + 1) * $block <= $size) {
                 AllUsers::updateRatings($sc[$key], $contestCof[$index], $i * $block, ($i + 1) * $block);
-                $used=true;
+                $used = true;
             } else {
                 echo "day " . $i . " not exist in contest " . $contest->contestId . "\n";
             }
             $index++;
         }
-        if($used) {
+        if ($used) {
             AllUsers::endOftheDay();
         }
     }

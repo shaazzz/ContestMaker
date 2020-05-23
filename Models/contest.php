@@ -3,10 +3,11 @@
 class contest
 {
     public $contestId;
-    private $difficulties, $tags, $negativeTags, $contestIndex, $contestLevel;
+    private $difficulties, $tags, $negativeTags, $contestIndex, $contestLevel, $workingDays;
 
-    public function __construct($api, $contestIndex, $contestLevel, $difficulties, $tags = null, $negativeTags = null, $contestId = null)
+    public function __construct($api, $contestIndex, $contestLevel, $difficulties, $workingDays, $tags = null, $negativeTags = null, $contestId = null)
     {
+        $this->workingDays=$workingDays;
         $this->contestIndex = $contestIndex;
         $this->contestLevel = $contestLevel;
         $this->difficulties = $difficulties;
@@ -28,7 +29,8 @@ class contest
         }
     }
 
-    public function getDifficulties(){
+    public function getDifficulties()
+    {
         return $this->difficulties;
     }
 
@@ -46,6 +48,11 @@ class contest
     public function getContestLevel()
     {
         return $this->contestLevel;
+    }
+
+    public function isWorking($dayNumber)
+    {
+        return $this->workingDays[$dayNumber % 7] == '1';
     }
 
     function giveContest($forbiddenProblemIds)

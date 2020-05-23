@@ -30,19 +30,23 @@ class AllContests
             $data = json_decode(file_get_contents("data/contest.txt"), true);
             foreach ($data as $contestIndex => $contestJsonArray) {
                 foreach ($contestJsonArray as $contestLevel => $contestId) {
-		    $setting = $settings["Week" . $contestIndex][$contestLevel];
+                    $setting = $settings["Week" . $contestIndex][$contestLevel];
+                    if (!isset($setting["workingDays"])) {
+                        $setting["workingDays"] = "1111111";
+                    }
+
                     AllContests::addContest($contestIndex, $contestLevel,
-                        $setting["difficulties"], $setting["tags"], $setting["negativeTags"], $contestId, null, true);
+                        $setting["difficulties"], $setting["workingDays"], $setting["tags"], $setting["negativeTags"], $contestId, null, true);
                 }
             }
         }
     }
 
-    static function addContest($contestIndex, $contestLevel, $difficulties, $tags, $negativeTags, $contestId, $api = null, $inside = false)
+    static function addContest($contestIndex, $contestLevel, $difficulties, $workingDays, $tags, $negativeTags, $contestId, $api = null, $inside = false)
     {
         $contestIndex = (int)$contestIndex;
         if (!isset(AllContests::$contests[$contestIndex][$contestLevel])) {
-            $contest = new contest($api, $contestIndex, $contestLevel, $difficulties, $tags, $negativeTags, $contestId);
+            $contest = new contest($api, $contestIndex, $contestLevel, $difficulties, $workingDays, $tags, $negativeTags, $contestId);
             AllContests::$contests[$contestIndex][$contestLevel] = $contest;
         }
         if (!$inside) {
@@ -52,10 +56,10 @@ class AllContests
 
     static function update()
     {
-        $contestIds=array();
-        foreach (AllContests::$contests as $weekId=>$weekContests){
-            foreach ($weekContests as $key=>$contest) {
-                $contestIds[$weekId][$key]=$contest->contestId;
+        $contestIds = array();
+        foreach (AllContests::$contests as $weekId => $weekContests) {
+            foreach ($weekContests as $key => $contest) {
+                $contestIds[$weekId][$key] = $contest->contestId;
             }
         }
         file_put_contents("data/contest.txt", json_encode($contestIds));
