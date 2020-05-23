@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . '/user.php';
-
 class AllUsers
 {
     public static $users = array(), $settings;
@@ -29,16 +27,16 @@ class AllUsers
         if (file_exists($dir)) {
             $data = json_decode(file_get_contents($dir), true);
             foreach ($data as $Array) {
-                AllUsers::addUser($Array["username"], $Array["fullName"], $Array["warm"], $Array["scores"], true);
+                AllUsers::addUser($Array["username"], $Array["warm"], $Array["scores"], true);
             }
         }
     }
 
-    static function addUser($username, $fullName, $warm, $scores, $inside = false)
+    static function addUser($username, $warm, $scores, $inside = false)
     {
         if (!isset(AllUsers::$users[$username])) {
-            $user = new user($username, $fullName, $warm, $scores);
-            AllUsers::$users[$username] = $user;
+            $user = new user($username, $warm, $scores);
+            AllUsers::$users[strtolower($username)] = $user;
         }
         if (!$inside) {
             AllUsers::update();
@@ -52,13 +50,17 @@ class AllUsers
 
     static function updateRatings($scoreboard, $contestCof, $L, $R){
         $arr = array();
+        $oneAcc = array();
         foreach($scoreboard as $username => $solved){
             if(!isset(AllUsers::$users[$username])){
-                AllUsers::$users[$username] = new user($username, $username);
+                AllUsers::$users[$username] = new user($username);
             }
             for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){
                     $arr[$i] = 0;
+                }
+                if($solved[$i] == true && !isset($oneAcc[$username])){
+                    $oneAcc[$username] = true;
                 }
                 if($solved[$i] == true){
                     $arr[$i]++;
@@ -68,9 +70,16 @@ class AllUsers
         foreach($scoreboard as $username => $solved){
             for($i = $L; $i < $R; $i++){
                 if($solved[$i] == true){
-                    AllUsers::$users[$username]->addRating($contestCof / $arr[$i]);
+                    $s = $contestCof * max(1/3, 1 - ($arr[$i] / count($oneAcc))); // change?
+                    AllUsers::$users[$username]->addRating($s);
                 }
             }
+        }
+        AllUsers::update();
+    }
+    static function startOftheDay(){
+        foreach(AllUsers::$users as $user){
+            $user->wake();
         }
         AllUsers::update();
     }

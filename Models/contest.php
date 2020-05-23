@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . '/problemset.php';
-
 class contest
 {
     public $contestId;
@@ -28,6 +26,10 @@ class contest
             $api->changeTimeToToday($this);
             $api->addContestToGroup($this->contestId);
         }
+    }
+
+    public function getDifficulties(){
+        return $this->difficulties;
     }
 
     /**

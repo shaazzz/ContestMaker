@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/APIException.php';
-
 function generateRandomString($length = 6)
 {
     $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -145,7 +143,7 @@ class CodeforcesUserApi
     {
         $duration = 15 * 60;
         if (!TIMER_UPDATE_EVERY_DAY) {
-            $duration = 24 * 60 * 7 - 9 * 40;
+            $duration = 24 * 60 * 7;
         }
         $this->request("gym/edit/" . $contest->contestId . "?csrf_token=" . $this->csrf_token, array(
             "csrf_token" => $this->csrf_token,
@@ -156,7 +154,7 @@ class CodeforcesUserApi
             "untaggedContestType" => "ICPC",
             "initialDatetime" => "",
             "startDay" => date("M/d/Y"),
-            "startTime" => "09:00",
+            "startTime" => "00:00",
             "duration" => $duration,
             "visibility" => "PRIVATE",
             "participationType" => "PERSONS_ONLY",
@@ -270,7 +268,7 @@ class CodeforcesUserApi
             "parentContestIdAndName" => "",
             "parentContestId" => "",
             "contestName" => "Contest #" . $contestIndex . " " . $contestLevel,
-            "contestDuration" => 24 * 60 * 7 - 9 * 40,
+            "contestDuration" => 24 * 60 * 7,
             "problemsJson" => "[]"
         ));
         if ($result != "{\"success\":\"true\"}") {

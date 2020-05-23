@@ -4,39 +4,53 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 libxml_use_internal_errors(true);
 
-require __DIR__ . '/Models/AllUsers.php';
-require __DIR__ . '/Models/CodeforcesUserApi.php';
-require __DIR__ . '/data/defines.php';
-//AllUsers::readFromFile();
+
+require_once 'data/defines.php';
+
+
+// have bugs
+function getSize($block, $scr)
+{
+    $ans = 1000;
+    foreach ($scr as $username => $solved) {
+        $ans = min($ans, count($solved));
+    }
+    return min(7 * $block, $ans);
+}
+
 
 $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
-$contestIds = array(278840, 278841, 278842, 278843, 279670, 279671, 279777, 279778, 280426, 280427, 280428, 280429);
-$contestLen = array(15, 15, 15, 15, 18, 18, 15, 15, 3, 18, 18, 18); // bigginer should be complete
-$sc = array(0, 0, 0, 0);
+$sc = array();
 $contestCof = array(10, 17, 26, 37); // changed
-
-for ($week = 0; $week < 3; $week++) {
-    for ($i = 0; $i < 4; $i++)
-        $sc[$i] = $api->getScoreboard($contestIds[$week * 4 + $i]);
+AllContests::readFromFile();
+foreach (AllContests::$contests as $weekId => $weekContests) {
+    echo "Starting week " . $weekId . "...\n";
+    foreach ($weekContests as $key => $contest) {
+        $sc[$key] = $api->getScoreboard($contest->contestId);
+        $block = count($contest->getDifficulties());
+        $size = getSize($block, $sc[$key]);
+        echo "contest $key has block size equal to $block and $size problems\n";
+        if ($size % $block != 0) {
+            throw new Exception("(size % block) should be 0");
+        }
+    }
     for ($i = 0; $i < 7; $i++) {
-        for ($j = 0; $j < 4; $j++) {
-            if ($contestLen[$week * 4 + $j] <= 3 * $i)
-                continue;
-            AllUsers::updateRatings($sc[$j], $contestCof[$j], $i * 3, $i * 3 + 3);
+        echo "Starting day " . ($i + 1) . "...\n";
+        $index = 0;
+        AllUsers::startOftheDay();
+        foreach ($weekContests as $key => $contest) {
+            $block = count($contest->getDifficulties());
+            $size = getSize($block, $sc[$key]);
+            if (($i + 1) * $block <= $size) {
+                AllUsers::updateRatings($sc[$key], $contestCof[$index], $i * $block, ($i + 1) * $block);
+            } else {
+                echo "day " . $i . " not exist in contest " . $contest->contestId . "\n";
+            }
+            $index++;
         }
         AllUsers::endOftheDay();
     }
 }
-/*
-for($i = 0; $i < count($contestIds); $i++){
-    $id = $contestIds[$i];
-    $ln = $contestLen[$i];
-    $sc = $api->getScoreboard($id);
-    for ($j = 0; $j < $ln; $j += 3) {
-        AllUsers::updateRatings($sc, 10, $j, $j + 3);
-        AllUsers::endOftheDay();
-    }
-}
-*/
+
 ?>

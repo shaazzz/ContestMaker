@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم پیشنهاد سوال</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="//training.shaazzz.ir/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
@@ -30,16 +31,10 @@
         error_reporting(E_ALL);
 
         try {
-            chdir('..');
-            if (isset($_POST['token'])) {
-                $_GET['token'] = $_POST['token'];
-            }
-            if (!isset($_GET['token']) || hash("sha512", $_GET['token']) != file_get_contents("data/suggestProblemPass.txt")) {
+            $token=$_GET['input'];
+            if (!isset($token) || hash("sha512", $token) != file_get_contents("data/suggestProblemPass.txt")) {
                 die("<h4 dir='rtl'>توکن اشتباه است</h4>");
             }
-            require __DIR__ . '/../data/defines.php';
-            require __DIR__ . '/../Models/problemset.php';
-            require __DIR__ . '/../Models/CodeforcesUserApi.php';
 
             foreach ($inputs as $input) {
                 if (!isset($_POST[$input])) {

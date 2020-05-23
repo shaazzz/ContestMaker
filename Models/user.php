@@ -2,19 +2,23 @@
 
 class user
 {
-    public $username, $fullName;
+    public $username;
     public $warm, $scores = array();
 
-    public function __construct($username, $fullName, $warm = 0, $scores = array() )
+    public function __construct($username, $warm = 0, $scores = array() )
     {
         $this->username = $username;
-        $this->fullName = $fullName;
         $this->warm = $warm;
         $this->scores = $scores;
     }
+    public function wake(){
+        $maxR = 1500;
+        $maxT = 100;
+        $f = $this->warm * $maxT / $maxR / $maxR;
+        $this->warm *= (1-$f);
+    }
     public function sleep(){
         array_push($this->scores, $this->warm);
-        $this->warm*= 0.96;
     }
     public function  addRating($x){
         $this->warm+= $x;

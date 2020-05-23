@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . '/problem.php';
-require_once __DIR__ . '/APIException.php';
-
 class problemset
 {
     static $problems = array();
