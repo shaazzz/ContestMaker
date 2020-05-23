@@ -52,6 +52,7 @@ class AllUsers
 
     static function updateRatings($scoreboard, $contestCof, $L, $R){
         $arr = array();
+        $oneAcc = array();
         foreach($scoreboard as $username => $solved){
             if(!isset(AllUsers::$users[$username])){
                 AllUsers::$users[$username] = new user($username);
@@ -59,6 +60,9 @@ class AllUsers
             for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){
                     $arr[$i] = 0;
+                }
+                if($solved[$i] == true && !isset($oneAcc[$username])){
+                    $oneAcc[$username] = true;
                 }
                 if($solved[$i] == true){
                     $arr[$i]++;
@@ -68,7 +72,8 @@ class AllUsers
         foreach($scoreboard as $username => $solved){
             for($i = $L; $i < $R; $i++){
                 if($solved[$i] == true){
-                    AllUsers::$users[$username]->addRating($contestCof / $arr[$i]);
+                    $s = $contestCof * max(1/3, 1 - ($arr[$i] / count($oneAcc))); // change?
+                    AllUsers::$users[$username]->addRating($s);
                 }
             }
         }
