@@ -104,7 +104,7 @@ if(!isset(AllUsers::$users[$username])){
         echo "<img border=\"0\" alt=\"open on codeforces\" src=\"//sta.codeforces.com/s/22391/apple-icon-57x57.png\" width=\"30\" height=\"30\"></a>";
         echo " $fullName ";
         echo "<a href=\"https://codeforces.com/usertalk?other=$username\" target=\"_blank\">";
-        echo "<img border=\"0\" alt=\"talk on codeforces\" src=\"//training.shaazzz.ir/files/sendMessageIcon.png\" width=\"30\" height=\"30\"></a>";
+        echo "<img border=\"0\" alt=\"talk on codeforces\" src=\"//training.shaazzz.ir/files/messageIcon.png\" width=\"30\" height=\"30\"></a>";
         echo "</h4>";
         echo "<h4 style=\"font-size: 20px;text-align:center\"><b>$userRateName</b></h4>";
         echo "</div>";
