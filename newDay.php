@@ -47,7 +47,10 @@ try {
         }
 
         foreach ($contestSettings as $key => $value) {
-            AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'],
+            if (!isset($contestSettings[$key]['workingDays']["workingDays"])) {
+                $contestSettings[$key]['workingDays']= "1111111";
+            }
+            AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'], $contestSettings[$key]['workingDays'],
                 $contestSettings[$key]['tags'], $contestSettings[$key]['negativeTags'], null, $api);
         }
     }
@@ -66,7 +69,9 @@ try {
         if (isset($contestSettings["hideProblemsEveryDay"]) && $contestSettings["hideProblemsEveryDay"]) {
             $api->setVisibilityProblems($contest->contestId, false);
         }
-        $api->setNewProblemsForContest($contest, $contest->giveContest($forbiddenProblemIds));
+        if ($contest->isWorking($dayNumber)) {
+            $api->setNewProblemsForContest($contest, $contest->giveContest($forbiddenProblemIds));
+        }
     }
 } catch (Exception $e) {
     echo "<h3 dir=\"rtl\"> خطا: " . $e->getMessage();
