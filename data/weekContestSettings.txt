@@ -24,10 +24,6 @@
         "Gold":{"difficulties": [{"L":2400,"R":2700}, {"L":2500,"R":2900}, {"L":2800,"R":3200}], "tags": ["meet-in-the-middle","graphs","dp"], "negativeTags": ["fft"]}
     },
     "Week4":{
-<<<<<<< HEAD
-        "Beginner":{"hideProblemsEveryDay":true, "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]}
-=======
         "Beginner":{"hideProblemsEveryDay":true, "workingDays":"1111111", "difficulties": [{"L":700,"R":1200}, {"L":900,"R":1400}, {"L":1100,"R":1600}], "tags": ["implementation","greedy","math"], "negativeTags": ["fft"]},
->>>>>>> 91b76bcb514cd625a450ea9ac892b2aacc578029
     }
 }
