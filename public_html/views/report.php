@@ -98,11 +98,14 @@ if(!isset(AllUsers::$users[$username])){
         }
 
         echo "<img class='circular-big-square' style=\"width: 40%;min-height:25%;\" src=\"" . $user['titlePhoto'] . "\">";
-        echo "<a href=\"https://codeforces.com/profile/$username\">
-<img border=\"0\" alt=\"W3Schools\" src=\"https://sta.codeforces.com/s/22391/apple-icon-57x57.png\" width=\"50\" height=\"50\">
-</a>";
         echo "<div dir='rtl' style=\"font-size: 20px;color:" . $userRateColor . ";\">";
-        echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">$fullName</h4>";
+        echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">";
+        echo "<a href=\"//codeforces.com/profile/$username\" target=\"_blank\">";
+        echo "<img border=\"0\" alt=\"open on codeforces\" src=\"//sta.codeforces.com/s/22391/apple-icon-57x57.png\" width=\"30\" height=\"30\"></a>";
+        echo " $fullName ";
+        echo "<a href=\"https://codeforces.com/usertalk?other=$username\" target=\"_blank\">";
+        echo "<img border=\"0\" alt=\"talk on codeforces\" src=\"//training.shaazzz.ir/files/sendMessageIcon.png\" width=\"30\" height=\"30\"></a>";
+        echo "</h4>";
         echo "<h4 style=\"font-size: 20px;text-align:center\"><b>$userRateName</b></h4>";
         echo "</div>";
         echo "<h4 dir='rtl' style=\"text-align:center;font-size: 20px;\"> امتیاز: " . (int)AllUsers::$users[$username]->warm . "</h4>";
