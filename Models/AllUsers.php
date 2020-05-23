@@ -29,15 +29,15 @@ class AllUsers
         if (file_exists($dir)) {
             $data = json_decode(file_get_contents($dir), true);
             foreach ($data as $Array) {
-                AllUsers::addUser($Array["username"], $Array["fullName"], $Array["warm"], $Array["scores"], true);
+                AllUsers::addUser($Array["username"], $Array["warm"], $Array["scores"], true);
             }
         }
     }
 
-    static function addUser($username, $fullName, $warm, $scores, $inside = false)
+    static function addUser($username, $warm, $scores, $inside = false)
     {
         if (!isset(AllUsers::$users[$username])) {
-            $user = new user($username, $fullName, $warm, $scores);
+            $user = new user($username, $warm, $scores);
             AllUsers::$users[$username] = $user;
         }
         if (!$inside) {
@@ -54,7 +54,7 @@ class AllUsers
         $arr = array();
         foreach($scoreboard as $username => $solved){
             if(!isset(AllUsers::$users[$username])){
-                AllUsers::$users[$username] = new user($username, $username);
+                AllUsers::$users[$username] = new user($username);
             }
             for($i = $L; $i < $R; $i++){
                 if(!isset($arr[$i])){

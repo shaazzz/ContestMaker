@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>رتبه بندی کل</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
@@ -49,7 +50,10 @@
 
             foreach (AllUsers::$users as $user) {
                 $number++;
-                $name = $user->fullName;
+                $fullName = $user->username;
+                if (isset($usersInf[$number - 1]["firstName"]) && isset($usersInf[$number - 1]["lastName"])) {
+                    $fullName = $usersInf[$number - 1]["firstName"] . " " . $usersInf[$number - 1]['lastName'];
+                }
                 $warm = (int)$user->warm;
                 $photo = $usersInf[$number - 1]['avatar'];
 
@@ -57,7 +61,7 @@
                         <td style='text-align:center;padding: 5px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 15px'>
                             <img class=\"circular--square\" style=\"width: 10%;min-height:10%;vertical-align:middle;display:inline;\" src=\"$photo\">
-                            <a href=\"/report.php?username=$user->username\" style='margin-left: 3px;margin-right: : 3px'>$name</a>
+                            <a href=\"/report.php?username=$user->username\" style='margin-left: 3px;margin-right: : 3px'>$fullName</a>
                         </td>
                         <td dir='rtl' style='text-align:center;padding: 5px'>$warm</td>
                         </tr>";

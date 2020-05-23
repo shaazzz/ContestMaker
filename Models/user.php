@@ -2,13 +2,12 @@
 
 class user
 {
-    public $username, $fullName;
+    public $username;
     public $warm, $scores = array();
 
-    public function __construct($username, $fullName, $warm = 0, $scores = array() )
+    public function __construct($username, $warm = 0, $scores = array() )
     {
         $this->username = $username;
-        $this->fullName = $fullName;
         $this->warm = $warm;
         $this->scores = $scores;
     }
@@ -23,7 +22,7 @@ class user
     {
         $ans = array();
         for($i = 0; $i < count($this->scores); $i++) {
-            array_push($ans, array("x" => $today-count($this->scores) + $i + 1, "y" => $this->scores[$i]));
+            array_push($ans, array("x" => $today-count($this->scores) + $i + 1, "y" => $this->scores[$i]*8));
         }
         return $ans;
     }

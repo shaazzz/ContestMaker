@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم گزارش کاربران</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 
