@@ -18,7 +18,7 @@
 <div class="container">
     <div id="contact">
         <img src="https://assets.prestashop2.com/sites/default/files/styles/blog_750x320/public/blog/2019/10/banner_error_404.jpg?itok=eAS4swln"
-             style="border-radius: 10%;max-width: 100%">
+             style="border-radius: 15%;max-width: 100%">
         <h3 id="contact" dir="rtl">صفحه ای که به دنبال آن میگردید وجود ندارد!</h3>
     </div>
 </div>
