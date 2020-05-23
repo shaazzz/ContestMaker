@@ -18,6 +18,14 @@
   overflow:hidden
 }
 
+.rotate45 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .circular-big-square {
   border-radius: 50%;
   width:300px;
