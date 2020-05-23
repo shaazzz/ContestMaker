@@ -33,7 +33,11 @@
 
             $cfApi = new CodeforcesApi();
             usort(AllUsers::$users, function ($a, $b) {
-                return $b->warm - $a->warm;
+                if($b->warm > $a->warm){
+                    return 1;
+                }else{
+                    return -1;
+                }
             });
 
             $usernames = array();
