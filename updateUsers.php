@@ -22,7 +22,7 @@ function getSize($block, $scr)
 $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $sc = array();
-$contestCof = array(10, 17, 26, 37); // changed
+$contestCof = array(7, 18, 30, 42); // changed
 AllContests::readFromFile();
 foreach (AllContests::$contests as $weekId => $weekContests) {
     echo "Starting week " . $weekId . "...\n";
