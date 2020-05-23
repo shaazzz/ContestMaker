@@ -1,35 +1,35 @@
 [{
 	"startValue": 0,
-	"endValue": 50,
+	"endValue": 100,
 	"name": "نوب",
 	"color": "rgb(192,192,192)"
 }, {
-	"startValue": 50,
-	"endValue": 100,
+	"startValue": 100,
+	"endValue": 200,
 	"name": "کم&zwnj;تلاش",
 	"color": "rgb(36,186,9)"
 }, {
-	"startValue": 100,
-	"endValue": 200,
-	"name": "تلاش گر",
+	"startValue": 200,
+	"endValue": 250,
+	"name": "تلاش&zwnj;گر",
 	"color": "#1e51d2"
 }, {
-	"startValue": 200,
-	"endValue": 300,
-	"name": "حرفه&zwnj;ای",
+	"startValue": 250,
+	"endValue": 400,
+	"name": "خبره",
 	"color": "#ce1760"
 }, {
-    "startValue": 300,
+    "startValue": 400,
     "endValue": 500,
     "name": "نیمچه استاد",
     "color": "#ece130"
 }, {
 	"startValue": 500,
-	"endValue": 800,
+	"endValue": 700,
 	"name": "استاد",
 	"color": "#e21d1d"
 }, {
-	"startValue": 800,
+	"startValue": 700,
 	"endValue": 10000,
 	"name": "استاد بزرگ",
 	"color": "#9e0505"
