@@ -251,9 +251,15 @@ class CodeforcesUserApi
             $users = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
             $userId = $users[0]->nodeValue;
             $columns = $participant_doc->getElementsByTagName("td");
+            $index=0;
             foreach ($columns as $column) {
                 if ($column->hasAttribute("problemid")) {
-                    $scoreboard[$userId][] = $column->hasAttribute("acceptedsubmissionid");
+                    if(isset($scoreboard[$userId][$index])){
+                        $scoreboard[$userId][$index] |= $column->hasAttribute("acceptedsubmissionid");
+                    }else{
+                        $scoreboard[$userId][$index] = $column->hasAttribute("acceptedsubmissionid");
+                    }
+                    $index++;
                 }
             }
         }

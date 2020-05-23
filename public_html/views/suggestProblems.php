@@ -16,7 +16,7 @@
 
 <div class="container">
 
-    <form id="contact" action="suggestProblems.php" method="post">
+    <form id="contact" action="" method="post">
         <h3 dir="rtl">فرم پیشنهاد سوال</h3>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -156,7 +156,6 @@
         <fieldset>
             <button class="submit" type="submit">Submit</button>
         </fieldset>
-        <input hidden name="token" value=<?php echo $_GET['token'] ?>>
     </form>
 
 </div>
