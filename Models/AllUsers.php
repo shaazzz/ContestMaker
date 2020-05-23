@@ -74,6 +74,12 @@ class AllUsers
         }
         AllUsers::update();
     }
+    static function startOftheDay(){
+        foreach(AllUsers::$users as $user){
+            $user->wake();
+        }
+        AllUsers::update();
+    }
     static function endOftheDay(){
         foreach(AllUsers::$users as $user){
             $user->sleep();

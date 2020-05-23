@@ -11,9 +11,14 @@ class user
         $this->warm = $warm;
         $this->scores = $scores;
     }
+    public function wake(){
+        $maxR = 1500;
+        $maxT = 100;
+        $f = $this->warm * $maxT / $maxR / $maxR;
+        $this->warm *= (1-$f);
+    }
     public function sleep(){
         array_push($this->scores, $this->warm);
-        $this->warm*= 0.96;
     }
     public function  addRating($x){
         $this->warm+= $x;
@@ -22,7 +27,7 @@ class user
     {
         $ans = array();
         for($i = 0; $i < count($this->scores); $i++) {
-            array_push($ans, array("x" => $today-count($this->scores) + $i + 1, "y" => $this->scores[$i]*8));
+            array_push($ans, array("x" => $today-count($this->scores) + $i + 1, "y" => $this->scores[$i]));
         }
         return $ans;
     }

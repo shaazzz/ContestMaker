@@ -42,6 +42,7 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
     for ($i = 0; $i < 7; $i++) {
         echo "Starting day " . ($i + 1) . "...\n";
         $index = 0;
+        AllUsers::startOftheDay();
         foreach ($weekContests as $key => $contest) {
             $block = count($contest->getDifficulties());
             $size = getSize($block, $sc[$key]);
