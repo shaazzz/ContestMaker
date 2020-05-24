@@ -17,7 +17,7 @@
 	"startValue": 350,
 	"endValue": 500,
 	"name": "خبره",
-	"color": "#ae1790"
+	"color": "#be1780"
 }, {
         "startValue": 500,
         "endValue": 600,
