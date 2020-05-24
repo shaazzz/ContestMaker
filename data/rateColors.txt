@@ -1,7 +1,7 @@
 [{
 	"startValue": 0,
 	"endValue": 100,
-	"name": "نوب",
+	"name": "تازهzwnj;کار",
 	"color": "rgb(192,192,192)",
   	"labelColor": "rgb(130,130,130)"
 }, {
