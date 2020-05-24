@@ -23,6 +23,16 @@ class user
     public function  addRating($x){
         $this->warm+= $x;
     }
+
+    public function getRate(){
+        $rates = json_decode(file_get_contents("data/rateColors.txt"), true);
+        foreach ($rates as $rate) {
+            if (AllUsers::$users[$this->username]->warm < $rate['endValue']) {
+                return $rate;
+            }
+        }
+    }
+
     public function getRating($today)
     {
         $ans = array();

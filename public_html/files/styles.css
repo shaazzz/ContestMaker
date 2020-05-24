@@ -11,6 +11,11 @@
   text-rendering: optimizeLegibility;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
 .circular--square {
   border-radius: 50%;
   width:25px;
@@ -40,7 +45,7 @@
   margin-left: auto;
   margin-right: auto;
   overflow:hidden
- }
+}
 
 body {
   font-family: "Vazir", Helvetica, Arial, sans-serif;
