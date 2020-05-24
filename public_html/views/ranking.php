@@ -4,7 +4,8 @@
     <title>رتبه&zwnj;بندی شاززز</title>
     <link rel="icon" href="//training.shaazzz.ir/files/shaazzzLogo.png">
     <link href="//training.shaazzz.ir/files/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
@@ -33,9 +34,9 @@
 
             $cfApi = new CodeforcesApi();
             usort(AllUsers::$users, function ($a, $b) {
-                if($b->warm > $a->warm){
+                if ($b->warm > $a->warm) {
                     return 1;
-                }else{
+                } else {
                     return -1;
                 }
             });
@@ -55,14 +56,14 @@
                 }
                 $warm = (int)$user->warm;
                 $photo = $usersInf[$number - 1]['avatar'];
-                $linkName=str_replace(".", "+", $user->username);
+                $linkName = str_replace(".", "+", $user->username);
 
                 $userRateColor = $user->getRate()['labelColor'];;
                 echo "<tr id=\"user\" style='margin: 100px'>
                         <td style='text-align:center;padding: 5px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 15px'>
                             <img class=\"circular--square\" style=\"width: 10%;min-height:10%;vertical-align:middle;display:inline;\" src=\"$photo\">
-                            <a href=\"profile/$linkName/\" style='font-size:3vw;color: $userRateColor;text-decoration: none;margin-left: 3px;margin-right: : 3px'>$fullName</a>
+                            <a href=\"profile/$linkName/\" style='font-size:1vmin;color: $userRateColor;text-decoration: none;margin-left: 3px;margin-right: : 3px'>$fullName</a>
                         </td>
                         <td dir='rtl' style='text-align:center;padding: 5px'>$warm</td>
                         </tr>";
