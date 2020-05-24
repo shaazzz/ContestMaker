@@ -82,7 +82,7 @@ if(!isset(AllUsers::$users[$username])){
         $user = $cfApi->request("user.info", array("handles" => $_GET['input']))['result'][0];
         $rates = json_decode(file_get_contents("data/rateColors.txt"), true);
         $userRateName = AllUsers::$users[$username]->getRate()['name'];;
-        $userRateColor = AllUsers::$users[$username]->getRate()['color'];
+        $userRateColor = AllUsers::$users[$username]->getRate()['labelColor'];
 
         $fullName = $_GET['input'];
         if (isset($user["firstName"]) && isset($user["lastName"])) {

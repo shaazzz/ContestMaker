@@ -57,7 +57,7 @@
                 $photo = $usersInf[$number - 1]['avatar'];
                 $linkName=str_replace(".", "+", $user->username);
 
-                $userRateColor = $user->getRate()['color'];;
+                $userRateColor = $user->getRate()['labelColor'];;
                 echo "<tr id=\"user\" style='margin: 100px'>
                         <td style='text-align:center;padding: 5px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 15px'>
