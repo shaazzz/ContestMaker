@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>رتبه بندی کل</title>
+    <title>رتبه&zwnj;بندی شاززز</title>
     <link rel="icon" href="//training.shaazzz.ir/files/shaazzzLogo.png">
     <link href="//training.shaazzz.ir/files/styles.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@
         <img style="align-content:center;padding-left:20%;padding-right:20%;width: 100%;min-height:25%;margin:auto;vertical-align:middle;display:inline;"
              src="//training.shaazzz.ir/files/shaazzzLogo.png">
         <br><br>
-        <h3 dir="rtl" style="font-size:45px;text-align:center">رتبه بندی کل</h3>
+        <h3 dir="rtl" style="font-size:45px;text-align:center">رتبه&zwnj;بندی کل</h3>
 
         <?php
         ini_set('display_errors', 1);
@@ -62,7 +62,7 @@
                         <td style='text-align:center;padding: 5px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 15px'>
                             <img class=\"circular--square\" style=\"width: 10%;min-height:10%;vertical-align:middle;display:inline;\" src=\"$photo\">
-                            <a href=\"profile/$linkName/\" style='color: $userRateColor;text-decoration: none;margin-left: 3px;margin-right: : 3px'>$fullName</a>
+                            <a href=\"profile/$linkName/\" style='font-size:3vw;color: $userRateColor;text-decoration: none;margin-left: 3px;margin-right: : 3px'>$fullName</a>
                         </td>
                         <td dir='rtl' style='text-align:center;padding: 5px'>$warm</td>
                         </tr>";
