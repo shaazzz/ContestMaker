@@ -27,7 +27,7 @@
     "endValue": 600,
     "name": "نیمچه استاد",
     "color": "#ece130",
-    "labelColor": "#e5b405"
+    "labelColor": "#e0b415"
 }, {
 	"startValue": 600,
 	"endValue": 800,
