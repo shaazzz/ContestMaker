@@ -17,12 +17,12 @@
 	"startValue": 350,
 	"endValue": 500,
 	"name": "خبره",
-	"color": "#ce1760"
+	"color": "#ae1790"
 }, {
-    "startValue": 500,
-    "endValue": 600,
-    "name": "نیمچه استاد",
-    "color": "#ece130"
+        "startValue": 500,
+        "endValue": 600,
+        "name": "نیمچه استاد",
+        "color": "#ece130"
 }, {
 	"startValue": 600,
 	"endValue": 800,
