@@ -27,10 +27,11 @@ class user
     public function getRate(){
         $rates = json_decode(file_get_contents("data/rateColors.txt"), true);
         foreach ($rates as $rate) {
-            if (AllUsers::$users[$this->username]->warm < $rate['endValue']) {
+            if ($this->warm < $rate['endValue']) {
                 return $rate;
             }
         }
+        return null;
     }
 
     public function getRating($today)
