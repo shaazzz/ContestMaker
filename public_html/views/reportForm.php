@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم گزارش کاربران</title>
-    <link rel="icon" href="http://bayanbox.ir/view/4819107262267230957/rlogo.png">
+    <link rel="icon" href="//training.shaazzz.ir/files/shaazzzLogo.png">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
-    <link href="//training.shaazzz.ir/styles.css" rel="stylesheet" type="text/css">
+    <link href="//training.shaazzz.ir/files/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 

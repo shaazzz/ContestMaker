@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>رتبه بندی کل</title>
-    <link rel="icon" href="http://bayanbox.ir/view/4819107262267230957/rlogo.png">
-    <link href="//training.shaazzz.ir/styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="//training.shaazzz.ir/files/shaazzzLogo.png">
+    <link href="//training.shaazzz.ir/files/styles.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
     <div id="contact">
 
         <img style="align-content:center;padding-left:20%;padding-right:20%;width: 100%;min-height:25%;margin:auto;vertical-align:middle;display:inline;"
-             src="http://bayanbox.ir/view/4819107262267230957/rlogo.png">
+             src="//training.shaazzz.ir/files/shaazzzLogo.png">
         <br><br>
         <h3 dir="rtl" style="font-size:45px;text-align:center">رتبه بندی کل</h3>
 
