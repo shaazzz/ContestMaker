@@ -18,7 +18,7 @@
     <div id="contact">
 
         <img style="align-content:center;padding-left:20%;padding-right:20%;width: 100%;min-height:25%;margin:auto;vertical-align:middle;display:inline;"
-             src="//training.shaazzz.ir/logo.png">
+             src="//shaazzz.ir/logo.png">
         <br><br>
         <h3 dir="rtl" style="font-size:45px;text-align:center">رتبه&zwnj;بندی شاززز</h3>
 
