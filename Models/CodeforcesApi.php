@@ -41,7 +41,12 @@ class CodeforcesApi
             $parameters['apiSig'] = $randomString . hash('sha512', $data);
         }
         $query = self::$url . $methodName . "?" . http_build_query($parameters);
-        return json_decode(file_get_contents($query), true);
+        $ansStr = file_get_contents($query);
+        $answer = json_decode($ansStr, true);
+        if ($answer['status'] != 'OK') {
+            throw new APIException("return status is not ok!", $ansStr);
+        }
+        return $answer;
     }
 
     function getAcceptedProblemIds($person)
@@ -67,5 +72,17 @@ class CodeforcesApi
             $problems = array_merge($problems, $this->getAcceptedProblemIds($forbiddenUserId));
         }
         return array_unique($problems);
+    }
+
+    function getContestProblems($contestId)
+    {
+        $result = $this->request("contest.standings", array("contestId" => $contestId))['result'];
+        return $result['problems'];
+    }
+
+    function getParticipatesActivities($contestId, $fromDay = 0, $showUnofficial = false)
+    {
+        $result = $this->request("contest.standings", array("contestId" => $contestId, "showUnofficial" => $showUnofficial))['result'];
+        var_dump($result);
     }
 }
