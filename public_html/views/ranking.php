@@ -66,7 +66,7 @@
                 echo "<tr id=\"user\" style='margin: 100px'>
                         <td style='text-align:center;padding: 5px'>#$number</td>
                         <td dir='auto' style='font-size: 20px;width: 100%;padding: 15px'>
-                            <img class=\"circular--square\" style=\"width: 10%;min-height:10%;vertical-align:middle;display:inline;\" src=\"$photo\">
+                            <img class=\"circular--square\" style=\"width: 10%;height:10%;vertical-align:middle;display:inline;\" src=\"$photo\">
                             <a href=\"profile/$linkName/\" style='font-size:$fontSize;color: $userRateColor;text-decoration: none;margin-left: 3px;margin-right: : 3px'>$fullName</a>
                         </td>
                         <td dir='rtl' style='text-align:center;padding: 5px'>$warm</td>
