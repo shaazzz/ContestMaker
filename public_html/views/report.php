@@ -90,7 +90,7 @@ if (!isset(AllUsers::$users[$username])) {
             $fullName = $user["firstName"] . " " . $user['lastName'];
         }
 
-        echo "<img class='circular-big-square' style=\"width: 300px;height:300px;\" src=\"https:" . $user['titlePhoto'] . "\">";
+        echo "<img class='circular-big-square' style=\"width: 220px;height:220px;\" src=\"https:" . $user['titlePhoto'] . "\">";
         echo "<div dir='rtl' style=\"font-size: 20px;color:" . $userRateColor . ";\">";
         echo "<h4 style=\"margin-top:20px;font-size: 35px;text-align:center;\">";
         echo "<a href=\"//codeforces.com/profile/$username\" target=\"_blank\">";
