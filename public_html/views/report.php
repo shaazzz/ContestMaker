@@ -1,7 +1,7 @@
 <?php
 $username = $_GET['input'];
 AllUsers::readFromFile();
-if(!isset(AllUsers::$users[$username])){
+if (!isset(AllUsers::$users[$username])) {
     require_once '404.php';
     return;
 }
@@ -13,7 +13,8 @@ if(!isset(AllUsers::$users[$username])){
     <title>امتیاز کاربر</title>
     <link href="//training.shaazzz.ir/files/styles.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="//shaazzz.ir/logo.png">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
@@ -54,7 +55,7 @@ if(!isset(AllUsers::$users[$username])){
                             }
                             $username = $_GET['input'];
                             $today = (int)file_get_contents("data/counter.txt");
-                            echo json_encode(AllUsers::$users[$username]->getRating($today + 1));
+                            echo json_encode(AllUsers::$users[$username]->getRating($today - 1));
                         } catch (Exception $e) {
                             if ($e->getMessage() != "_POST input error") {
                                 echo sprintf("<errorbox><h4 dir=\"rtl\"> <b>خطا:</b> %s</h4></errorbox><br>", $e->getMessage());

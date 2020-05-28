@@ -7,12 +7,10 @@ libxml_use_internal_errors(true);
 
 require_once 'data/defines.php';
 
-/*
+
 $cfApi = new CodeforcesApi();
 $cfApi->addUser("shaazzz_admin", CODEFORCES_API_KEY, CODEFORCES_API_SECRET);
-$cfApi->getParticipatesActivities(281384,true);
 
-*/
 
 // have bugs
 function getSize($block, $scr)
@@ -29,14 +27,15 @@ $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $sc = array();
 $contestCof = array(7, 18, 30, 42); // changed
 AllContests::readFromFile();
+$size=array();
 foreach (AllContests::$contests as $weekId => $weekContests) {
     echo "Starting week " . $weekId . "...\n";
     foreach ($weekContests as $key => $contest) {
         $sc[$key] = $api->getScoreboard($contest->contestId);
         $block = count($contest->getDifficulties());
-        $size = getSize($block, $sc[$key]);
-        echo "contest $key has block size equal to $block and $size problems\n";
-        if ($size % $block != 0) {
+        $size[$key] = count($cfApi->getContestProblems($contest->contestId));
+        echo "contest $key has block size equal to $block and $size[$key] problems\n";
+        if ($size[$key] % $block != 0) {
             throw new Exception("(size % block) should be 0");
         }
     }
@@ -49,9 +48,9 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
         }
         $used = false;
         foreach ($weekContests as $key => $contest) {
+
             $block = count($contest->getDifficulties());
-            $size = getSize($block, $sc[$key]);
-            if (($i + 1) * $block <= $size) {
+            if (($i + 1) * $block <= $size[$key]) {
                 AllUsers::updateRatings($sc[$key], $contestCof[$index], $i * $block, ($i + 1) * $block);
                 $used = true;
             } else {

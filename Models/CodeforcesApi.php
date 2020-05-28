@@ -74,6 +74,12 @@ class CodeforcesApi
         return array_unique($problems);
     }
 
+    function getContestProblems($contestId)
+    {
+        $result = $this->request("contest.standings", array("contestId" => $contestId))['result'];
+        return $result['problems'];
+    }
+
     function getParticipatesActivities($contestId, $fromDay = 0, $showUnofficial = false)
     {
         $result = $this->request("contest.standings", array("contestId" => $contestId, "showUnofficial" => $showUnofficial))['result'];
