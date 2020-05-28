@@ -32,9 +32,10 @@ try {
                 if (!isset(AllContests::$contests[$contestIndex - 1])) {
                     throw new Exception("");
                 }
-//                foreach (AllContests::$contests[$contestIndex - 1] as $contest) {
-//                    $api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
-//                }
+                foreach (AllContests::$contests[$contestIndex - 1] as $contest) {
+                    $api->setVisibilityProblems($contest->contestId, true);
+                    //$api->sendScoreboard($contest->contestId, CF_GROUP_PREFIX_ADDRESS);
+                }
             }
         } catch (Exception $e) {
             echo "\n<br>error in sending scoreboard";
@@ -48,12 +49,13 @@ try {
 
         foreach ($contestSettings as $key => $value) {
             if (!isset($contestSettings[$key]['workingDays']["workingDays"])) {
-                $contestSettings[$key]['workingDays']= "1111111";
+                $contestSettings[$key]['workingDays'] = "1111111";
             }
             AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'], $contestSettings[$key]['workingDays'],
                 $contestSettings[$key]['tags'], $contestSettings[$key]['negativeTags'], null, $api);
         }
     }
+    require "updateUsers.php";
 
     foreach (AllContests::$contests[$contestIndex] as $contest) {
         if (isset($setting["Week" . $contestIndex])) {

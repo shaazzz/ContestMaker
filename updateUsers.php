@@ -7,6 +7,12 @@ libxml_use_internal_errors(true);
 
 require_once 'data/defines.php';
 
+/*
+$cfApi = new CodeforcesApi();
+$cfApi->addUser("shaazzz_admin", CODEFORCES_API_KEY, CODEFORCES_API_SECRET);
+$cfApi->getParticipatesActivities(281384,true);
+
+*/
 
 // have bugs
 function getSize($block, $scr)
