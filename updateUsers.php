@@ -41,7 +41,7 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
         }
     }
     for ($i = 0; $i < 7; $i++) {
-        if (($weekId - 1) * 7 + ($i + 1) >= $dayNumber - 1) {
+        if (($weekId - 1) * 7 + ($i + 1) >= $dayNumber) {
             continue;
         }
         echo "Starting day " . ($i + 1) . "...\n";
