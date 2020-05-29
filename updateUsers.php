@@ -27,7 +27,8 @@ $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $sc = array();
 $contestCof = array(7, 18, 30, 42); // changed
 AllContests::readFromFile();
-$size=array();
+$size = array();
+$dayNumber = (int)file_get_contents("data/counter.txt");
 foreach (AllContests::$contests as $weekId => $weekContests) {
     echo "Starting week " . $weekId . "...\n";
     foreach ($weekContests as $key => $contest) {
@@ -40,6 +41,9 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
         }
     }
     for ($i = 0; $i < 7; $i++) {
+        if (($weekId - 1) * 7 + ($i + 1) >= $dayNumber - 1) {
+            continue;
+        }
         echo "Starting day " . ($i + 1) . "...\n";
         $index = 0;
         AllUsers::startOftheDay();
