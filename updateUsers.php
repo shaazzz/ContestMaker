@@ -39,13 +39,10 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
             throw new Exception("(size % block) should be 0");
         }
     }
-    $used = true;
     for ($i = 0; $i < 7; $i++) {
         echo "Starting day " . ($i + 1) . "...\n";
         $index = 0;
-        if ($used) {
-            AllUsers::startOftheDay();
-        }
+        AllUsers::startOftheDay();
         $used = false;
         foreach ($weekContests as $key => $contest) {
 
@@ -58,9 +55,7 @@ foreach (AllContests::$contests as $weekId => $weekContests) {
             }
             $index++;
         }
-        if ($used) {
-            AllUsers::endOftheDay();
-        }
+        AllUsers::endOftheDay();
     }
 }
 
