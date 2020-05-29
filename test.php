@@ -16,8 +16,8 @@ $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $cfApi = new CodeforcesApi();
 
 
-foreach (AllContests::$contests[4] as $contest) {
-    $api->setVisibilityProblems($contest->contestId, true);
-}
+//foreach (AllContests::$contests[4] as $contest) {
+    $api->setVisibilityProblems(281384, false);
+//}
 
-require "updateUsers.php";
+//require "updateUsers.php";
