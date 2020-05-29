@@ -47,7 +47,7 @@ try {
         }
 
         foreach ($contestSettings as $key => $value) {
-            if (!isset($contestSettings[$key]['workingDays']["workingDays"])) {
+            if (!isset($contestSettings[$key]['workingDays'])) {
                 $contestSettings[$key]['workingDays'] = "1111111";
             }
             AllContests::addContest($contestIndex, $key, $contestSettings[$key]['difficulties'], $contestSettings[$key]['workingDays'],
@@ -65,13 +65,15 @@ try {
         if (isset($setting["Week" . $contestIndex])) {
             $contestSettings = $setting["Week" . $contestIndex][$contest->getContestLevel()];
         } else {
-            echo "week setting not found! using week default setting...\n";
+            file_put_contents('/data/log.txt', "week setting not found! using week default setting...\n", FILE_APPEND);
             $contestSettings = $setting["WeekDefault"][$contest->getContestLevel()];
         }
         $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
-        echo "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n";
+
+        file_put_contents('/data/log.txt',  "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n", FILE_APPEND);
         $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
-        echo "number of forbidden problem:" . count($forbiddenProblemIds) . "\n";
+        file_put_contents('/data/log.txt',  "number of forbidden problem:" . count($forbiddenProblemIds) . "\n" . $contest->contestId . "\n", FILE_APPEND);
+
         if (isset($contestSettings["hideProblemsEveryDay"]) && $contestSettings["hideProblemsEveryDay"]) {
             $api->setVisibilityProblems($contest->contestId, false);
         }
