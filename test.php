@@ -8,14 +8,16 @@ date_default_timezone_set('Asia/Taipei');
 
 require_once 'data/defines.php';
 
+problemset::readFromFile();
+AllContests::readFromFile();
+
 $api = new CodeforcesUserApi();
 $api->login(CODEFORCES_USERNAME, CODEFORCES_PASSWORD);
 $cfApi = new CodeforcesApi();
 
-//$sc = $api->getScoreboard(280427, "group/W2YvE0cOoh/contest");
-///var_dump($sc);
 
-$users = $api->getActiveParticipates(280427, "group/W2YvE0cOoh/contest");
-var_dump($users);
-echo count($cfApi->getForbiddenProblemIds($users));//,"group/W2YvE0cOoh/contest"));
+foreach (AllContests::$contests[4] as $contest) {
+    $api->setVisibilityProblems($contest->contestId, true);
+}
 
+require "updateUsers.php";
