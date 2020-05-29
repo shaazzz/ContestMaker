@@ -24,7 +24,6 @@ try {
     file_put_contents("data/counter.txt", $dayNumber + 1);
     $contestIndex = intdiv($dayNumber, 7) + 1;
 
-
     $setting = json_decode(file_get_contents("data/weekContestSettings.txt"), true);
     if ($dayNumber % 7 == 0) {
         try {
@@ -55,6 +54,11 @@ try {
                 $contestSettings[$key]['tags'], $contestSettings[$key]['negativeTags'], null, $api);
         }
     }
+
+    foreach (AllContests::$contests[$contestIndex] as $contest) {
+        $api->setVisibilityProblems($contest->contestId, true);
+    }
+
     require "updateUsers.php";
 
     foreach (AllContests::$contests[$contestIndex] as $contest) {
