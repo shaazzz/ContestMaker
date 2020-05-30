@@ -70,14 +70,14 @@ try {
         }
         $forbiddenUsers = $api->getActiveParticipates($contest->contestId);
 
-        file_put_contents('/data/log.txt',  "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n", FILE_APPEND);
+        file_put_contents('/data/log.txt', "(" . implode(', ', $forbiddenUsers) . ") are active users for contest " . $contest->contestId . "\n", FILE_APPEND);
         $forbiddenProblemIds = $cfApi->getForbiddenProblemIds($forbiddenUsers);
-        file_put_contents('/data/log.txt',  "number of forbidden problem:" . count($forbiddenProblemIds) . "\n" . $contest->contestId . "\n", FILE_APPEND);
+        file_put_contents('/data/log.txt', "number of forbidden problem:" . count($forbiddenProblemIds) . "\n" . $contest->contestId . "\n", FILE_APPEND);
 
         if (isset($contestSettings["hideProblemsEveryDay"]) && $contestSettings["hideProblemsEveryDay"]) {
             $api->setVisibilityProblems($contest->contestId, false);
         }
-        if ($contest->isWorking($dayNumber)) {
+        if ($contest->isWorking($dayNumber - 1)) {
             $api->setNewProblemsForContest($contest, $contest->giveContest($forbiddenProblemIds));
         }
     }
