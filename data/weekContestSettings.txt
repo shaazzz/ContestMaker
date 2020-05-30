@@ -285,7 +285,7 @@
 			"negativeTags": ["fft"]
 		},
 		"Silver": {
-			"workingDays": "0110010",
+			"workingDays": "1010010",
 			"difficulties": [{
 				"L": 1900,
 				"R": 2200
@@ -300,7 +300,7 @@
 			"negativeTags": ["fft"]
 		},
 		"Gold": {
-			"workingDays": "1001000",
+			"workingDays": "0101000",
 			"difficulties": [{
 				"L": 2400,
 				"R": 2700
