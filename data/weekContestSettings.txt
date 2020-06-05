@@ -314,5 +314,68 @@
 			"tags": ["centroid", "string suffix structures", "dp"],
 			"negativeTags": ["fft"]
 		}
+	},
+	"Week6": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["implementation", "greedy", "math"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["sortings", "greedy", "math", "strings"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["hashing", "strings", "ternary search", "bitmasks"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["dsu", "sqrt", "matrices"],
+			"negativeTags": ["fft"]
+		}
 	}
 }
