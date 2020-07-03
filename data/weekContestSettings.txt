@@ -596,7 +596,7 @@
                                 "L": 1700,
                                 "R": 2000
                         }],
-                        "tags": [],
+                        "tags": ["combinatorics","bfs","dp"],
                         "negativeTags": ["fft"]
                 },
                 "Silver": {
@@ -611,7 +611,7 @@
                                 "L": 2300,
                                 "R": 2600
                         }],
-                        "tags": [],
+                        "tags": ["dp", "number theory","math"],
                         "negativeTags": ["fft"]
                 },
                 "Gold": {
@@ -626,7 +626,7 @@
                                 "L": 2800,
                                 "R": 3200
                         }],
-                        "tags": [],
+                        "tags": ["probabilities", "graphs", "binary search"],
                         "negativeTags": ["fft"]
                 }
         }, 
