@@ -659,7 +659,7 @@
 				"L": 1700,
 				"R": 2000
 			}],
-			"tags": [dp", "number theory", "math"],
+			"tags": ["dp", "number theory", "math"],
 			"negativeTags": ["fft"]
 		},
 		"Silver": {
