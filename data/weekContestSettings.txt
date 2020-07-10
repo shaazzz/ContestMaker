@@ -626,7 +626,7 @@
 				"L": 2800,
 				"R": 3200
 			}],
-			"tags": ["probabilities", "graphs", "binary search"],
+			"tags": ["dsu", "sqrt", "matrices", "binary search"],
 			"negativeTags": ["fft"]
 		}
 	},
@@ -659,7 +659,7 @@
 				"L": 1700,
 				"R": 2000
 			}],
-			"tags": [],
+			"tags": [dp", "number theory", "math"],
 			"negativeTags": ["fft"]
 		},
 		"Silver": {
@@ -674,7 +674,7 @@
 				"L": 2300,
 				"R": 2600
 			}],
-			"tags": [],
+			"tags": ["graphs", "dfs and similar", "data structures", "binary search"],
 			"negativeTags": ["fft"]
 		},
 		"Gold": {
@@ -689,7 +689,7 @@
 				"L": 2800,
 				"R": 3200
 			}],
-			"tags": [],
+			"tags": ["dsu", "sqrt", "matrices"],
 			"negativeTags": ["fft"]
 		}
 	},
