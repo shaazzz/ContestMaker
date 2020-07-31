@@ -818,5 +818,1076 @@
 			"tags": ["graphs", "dfs and similar", "data structures"],
 			"negativeTags": ["fft"]
 		}
+	},
+	"Week14": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["strings", "number theory", "sortings", "probabilities"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["ternary search", "dsu", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["greedy", "implementation", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week15": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week16": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week17": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week18": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week19": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week20": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week21": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week22": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week23": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week24": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week25": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week26": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week27": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week28": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week29": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
+	},
+	"Week30": {
+		"Beginner": {
+			"workingDays": "1111111",
+			"hideProblemsEveryDay": true,
+			"difficulties": [{
+				"L": 700,
+				"R": 1200
+			}, {
+				"L": 900,
+				"R": 1400
+			}, {
+				"L": 1100,
+				"R": 1600
+			}],
+			"tags": ["graphs", "greedy", "implementation"],
+			"negativeTags": ["fft"]
+		},
+		"Bronze": {
+			"workingDays": "1101101",
+			"difficulties": [{
+				"L": 1300,
+				"R": 1600
+			}, {
+				"L": 1500,
+				"R": 1800
+			}, {
+				"L": 1700,
+				"R": 2000
+			}],
+			"tags": ["games", "number theory", "math", "constructive algorithms"],
+			"negativeTags": ["fft"]
+		},
+		"Silver": {
+			"workingDays": "1010010",
+			"difficulties": [{
+				"L": 1900,
+				"R": 2200
+			}, {
+				"L": 2100,
+				"R": 2400
+			}, {
+				"L": 2300,
+				"R": 2600
+			}],
+			"tags": ["dp", "probabilities", "data structures", "binary search"],
+			"negativeTags": ["fft"]
+		},
+		"Gold": {
+			"workingDays": "0101000",
+			"difficulties": [{
+				"L": 2400,
+				"R": 2700
+			}, {
+				"L": 2500,
+				"R": 2900
+			}, {
+				"L": 2800,
+				"R": 3200
+			}],
+			"tags": ["graphs", "dfs and similar", "data structures"],
+			"negativeTags": ["fft"]
+		}
 	}
 }
